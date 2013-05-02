@@ -1,0 +1,2 @@
+#!/bin/bash
+git co $(git rev-list --children --all | awk "/^$(git rev-parse @\{0})/ { print \$2; }")

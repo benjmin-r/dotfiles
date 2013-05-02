@@ -1,0 +1,17 @@
+[defaults]
+# suppress noisy extdiff header message
+cdiff = -q
+
+[ui]
+# as I use hg almost only with bitbucket, this makes a lot of sense
+username = nureineide
+
+[extensions]
+hgext.extdiff =
+bookmarks =
+fetch = 
+prompt = ~/data/projects/hg-projects/hg-prompt/prompt.py
+
+[extdiff]
+cmd.cdiff = colordiff
+opts.cdiff = -uprN

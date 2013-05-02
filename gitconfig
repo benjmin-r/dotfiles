@@ -1,0 +1,26 @@
+[user]
+	name = Benjamin Reitzammer
+	email = benjamin@ambestengestern.de
+
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    branches= branch -lav
+    co = checkout
+    df = diff
+    lg = log -p
+    lgs = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    tags = tag -ln
+[color]
+    ui = true
+
+
+[core]
+	excludesfile = /Users/benjamin/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
