@@ -24,3 +24,7 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[github]
+	user = nureineide
+[ghi]
+	token = 17281779cfc79cefb3fb61f834380b798b4f7493
