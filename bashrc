@@ -40,9 +40,9 @@ hg_ps1() {
 export PS1="$txtpur\u$txtrst at $txtblu\h$txtrst in $txtgrn\w$txtrst $txtblu \$(__git_ps1 'on (%s)')$txtrst\n$ "
 
 
-
-
-# pythonbrew
-source /Users/benjamin/.pythonbrew/etc/bashrc
+PYTHONBREW_BASHRC="/Users/benjamin/.pythonbrew/etc/bashrc"
+if [ -f $PYTHONBREW_BASHRC ]; then
+  source $PYTHONBREW_BASHRC
+fi
 
 
