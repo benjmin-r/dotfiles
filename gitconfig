@@ -12,19 +12,12 @@
     lg = log -p
     lgs = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     tags = tag -ln
+    url =! bash -c 'git config --get remote.origin.url | sed -E "s/.+:\\(.+\\)\\.git$/https:\\\\/\\\\/github\\\\.com\\\\/\\\\1/g"'
 [color]
     ui = true
 
 
 [core]
-	excludesfile = /Users/benjamin/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+	excludesfile = ~/.gitignore_global
 [github]
 	user = nureineide
-[ghi]
-	token = 17281779cfc79cefb3fb61f834380b798b4f7493
