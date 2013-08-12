@@ -16,9 +16,13 @@ export PLAY_HOME=~/bin/play-2.0.4
 export PATH=/usr/local/share/npm/bin:~/bin:$PLAY_HOME:$PATH
 
 export WORKON_HOME=~/VirtualEnvs
-source /usr/local/bin/virtualenvwrapper.sh 
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    source /usr/local/bin/virtualenvwrapper.sh 
+fi
 
-source ~/.git-completion.bash
+if [ -f ~/.git-completion.bash ]; then
+  source ~/.git-completion.bash
+fi
 
 function pless {
   pygmentize $1 | less -r
