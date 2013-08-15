@@ -21,3 +21,5 @@
 	excludesfile = ~/.gitignore_global
 [github]
 	user = nureineide
+[push]
+	default = matching
