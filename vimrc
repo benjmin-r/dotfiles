@@ -8,6 +8,7 @@ behave xterm          " Alternative is "mswin"
 set background=dark
 set relativenumber
 colorscheme solarized
+syntax on
 
 
 inoremap jj <ESC>
@@ -123,14 +124,20 @@ map <leader>rc :!run_ctags<Enter>
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|target|build)$'
 
+" html5 plugin
+let g:html5_event_handler_attributes_complete = 0
+let g:html5_rdfa_attributes_complete = 0
+let g:html5_microdata_attributes_complete = 0
+
+" omnicomplete
+" only complete the longest common text of all matches (not complete first match) 
+set completeopt+=longest
+
 " clear highlighted search results
 nnoremap <leader><space> :noh<cr>
 
 set encoding=utf-8
 
-let perl_extended_vars=1 " highlight advanced perl vars inside strings
-
-syntax on
 
 au BufNewFile,BufRead *.tmpl :set ft=html " all my .tmpl files ARE html
 
@@ -138,6 +145,8 @@ filetype on
 filetype plugin on
 filetype plugin indent on
 
+" enable omnicomplete
+set omnifunc=syntaxcomplete#Complete
 
 " Add the virtualenv's site-packages to vim path
 if has("python")
