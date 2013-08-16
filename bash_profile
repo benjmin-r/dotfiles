@@ -12,8 +12,7 @@ export PIP_REQUIRE_VIRTUALENV=false
 export PIP_RESPECT_VIRTUALENV=true
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 
-export PLAY_HOME=~/bin/play-2.0.4
-export PATH=/usr/local/share/npm/bin:~/bin:$PLAY_HOME:$PATH
+export PATH=/usr/local/share/npm/bin:~/bin:$PATH
 
 export WORKON_HOME=~/VirtualEnvs
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then

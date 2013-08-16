@@ -13,6 +13,7 @@
     lgs = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     tags = tag -ln
     url =! bash -c 'git config --get remote.origin.url | sed -E "s/.+:\\(.+\\)\\.git$/https:\\\\/\\\\/github\\\\.com\\\\/\\\\1/g"'
+	ctags = !.git/hooks/ctags
 [color]
     ui = true
 
@@ -23,3 +24,5 @@
 	user = nureineide
 [push]
 	default = matching
+[init]
+	templatedir = ~/.git_template

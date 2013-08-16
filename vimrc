@@ -40,9 +40,6 @@ nmap <silent>tee <Esc>:Pytest end<CR>
 vnoremap Q gq
 nnoremap Q gqap
 
-" Flipping through open buffers
-nnoremap <leader>bn :bn<Enter>
-nnoremap <leader>bp :bp<Enter>
 map <F12> :set number!<CR>
 map <C-i> :set encoding=utf8<Enter>
 
@@ -116,6 +113,15 @@ set ignorecase      " make searching case-insensitive
 set smartcase       " make searches with mixed case, case-sensitive
 set gdefault        " always substitute globally
 
+" ctags
+set tags=./tags,.git/tags,tags;/
+map <leader>t <C-]>
+map <leader>r <C-t>
+map <leader>rc :!run_ctags<Enter>
+
+" Ctrl-P
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|target|build)$'
 
 " clear highlighted search results
 nnoremap <leader><space> :noh<cr>
@@ -126,15 +132,7 @@ let perl_extended_vars=1 " highlight advanced perl vars inside strings
 
 syntax on
 
-
-"autocmd BufNewFile,BufRead *.py compiler nose
-autocmd FileType python map <leader>8 :call Pep8()<CR>
-let g:pyflakes_use_quickfix = 0
-
-autocmd Filetype html,xml,xsl,xml.in,prop.in source ~/personal/config/vim/runtime/scripts/closetag.vim
-
 au BufNewFile,BufRead *.tmpl :set ft=html " all my .tmpl files ARE html
-
 
 filetype on
 filetype plugin on
@@ -156,23 +154,7 @@ EOF
 endif
 
 
-" Completion popup selection like other IDEs
-" http://www.vim.org/tips/tip.php?tip_id=1228
-"inoremap <silent><Esc>      <C-r>=pumvisible()?"<C-e>":"<Esc>"<CR>
-"inoremap <silent><CR>       <C-r>=pumvisible()?"<C-y>":"<CR>"<CR>
-"inoremap <silent><Down>     <C-r>=pumvisible()?"<C-n>":"<Down>"<CR>
-"inoremap <silent><Up>       <C-r>=pumvisible()?"<C-p>":"<Up>"<CR>
-"inoremap <silent><PageDown> <C-r>=pumvisible()?"<PageDown><C-p><C-n>":"<PageDown>"<CR>
-"inoremap <silent><PageUp>   <C-r>=pumvisible()?"<PageUp><C-p><C-n>":"<PageUp>"<CR> 
-
-
-
-"
 " TRY THESE SOMETIME LATER
-"
-"
-"" abbreviations
-" iab xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 "
 "Here's a function to overload the <tab> , <c-i> functionality to first go forward in the jump list, and if there is nowhere to go, it will move to the next window:
 "
