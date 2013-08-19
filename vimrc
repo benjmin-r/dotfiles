@@ -1,14 +1,13 @@
 set nocompatible      " Don't force vi compatibility
 
-
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 behave xterm          " Alternative is "mswin"
-set background=dark
-set relativenumber
-colorscheme solarized
 syntax on
+set background=dark
+let g:solarized_termtrans=1
+colorscheme solarized
 
 
 inoremap jj <ESC>
@@ -74,6 +73,7 @@ nnoremap <leader>a :Ack
 " save a file with sudo, even if vim wasn't called with sudo
 cmap w!! w !sudo tee % >/dev/null
 
+set relativenumber
 set scrolloff=999       " keeps current line centered on screen
 set confirm
 set mouse=a           " Enable mouse support

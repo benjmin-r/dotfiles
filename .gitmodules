@@ -31,3 +31,9 @@
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
+[submodule "vim/bundle/less"]
+	path = vim/bundle/less
+	url = https://github.com/groenewege/vim-less.git
+[submodule "vim/bundle/css3"]
+	path = vim/bundle/css3
+	url = https://github.com/hail2u/vim-css3-syntax.git
