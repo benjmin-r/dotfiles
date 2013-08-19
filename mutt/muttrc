@@ -53,6 +53,7 @@ mailboxes +ambestengestern.de/INBOX \
           +ambestengestern.de/sc.sc-ffm \
           +ambestengestern.de/sc.socrates \
           +ambestengestern.de/squeakyvessel \
+          +temporary/search \
 
 # Other special folders
 set mbox      = "+ambestengestern.de/archive"
@@ -77,6 +78,7 @@ bind index <tab>    sync-mailbox
 bind index <space>  collapse-thread
 bind index p        recall-message
 bind index o        display-message
+bind index N        search-opposite
 
 # Ctrl-R to mark all as read
 macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
@@ -89,6 +91,10 @@ macro index f "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to s
 macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
 macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 
+# reset any limiting
+macro index a "<limit>all\n" "show all messages (undo limit)"
+
+
 # Sidebar Options ---------------------------------
 set sidebar_shortpath=yes
 set sidebar_format = "%B"
@@ -97,9 +103,15 @@ set sidebar_format = "%B"
 bind index,pager <down>   sidebar-next
 bind index,pager <up>     sidebar-prev
 bind index,pager <right>  sidebar-open
+
 # b toggles sidebar visibility
 macro index b "<enter-command>toggle sidebar_visible<enter>"
 macro pager b "<enter-command>toggle sidebar_visible<enter>"
+
+# jump to inbox
+macro index gi "<change-folder>+ambestengestern.de/INBOX<enter>"
+macro pager gi "<change-folder>+ambestengestern.de/INBOX<enter>"
+
 
 # Pager View Options ---------------------------------
 set pager_index_lines = 10 # number of index lines to show
@@ -119,6 +131,7 @@ bind pager \Cd  next-page
 bind pager \Cu  previous-page
 bind pager gg   top
 bind pager G    bottom
+bind pager N    search-opposite
 
 bind pager R  group-reply
 
@@ -159,7 +172,7 @@ bind compose p postpone-message
 bind index N search-opposite
 bind pager N search-opposite
 macro index a "<limit>all\n" "show all messages (undo limit)"
-
+macro index S "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py.py ~/.mail/temporary/search<enter><change-folder-readonly>+temporary/search<enter>" "search mail (using notmuch)"
 
 # Colorschemes -------------------------------¬  
 source ~/.mutt/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc
