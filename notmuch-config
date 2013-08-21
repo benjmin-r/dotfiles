@@ -48,8 +48,8 @@ other_email=benjamin@squeakyvessel.com ;breitzammer@gmail.com;benjamin@nur-eine-
 #		in the mail store.
 #
 [new]
-tags=unread;inbox;
-ignore=
+tags=archive;inbox;
+ignore=temporary
 
 # Search configuration
 #
