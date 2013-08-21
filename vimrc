@@ -122,7 +122,7 @@ map <leader>rc :!run_ctags<Enter>
 
 " Ctrl-P
 let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|target|build)$'
+let g:ctrlp_custom_ignore = '\v[\/]\.?(git|hg|svn|target|build)$'
 
 " html5 plugin
 let g:html5_event_handler_attributes_complete = 0
