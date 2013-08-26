@@ -48,7 +48,7 @@ other_email=benjamin@squeakyvessel.com ;breitzammer@gmail.com;benjamin@nur-eine-
 #		in the mail store.
 #
 [new]
-tags=archive;inbox;
+tags=sent;archive;inbox;
 ignore=temporary
 
 # Search configuration
