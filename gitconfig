@@ -13,7 +13,8 @@
     lgs = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     tags = tag -ln
     url =! bash -c 'git config --get remote.origin.url | sed -E "s/.+:\\(.+\\)\\.git$/https:\\\\/\\\\/github\\\\.com\\\\/\\\\1/g"'
-	ctags = !.git/hooks/ctags
+    ctags = !.git/hooks/ctags
+    fix = "!f() { ${EDITOR} `git diff --name-only`; }; f"
 [color]
     ui = true
 
