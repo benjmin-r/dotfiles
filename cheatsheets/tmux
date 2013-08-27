@@ -1,0 +1,68 @@
+==========================================
+             TMUX COMMAND                 
+==========================================
+                                          
+List    tmux ls                           
+New          -s <session>                 
+Attach       att -t <session>             
+Rename       rename-session -t <old> <new>
+Kill         kill-session -t <session>    
+                                          
+==========================================
+             CONTROLS                     
+==========================================
+                                          
+Detach       ^b d                         
+List         ^b =                         
+Buffer       ^b <PgUpDn>                  
+Command      ^b : <command>               
+                                          
+Copy         ^b [ ... <space> ... <enter> 
+Moving         vim/emacs key bindings    
+Start          <space>                   
+Copy           <enter>                   
+Paste        ^b ]                         
+                                          
+==========================================
+             SESSION                      
+==========================================
+                                          
+Next         ^b (                         
+Previous     ^b )                         
+
+==========================================
+             WINDOW (TAB)                 
+==========================================
+
+List         ^b w
+Create       ^b c
+Rename       ^b , <name>
+Last         ^b l               (lower-L)
+Close        ^b &
+
+Goto #       ^b <0-9>
+Next         ^b n
+Previous     ^b p
+Choose       ^b w <name>
+
+==========================================
+           PANE
+==========================================
+
+Show #       ^b q
+Split Horiz  ^b "                --------
+Split Vert   ^b %                   |
+Make Window  ^b !
+Kill         ^b x
+
+Reorganize   ^b <space>
+Expand       ^b <alt><arrow>
+Resize       ^b ^<arrow>
+Resize x n   ^b <n> <arrow>
+
+Select       ^b <arrow>
+Previous     ^b {
+Next         ^b }
+Switch       ^b o                  other
+Swap         ^b ^o
+Last         ^b ;
