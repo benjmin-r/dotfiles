@@ -40,3 +40,6 @@
 [submodule "mutt/notmuch-py"]
 	path = mutt/notmuch-py
 	url = https://github.com/honza/mutt-notmuch-py.git
+[submodule "vim/bundle/dockerfile"]
+	path = vim/bundle/dockerfile
+	url = https://github.com/honza/dockerfile.vim.git

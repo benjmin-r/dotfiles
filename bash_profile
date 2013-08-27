@@ -1,7 +1,5 @@
 alias l='ls -al -G'
 alias gti='git'
-alias vi='mvim -v'
-alias vim='mvim -v'
 alias pd=pushd
 alias composer="php composer.phar"
 alias mutt="cd ~/Downloads && mutt"
