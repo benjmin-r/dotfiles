@@ -1,7 +1,10 @@
 set nocompatible      " Don't force vi compatibility
 
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+call pathogen#infect()
+filetype off
+syntax on
+filetype plugin on
+filetype plugin indent on
 
 behave xterm          " Alternative is "mswin"
 syntax on
@@ -140,10 +143,6 @@ set encoding=utf-8
 
 
 au BufNewFile,BufRead *.tmpl :set ft=html " all my .tmpl files ARE html
-
-filetype on
-filetype plugin on
-filetype plugin indent on
 
 " enable omnicomplete
 set omnifunc=syntaxcomplete#Complete
