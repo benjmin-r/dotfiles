@@ -1,0 +1,68 @@
+#!/bin/bash
+
+BROWSER='/usr/bin/firefox'
+
+XVFB_PIDFILE='/tmp/custom_xvfb_99.pid'
+BROWSER_PIDFILE='/tmp/custom_browser.pid'
+
+do_start() {
+     /sbin/start-stop-daemon --start \
+         --quiet \
+         --pidfile $XVFB_PIDFILE \
+         --make-pidfile \
+         --background \
+         --exec /usr/bin/Xvfb -- :99 > /dev/null 2>&1
+
+     /sbin/start-stop-daemon --start \
+         --quiet \
+         --pidfile $BROWSER_PIDFILE \
+         --make-pidfile \
+         --background \
+         --exec $BROWSER 
+}
+
+do_stop() {
+     /sbin/start-stop-daemon --stop --pidfile $BROWSER_PIDFILE
+     /sbin/start-stop-daemon --stop --pidfile $XVFB_PIDFILE 
+}
+
+do_status() {
+    echo "NOT IMPLEMENTED YET"
+}
+
+do_help() {
+    cat <<END
+start/stop xvfb and a headless browser
+
+Syntax: $base [ <command> ] [ <options> ]
+
+Commands:
+
+    start      - start xfvb and the browser
+    stop       - stop xfvb and the browser
+    status     - output if xvfb and browser are running
+END
+}
+
+
+cmd=$1 ; shift || true
+case "$cmd" in
+    start)
+    do_start $@
+    exit $?
+    ;;
+    stop)
+    do_stop $@
+    exit $?
+    ;;
+    status)
+    do_status $@
+    exit $?
+    ;;
+    *)
+    do_help
+    exit 1
+    ;;
+esac
+
+
