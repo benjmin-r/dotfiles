@@ -17,13 +17,12 @@
     fix = "!f() { ${EDITOR} `git diff --name-only`; }; f"
 [color]
     ui = true
-
-
 [core]
-	excludesfile = ~/.gitignore_global
+    excludesfile = ~/.gitignore_global
+    editor = vim -f
 [github]
-	user = nureineide
+    user = nureineide
 [push]
-	default = matching
+    default = matching
 [init]
-	templatedir = ~/.git_template
+    templatedir = ~/.git_template
