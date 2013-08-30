@@ -138,6 +138,10 @@ bind pager R  group-reply
 # View attachments properly.
 bind attach <return> view-mailcap
 
+# Saner copy/move dialogs
+macro pager C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro pager M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+
 macro pager U "|urlview<enter>" "call urlview to open links"
 
 
