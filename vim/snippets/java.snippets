@@ -1,0 +1,43 @@
+#====================================================================
+# https://github.com/Armaklan/vim-snipmate-play/blob/master/snippets/java.snippets
+# Java Play Framework snippets
+# Added by ZUBER Lionel <lionel.zuber@armaklan.org>
+#		Inspirate by Play 1 Snippets
+#====================================================================
+snippet action
+	public static void ${1:index}(${2:args}) { 
+		${3} 
+	}
+snippet before
+	@Before
+	static void ${1:intercept}(${2:args}) { 
+		${3} 
+	}
+snippet pdebug
+	Logger.debug(${1:param});${2}
+snippet perror
+	Logger.error(${1:param});${2}
+snippet pinfo
+	Logger.info(${1:param});${2}
+snippet pwarn
+	Logger.warn(${1:param});${2}
+snippet findall
+	List<${1:listName}> ${2:items} = ${1}.findAll();${3}
+snippet rnf
+	notFound(${1:param});${2}
+snippet rnfin
+	notFoundIfNull(${1:param});${2}
+snippet ru
+	unauthorized(${1:param});${2}
+snippet ok
+	return ok(${1:view.render()};${2}
+snippet flash
+	flash("${1:key}",${2:"msg"});${3}
+snippet session
+	session("${1:key}",${2:"msg"});${3}
+snippet with
+	With(${1:Authenticator}.class
+	${2}
+#====================================================================
+#  End of Play framework's snippets 
+#====================================================================

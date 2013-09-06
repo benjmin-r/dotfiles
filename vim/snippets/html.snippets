@@ -1,0 +1,19 @@
+#====================================================================
+# https://github.com/Armaklan/vim-snipmate-play/blob/master/snippets/html.snippets
+# Scala Template Play Framework snippets
+# Added by ZUBER Lionel <lionel.zuber@armaklan.org>
+#====================================================================
+snippet co
+	@* ${1:Comment} *@
+	${2}
+snippet fu
+	@${1:functionName}(${2:param}) = {
+		${4}
+	}
+snippet link
+	routes.${1:Controller}.${2:view}(${3:param})${4}
+snippet asset
+	@routes.Assets.at("${1:link}")${2}
+#====================================================================
+#  End of Play framework's snippets 
+#====================================================================
