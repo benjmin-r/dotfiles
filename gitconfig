@@ -15,6 +15,7 @@
     url =! bash -c 'git config --get remote.origin.url | sed -E "s/.+:\\(.+\\)\\.git$/https:\\\\/\\\\/github\\\\.com\\\\/\\\\1/g"'
     ctags = !.git/hooks/ctags
     fix = "!f() { ${EDITOR} `git diff --name-only`; }; f"
+    unstage = reset HEAD --
 [color]
     ui = true
 [core]
