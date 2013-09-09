@@ -26,6 +26,11 @@ inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 
+" move between splits easily"
+map <C-J> <C-W>j<C-W>_
+map <C-K> <C-W>k<C-W>_
+map <C-L> <C-W>l<C-W>_
+map <C-H> <C-W>h<C-W>_
 
 " Execute the tests
 map <silent>tf <Esc>:Pytest file<CR>
