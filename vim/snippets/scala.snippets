@@ -1,0 +1,14 @@
+snippet spec
+	package ${1:packagename}
+
+	import org.specs2.mutable.Specification
+	import org.mockito.Mockito._
+
+	class ${2:specname} extends Specification with Mockito {  
+
+	  "${3}" should {
+
+	    "${4:first behaviour}" in {
+	    }
+	  }
+	}
