@@ -2,7 +2,8 @@ snippet spec
 	package ${1:packagename}
 
 	import org.specs2.mutable.Specification
-	import org.mockito.Mockito._
+	import org.specs2.mock.Mockito
+	import org.mockito.Matchers.{eq => mockitoEq, _}
 
 	class ${2:specname} extends Specification with Mockito {  
 
@@ -11,4 +12,23 @@ snippet spec
 	    "${4:first behaviour}" in {
 	    }
 	  }
+	}
+
+snippet controller
+	package controllers
+
+	import com.google.inject.Singleton
+	import javax.inject.Inject
+	import play.api.i18n.Messages
+	import play.api.mvc._
+	import play.i18n.Lang
+	import scala.Some
+	import scala.util.{Failure, Success}
+
+	@Singleton
+	class ${1:class} @Inject() () extends Controller {
+
+	  def ${2:get} = Action { implicit request =>
+	  }
+
 	}
