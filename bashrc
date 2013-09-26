@@ -48,3 +48,4 @@ fi
 
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+source $(rvm ruby-1.9.3-p429 do rvm env --path)

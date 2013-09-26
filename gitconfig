@@ -16,6 +16,7 @@
     ctags = !.git/hooks/ctags
     fix = "!f() { ${EDITOR} `git diff --name-only`; }; f"
     unstage = reset HEAD --
+    ada = add --all
 [color]
     ui = true
 [core]

@@ -1,2 +1,2 @@
 #! /usr/bin/env sh
-python -m smtpd -n -c DebuggingServer
+python -m smtpd -n -c DebuggingServer localhost:8025

@@ -1,5 +1,7 @@
 alias l='ls -al -G'
 alias gti='git'
+alias gitp='git-smart-pull'
+alias gitl='git-smart-log'
 alias pd=pushd
 alias composer="php composer.phar"
 alias mutt="cd ~/Downloads && mutt"
