@@ -47,5 +47,8 @@ fi
 
 
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-source $(rvm ruby-1.9.3-p429 do rvm env --path)
+if hash rvm 2>/dev/null; then
+    PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+    source $(rvm ruby-1.9.3-p429 do rvm env --path)
+fi
+
