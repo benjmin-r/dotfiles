@@ -25,7 +25,7 @@ maxconnections = 1
 type = Gmail
 remoteuser = benjamin@ambestengestern.de
 remotepasseval = get_keychain_pass('benjamin@ambestengestern.de', 'imap.gmail.com')
-cert_fingerprint = b0ba392bba326e6feb1add4d04fa0fb86cd173fa
+cert_fingerprint = 89091347184d41768bfc0da9fad94bfe882dd358
 realdelete = yes
 nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
                             '[Gmail]/Sent Mail': 'sent',
@@ -33,7 +33,4 @@ nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
                             '[Gmail]/Trash':     'trash',
                             '[Gmail]/All Mail':  'archive',
                             }.get(folder, folder)
-folderfilter = lambda folder: folder not in ['[Gmail]/Trash',
-                                             '[Gmail]/Important',
-                                             '[Gmail]/Spam',
-                                             ]
+folderfilter = lambda folder: folder not in ['[Gmail]/Important', '[Gmail]/Spam', ]

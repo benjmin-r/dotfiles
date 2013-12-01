@@ -8,20 +8,23 @@
     br = branch
     branches= branch -lav
     co = checkout
-    df = diff
-    lg = log -p
-    lgs = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    df = diff --check
+    difflog = log -p
+    lgs = log --pretty=format:\"%C(yellow)%h%Creset %Cgreen%ar%Creset %Cblue%an%Creset %s %C(white)%d%Creset\" --graph --all
+    lg = log --graph --oneline --decorate --all
     tags = tag -ln
     url =! bash -c 'git config --get remote.origin.url | sed -E "s/.+:\\(.+\\)\\.git$/https:\\\\/\\\\/github\\\\.com\\\\/\\\\1/g"'
     ctags = !.git/hooks/ctags
     fix = "!f() { ${EDITOR} `git diff --name-only`; }; f"
     unstage = reset HEAD --
     ada = add --all
+    rst = reset --hard HEAD
 [color]
     ui = true
 [core]
     excludesfile = ~/.gitignore_global
     editor = vim -f
+    whitespace = tab-in-indent
 [github]
     user = nureineide
 [push]

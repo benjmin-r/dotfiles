@@ -53,11 +53,13 @@ mailboxes +ambestengestern.de/INBOX \
           +ambestengestern.de/sc.sc-ffm \
           +ambestengestern.de/sc.socrates \
           +ambestengestern.de/squeakyvessel \
+          +ambestengestern.de/trash \
           +temporary/search \
 
 # Other special folders
 set mbox      = "+ambestengestern.de/archive"
 set postponed = "+ambestengestern.de/drafts"
+set trash     = "+ambestengestern.de/trash"
 
 # Index View Options ---------------------------------
 set date_format = "%m/%d"
@@ -94,10 +96,13 @@ macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 # reset any limiting
 macro index a "<limit>all\n" "show all messages (undo limit)"
 
+# archive message
+macro index,pager y "<save-message>=ambestengestern.de/archive<enter>" "Archive"
+macro index,pager d "<save-message>=ambestengestern.de/trash<enter>" "Trash"
+
 
 # Sidebar Options ---------------------------------
-set sidebar_shortpath=yes
-set sidebar_format = "%B"
+set sidebar_width = 30
 
 # Sidebar Navigation ---------------------------------
 bind index,pager <down>   sidebar-next
@@ -120,6 +125,8 @@ set pager_stop             # don't go to next message automatically
 set menu_scroll            # scroll in menus
 set tilde                  # show tildes like in vim
 unset markers              # no ugly plus signs
+auto_view html             # automatically use mailcap settings on html mails
+alternative_order text/plain text/enriched text/html 
 
 set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
 alternative_order text/plain text/enriched text/html
@@ -149,7 +156,6 @@ macro pager U "|urlview<enter>" "call urlview to open links"
 set realname = "Benjamin Reitzammer" # who am i?
 set envelope_from                    # which from?
 set sig_dashes                       # dashes before sig
-set edit_headers                     # show headers when composing
 set fast_reply                       # skip to compose when replying
 set askcc                            # ask for CC:
 set fcc_attach                       # save attachments with the body

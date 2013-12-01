@@ -52,3 +52,5 @@ if hash rvm 2>/dev/null; then
     source $(rvm ruby-1.9.3-p429 do rvm env --path)
 fi
 
+# added by travis gem
+source /Users/benjamin/.travis/travis.sh

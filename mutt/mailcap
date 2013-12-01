@@ -13,6 +13,8 @@ application/pdf; ~/.mutt/view_attachment.sh %s pdf
 
 # HTML
 text/html; ~/.mutt/view_attachment.sh %s html
+#text/html; w3m %s; nametemplate=%s.html"; needsterminal
+text/html; links -dump %s; nametemplate=%s.html; copiousoutput; needsterminal
 
 # Unidentified files
 application/octet-stream; ~/.mutt/view_attachment.sh %s "-"

@@ -34,6 +34,9 @@ if [ -f ~/.bashrc ]; then
   . ~/.bashrc
 fi
 
+if [ -f /usr/local/opt/autoenv/activate.sh ]; then
+  source /usr/local/opt/autoenv/activate.sh
+fi
 
 # rbenv completion ... via homebrew
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
