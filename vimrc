@@ -168,19 +168,18 @@ EOF
 endif
 
 
-" TRY THESE SOMETIME LATER
-"
-"Here's a function to overload the <tab> , <c-i> functionality to first go forward in the jump list, and if there is nowhere to go, it will move to the next window:
-"
-"function! Tab_jump_or_win_move()
-"let l = line(".")
-"let c = col(".")
-"let b = bufnr("%")
-"exe "normal! \<esc>\<tab>"
-"if l == line(".") && c == col(".") && b == bufnr("%")
-"call feedkeys( "\<c-w>\<c-w>", "t" )
-"endif
-"endfunction
-"
-"nnoremap <silent> <tab> :call Tab_jump_or_win_move()<CR> 
+" http://vimcasts.org/episodes/soft-wrapping-text/
+" enable soft wrapping"
+command! -nargs=* Wrap set wrap linebreak nolist
 
+" use j, k, $, 0 and ^ on display lines by holding down the command key.
+vmap <D-j> gj
+vmap <D-k> gk
+vmap <D-4> g$
+vmap <D-6> g^
+vmap <D-0> g^
+nmap <D-j> gj
+nmap <D-k> gk
+nmap <D-4> g$
+nmap <D-6> g^
+nmap <D-0> g^"

@@ -46,6 +46,10 @@ if [ -f $PYTHONBREW_BASHRC ]; then
 fi
 
 
+RVM_SCRIPT="$HOME/.rvm/scripts/rvm"
+if [ -f $RVM_SCRIPT ]; then
+  source $RVM_SCRIPT
+fi
 
 if hash rvm 2>/dev/null; then
     PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
@@ -53,4 +57,7 @@ if hash rvm 2>/dev/null; then
 fi
 
 # added by travis gem
-source /Users/benjamin/.travis/travis.sh
+TRAVIS_SH="/Users/benjamin/.travis/travis.sh"
+if  [ -f $TRAVIS_SH ]; then
+    source $TRAVIS_SH
+fi

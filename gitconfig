@@ -18,6 +18,7 @@
     fix = "!f() { ${EDITOR} `git diff --name-only`; }; f"
     unstage = reset HEAD --
     ada = add --all
+    ac = commit --all
     rst = reset --hard HEAD
 [color]
     ui = true
