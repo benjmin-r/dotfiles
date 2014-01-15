@@ -85,3 +85,6 @@ upgrade() {
     # install them.
     apt-get --assume-yes upgrade
 }
+
+# added by travis gem
+[ -f /Users/benjamin/.travis/travis.sh ] && source /Users/benjamin/.travis/travis.sh
