@@ -26,6 +26,8 @@ set thorough_search      # strip headers and eval mimes before searching
 set sidebar_delim   = '  │'
 set sidebar_visible = yes
 set sidebar_width   = 24
+set sidebar_shortpath=yes
+set sidebar_format = "%B"
 #color sidebar_new color221 color233
 
 # Status Bar -----------------------------------------
@@ -59,7 +61,7 @@ mailboxes +ambestengestern.de/INBOX \
 # Other special folders
 set mbox      = "+ambestengestern.de/archive"
 set postponed = "+ambestengestern.de/drafts"
-set trash     = "+ambestengestern.de/trash"
+#set trash     = "+ambestengestern.de/trash"
 
 # Index View Options ---------------------------------
 set date_format = "%m/%d"
