@@ -1,4 +1,4 @@
-alias l='ls -al -G'
+alias l='ls -hal -G'
 alias gti='git'
 alias gitp='git-smart-pull'
 alias gitl='git-smart-log'
