@@ -17,3 +17,9 @@ def get_keychain_pass(account=None, server=None):
                if l.startswith('password: ')][0]
 
     return re.match(r'password: "(.*)"', outtext).group(1)
+
+if __name__ == '__main__':
+    import sys
+    account = sys.argv[1]
+    server = sys.argv[2]
+    print get_keychain_pass(account, server)

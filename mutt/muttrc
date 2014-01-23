@@ -1,16 +1,14 @@
+
 # Paths ----------------------------------------------
 set folder           = ~/.mail               # mailbox location
 set alias_file       = ~/.mutt/alias         # where to store aliases
-set header_cache     = ~/.mutt/cache/headers # where to store headers
-set message_cachedir = ~/.mutt/cache/bodies  # where to store bodies
 set certificate_file = ~/.mutt/certificates  # where to store certs
 set mailcap_path     = ~/.mutt/mailcap       # entries for filetypes
 set tmpdir           = ~/.tmp                # where to keep temp files
-set signature        = ~/.mutt/sig           # my signature file
+set mbox_type        = Maildir               # mailbox type
 
 # Basic Options --------------------------------------
 set wait_key = no        # shut up, mutt
-set mbox_type = Maildir  # mailbox type
 set timeout = 3          # idle time before scanning
 set mail_check = 0       # minimum time between scans
 unset move               # gmail does that
@@ -25,9 +23,9 @@ set thorough_search      # strip headers and eval mimes before searching
 # Sidebar Patch --------------------------------------
 set sidebar_delim   = '  │'
 set sidebar_visible = yes
-set sidebar_width   = 24
+set sidebar_width   = 25
 set sidebar_shortpath=yes
-set sidebar_format = "%B"
+set sidebar_format = "%B%* %N"      # folder name, soft pad with spaces, unread msg count
 #color sidebar_new color221 color233
 
 # Status Bar -----------------------------------------
@@ -37,31 +35,11 @@ set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)
 # Header Options -------------------------------------
 ignore *                                # ignore all headers
 unignore from: to: cc: date: subject:   # show only these
-unhdr_order *                           # some distros order things by default
+unhdr_order *                          # some distros order things by default
 hdr_order from: to: cc: date: subject:  # and in this order
 
 # Account Settings -----------------------------------
 
-# Default inbox.
-set spoolfile = "+ambestengestern.de/INBOX"
-
-alternates benjamin@nur-eine-i.de breitzammer@gmail.com
-
-mailboxes +ambestengestern.de/INBOX \
-          +ambestengestern.de/flagged \
-          +ambestengestern.de/drafts \
-          +ambestengestern.de/sent \
-          +ambestengestern.de/archive \
-          +ambestengestern.de/sc.sc-ffm \
-          +ambestengestern.de/sc.socrates \
-          +ambestengestern.de/squeakyvessel \
-          +ambestengestern.de/trash \
-          +temporary/search \
-
-# Other special folders
-set mbox      = "+ambestengestern.de/archive"
-set postponed = "+ambestengestern.de/drafts"
-#set trash     = "+ambestengestern.de/trash"
 
 # Index View Options ---------------------------------
 set date_format = "%m/%d"
@@ -83,6 +61,8 @@ bind index <space>  collapse-thread
 bind index p        recall-message
 bind index o        display-message
 bind index N        search-opposite
+bind index \Cd      next-page
+bind index \Cu      previous-page
 
 # Ctrl-R to mark all as read
 macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
@@ -98,13 +78,6 @@ macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 # reset any limiting
 macro index a "<limit>all\n" "show all messages (undo limit)"
 
-# archive message
-macro index,pager y "<save-message>=ambestengestern.de/archive<enter>" "Archive"
-macro index,pager d "<save-message>=ambestengestern.de/trash<enter>" "Trash"
-
-
-# Sidebar Options ---------------------------------
-set sidebar_width = 30
 
 # Sidebar Navigation ---------------------------------
 bind index,pager <down>   sidebar-next
@@ -114,10 +87,6 @@ bind index,pager <right>  sidebar-open
 # b toggles sidebar visibility
 macro index b "<enter-command>toggle sidebar_visible<enter>"
 macro pager b "<enter-command>toggle sidebar_visible<enter>"
-
-# jump to inbox
-macro index gi "<change-folder>+ambestengestern.de/INBOX<enter>"
-macro pager gi "<change-folder>+ambestengestern.de/INBOX<enter>"
 
 
 # Pager View Options ---------------------------------
@@ -158,6 +127,7 @@ macro pager U "|urlview<enter>" "call urlview to open links"
 set realname = "Benjamin Reitzammer" # who am i?
 set envelope_from                    # which from?
 set sig_dashes                       # dashes before sig
+set edit_headers                     # show headers when composing
 set fast_reply                       # skip to compose when replying
 set askcc                            # ask for CC:
 set fcc_attach                       # save attachments with the body
@@ -170,15 +140,10 @@ set reverse_name                     # reply as whomever it was to
 set include                          # include message in replies
 set forward_quote                    # include message in forwards
 
-set editor = "vim"
+set editor = "vim +9"
 
-set from = "benjamin@ambestengestern.de"
-set sendmail = "/usr/local/bin/msmtp -a ambestengestern.de"
 set sendmail_wait = 0
-unset record
-
 bind compose p postpone-message
-
 
 # Search Options -------------------------------¬  
 bind index N search-opposite

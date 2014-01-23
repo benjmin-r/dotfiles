@@ -1,0 +1,28 @@
+source ~/.mutt/muttrc
+
+
+set from      = "benjamin.reitzammer@vaamo.de"
+set sendmail = "/usr/local/bin/msmtp -a work"
+
+set record    = "+work/Sent"
+set mbox      = "+work/Archive"
+set postponed = "+work/Drafts"
+
+#color status red default
+mailboxes +work/INBOX \
+          +work/Drafts \
+          +work/Sent \
+          +work/Archive \
+          +work/Trash \
+
+
+set header_cache     = ~/.mutt/cache/work-headers # where to store headers
+set message_cachedir = ~/.mutt/cache/work-bodies  # where to store bodies
+
+macro index,pager y "<save-message>+work/Archive<enter>" "Archive"
+macro index,pager d "<save-message>+work/Trash<enter>" "Trash"
+
+# jump to inbox
+macro index gi "<change-folder>+work/INBOX<enter>" "Jump to Inbox"
+macro pager gi "<change-folder>+work/INBOX<enter>" "Jump to Inbox"
+

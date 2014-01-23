@@ -4,6 +4,16 @@ accounts = ambestengestern.de
 pythonfile=~/.mutt/offlineimap.py
 fsync = False
 
+
+# [mbnames]
+# enabled = yes
+# filename = ~/.mutt/mailboxes
+# header = "mailboxes "
+# peritem = "+%(accountname)s/%(foldername)s"
+# sep = " "
+# footer = "\n"
+
+
 [Account ambestengestern.de]
 localrepository = ambestengestern.de-Local
 remoterepository = ambestengestern.de-Remote
@@ -13,24 +23,42 @@ postsynchook = notmuch new
 [Repository ambestengestern.de-Local]
 type = Maildir
 localfolders = ~/.mail/ambestengestern.de
-nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
-                            'sent':    '[Gmail]/Sent Mail',
-                            'flagged': '[Gmail]/Starred',
-                            'trash':   '[Gmail]/Trash',
-                            'archive': '[Gmail]/All Mail',
-                            }.get(folder, folder)
 
 [Repository ambestengestern.de-Remote]
-maxconnections = 1
-type = Gmail
+maxconnections = 2
+type = IMAP
+remotehost = mail.ambestengestern.de
 remoteuser = benjamin@ambestengestern.de
-remotepasseval = get_keychain_pass('benjamin@ambestengestern.de', 'imap.gmail.com')
-cert_fingerprint = 89091347184d41768bfc0da9fad94bfe882dd358
-realdelete = yes
-nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
-                            '[Gmail]/Sent Mail': 'sent',
-                            '[Gmail]/Starred':   'flagged',
-                            '[Gmail]/Trash':     'trash',
-                            '[Gmail]/All Mail':  'archive',
+remotepasseval = get_keychain_pass('benjamin@ambestengestern.de', 'mail.ambestengestern.de')
+ssl = yes
+cert_fingerprint = 91d976241f0694a725c0f751d5409fd1a1d1cfc3
+
+
+[Account work]
+localrepository = work-Local
+remoterepository = work-Remote
+status_backend = sqlite
+#postsynchook = notmuch new
+
+[Repository work-Local]
+type = Maildir
+localfolders = ~/.mail/work
+
+[Repository work-Remote]
+maxconnections = 1
+type = IMAP
+remotehost = mail.hostedoffice.ag
+remoteuser = benjamin.reitzammer@vaamo.de
+remotepasseval = get_keychain_pass('benjamin.reitzammer@vaamo.de', 'mail.hostedoffice.ag')
+cert_fingerprint = 6edd31540e615f0a28e08d864a3a3edf3186439e
+ssl = yes
+nametrans = lambda folder: {'Sent Items': 'Sent'
                             }.get(folder, folder)
-folderfilter = lambda folder: folder not in ['[Gmail]/Important', '[Gmail]/Spam', ]
+folderfilter = lambda folder: folder not in ['Calendar', 
+                                             'Outbox',
+                                             'Tasks',
+                                             'Junk E-Mail',
+                                             'Notes',
+                                             'Deleted Items',
+                                             'Journal',
+                                             'Contacts', ]

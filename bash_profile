@@ -4,7 +4,8 @@ alias gitp='git-smart-pull'
 alias gitl='git-smart-log'
 alias pd=pushd
 alias composer="php composer.phar"
-alias mutt="cd ~/Downloads && mutt"
+alias mutt-personal='mutt -n -e "source ~/.mutt/accounts/ambestengestern"'
+alias mutt-work='mutt -n -e "source ~/.mutt/accounts/work"'
 
 
 export EDITOR=vi
