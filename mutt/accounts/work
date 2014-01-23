@@ -4,16 +4,30 @@ source ~/.mutt/muttrc
 set from      = "benjamin.reitzammer@vaamo.de"
 set sendmail = "/usr/local/bin/msmtp -a work"
 
+set spoolfile = "+work/INBOX"
 set record    = "+work/Sent"
 set mbox      = "+work/Archive"
 set postponed = "+work/Drafts"
 
 #color status red default
 mailboxes +work/INBOX \
+          +work/Archive \
           +work/Drafts \
           +work/Sent \
-          +work/Archive \
           +work/Trash \
+          +work/Reading \
+          +work/R-mgmt \
+          +work/R-ops \
+          +work/R-product \
+          +work/Invoices \
+          +work/Invoices-done \
+          +work/Hiring \
+          +work/FE-Dev \
+          +work/FE-Dev-no \
+          +work/FE-Dev-Phase1 \
+          +work/FE-Dev-Phase2 \
+          +work/FE-Dev-Phase3 \
+          +work/Umzug \
 
 
 set header_cache     = ~/.mutt/cache/work-headers # where to store headers

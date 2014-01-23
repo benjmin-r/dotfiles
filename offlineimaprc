@@ -1,17 +1,17 @@
 [general]
 ui = ttyui
-accounts = ambestengestern.de
+accounts = ambestengestern.de, work
 pythonfile=~/.mutt/offlineimap.py
 fsync = False
 
 
-# [mbnames]
-# enabled = yes
-# filename = ~/.mutt/mailboxes
-# header = "mailboxes "
-# peritem = "+%(accountname)s/%(foldername)s"
-# sep = " "
-# footer = "\n"
+[mbnames]
+enabled = yes
+filename = ~/.mutt/mailboxes
+header = "mailboxes "
+peritem = "+%(accountname)s/%(foldername)s"
+sep = " "
+footer = "\n"
 
 
 [Account ambestengestern.de]
@@ -43,6 +43,9 @@ status_backend = sqlite
 [Repository work-Local]
 type = Maildir
 localfolders = ~/.mail/work
+nametrans = lambda folder: {'Sent':             'Sent Items',
+                            'Trash':            'Deleted Items',
+                            }.get(folder, folder)
 
 [Repository work-Remote]
 maxconnections = 1
@@ -52,13 +55,13 @@ remoteuser = benjamin.reitzammer@vaamo.de
 remotepasseval = get_keychain_pass('benjamin.reitzammer@vaamo.de', 'mail.hostedoffice.ag')
 cert_fingerprint = 6edd31540e615f0a28e08d864a3a3edf3186439e
 ssl = yes
-nametrans = lambda folder: {'Sent Items': 'Sent'
+nametrans = lambda folder: {'Sent Items':       'Sent',
+                            'Deleted Items':    'Trash',
                             }.get(folder, folder)
 folderfilter = lambda folder: folder not in ['Calendar', 
                                              'Outbox',
                                              'Tasks',
                                              'Junk E-Mail',
                                              'Notes',
-                                             'Deleted Items',
                                              'Journal',
                                              'Contacts', ]
