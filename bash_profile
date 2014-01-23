@@ -13,8 +13,9 @@ export EDITOR=vi
 export PIP_REQUIRE_VIRTUALENV=false
 export PIP_RESPECT_VIRTUALENV=true
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
+export TMUXIFIER_LAYOUT_PATH=$HOME/.dotfiles/tmuxifier-layouts
 
-export PATH=/usr/local/share/npm/bin:~/bin:$PATH
+export PATH=/usr/local/share/npm/bin:~/bin:~/.dotfiles/tmuxifier/bin:$PATH
 
 export WORKON_HOME=~/VirtualEnvs
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then

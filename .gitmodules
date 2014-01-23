@@ -58,3 +58,6 @@
 [submodule "vim/bundle/surround"]
 	path = vim/bundle/surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "tmuxifier"]
+	path = tmuxifier
+	url = git@github.com:jimeh/tmuxifier.git

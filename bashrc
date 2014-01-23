@@ -59,6 +59,8 @@ if  [ -f $TRAVIS_SH ]; then
     source $TRAVIS_SH
 fi
 
+# tmuxifier initialization
+eval "$(tmuxifier init -)"
 
 upgrade() {
     local retry=5 count=0
