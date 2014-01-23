@@ -34,9 +34,6 @@ bakwht='\e[47m'   # White
 txtrst='\e[0m'    # Text Reset
 
 
-hg_ps1() {
-        hg prompt "{{branch}}{ at {bookmark}}{status}" 2> /dev/null
-}
 export PS1="$txtpur\u$txtrst at $txtblu\h$txtrst in $txtgrn\w$txtrst $txtblu \$(__git_ps1 'on (%s)')$txtrst\n$ "
 
 
