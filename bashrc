@@ -54,13 +54,22 @@ if hash rvm 2>/dev/null; then
 fi
 
 # added by travis gem
-TRAVIS_SH="/Users/benjamin/.travis/travis.sh"
-if  [ -f $TRAVIS_SH ]; then
-    source $TRAVIS_SH
-fi
+[ -f /Users/benjamin/.travis/travis.sh ] && source /Users/benjamin/.travis/travis.sh
 
 # tmuxifier initialization
 eval "$(tmuxifier init -)"
+
+function pgr() {
+    ps -xeo pid,command | grep -i $1 | grep -v grep
+}
+
+function pgrid() {
+    pgr $1 | awk '{print $1}'
+}
+
+function pgrkill() {
+    pgrid $1 | xargs kill
+}
 
 upgrade() {
     local retry=5 count=0
@@ -85,5 +94,3 @@ upgrade() {
     apt-get --assume-yes upgrade
 }
 
-# added by travis gem
-[ -f /Users/benjamin/.travis/travis.sh ] && source /Users/benjamin/.travis/travis.sh
