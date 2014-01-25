@@ -77,6 +77,7 @@ au FocusLost * :wa
 " strip all trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
+nnoremap <leader>da :Dash
 nnoremap <leader>a :Ack 
 
 " save a file with sudo, even if vim wasn't called with sudo
