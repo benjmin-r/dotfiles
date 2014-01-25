@@ -40,3 +40,7 @@ macro index,pager d "<save-message>+work/Trash<enter>" "Trash"
 macro index gi "<change-folder>+work/INBOX<enter>" "Jump to Inbox"
 macro pager gi "<change-folder>+work/INBOX<enter>" "Jump to Inbox"
 
+# Sync email
+macro index F "<shell-escape>offlineimap -a work<enter>"           "run offlineimap to sync all mail"
+macro index f "<shell-escape>offlineimap -qf INBOX -a work<enter>" "run offlineimap to sync inbox"
+
