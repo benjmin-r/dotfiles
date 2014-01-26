@@ -11,8 +11,9 @@ mailboxes "+ambestengestern.de/INBOX" \
           "+ambestengestern.de/Sent" \
           "+ambestengestern.de/Trash" \
           "+ambestengestern.de/Junk" \
-          "+ambestengestern.de/root" \
           "+ambestengestern.de/rss" \
+          "+ambestengestern.de/root" \
+          "+ambestengestern.de/fail2ban" \
           "+ambestengestern.de/sc" \
           "+ambestengestern.de/sc.SC" \
           "+temporary/search"
