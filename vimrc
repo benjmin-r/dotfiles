@@ -99,40 +99,46 @@ set selectmode=key    " to enter visual mode when selecting with mouse
 set ai                " Turn on autoindenting
 set aw                " Save file when compiling, etc.
 set bs=2              " Allow backspacing over everything in insert mode
-set sm                " Show matching brackets/parentheses ...
 " set tw=70             " Limit the width of text to 70
 set viminfo='20,\"50  " Read/write a .viminfo file, don't store more than 50 lines of registers
 set whichwrap=b,s,<,>,[,] " End of line cursor support
 set nobackup          " Do not create backup files
-set expandtab         " No tabs in the output file!
 set hidden
 set ruler
-set showcmd   " display incomplete commands
-set shiftwidth=4      " What you get for ^D
-set tabstop=4         " Same as shiftwidth
+set showcmd           " display incomplete commands
 set foldmethod=indent
 set foldlevelstart=99
 set vb t_vb=
-set showmatch " show matching brackets
-set mat=5 " how many tenths of a second to blink matching brackets for
+set showmatch         " show matching brackets
+set mat=5             " how many tenths of a second to blink matching brackets for
+
+" indent without tabs, default 4 spaces
+set expandtab         " No tabs in the output file!
+set shiftwidth=4      " What you get for ^D
+set softtabstop=4
+map <leader>i2 :set shiftwidth=2 softtabstop=2<CR>
+                   map <leader>i4 :set shiftwidth=4 softtabstop=4<CR>
 
 " searching
-set incsearch " BUT do highlight as you type you search phrase
+set hlsearch        " do not highlight searched for phrases
+set incsearch       " BUT do highlight as you type you search phrase
 set showmatch
-set hlsearch " do not highlight searched for phrases
 set ignorecase      " make searching case-insensitive
 set smartcase       " make searches with mixed case, case-sensitive
 set gdefault        " always substitute globally
 
 " ctags
 set tags=./tags,.git/tags,tags;/
-map <leader>t <C-]>
-map <leader>r <C-t>
+map <leader>t g<C-]>        " jump to tag under cursor, showing match-list if more than one match
+map <leader>wt <C-W>g<C-]>  " open matching tag in new buffer
+map <leader>m g]            " show list of matching tags
+map <leader>wm <C-W>g]      " show list of matching tags in a new buffer
+map <leader>r <C-t>         " jump back to previous tag on stack
 map <leader>rc :!run_ctags<Enter>
 
 " Ctrl-P
 let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_custom_ignore = '\v[\/]\.?(git|hg|svn|target|build)$'
+let g:ctrlp_custom_ignore = '\v[\/]\.?(git|hg|svn|target|build|node_modules)$'
 
 " html5 plugin
 let g:html5_event_handler_attributes_complete = 0
