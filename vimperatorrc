@@ -1,0 +1,5 @@
+" disable keymapping for record macro ... never use it
+map qq <Nop>
+
+" make textareas editable in macvim
+set editor='bash -lc "mvim -f \$*" mvim '
