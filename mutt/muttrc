@@ -20,6 +20,12 @@ set beep_new             # bell on new mails
 set pipe_decode          # strip headers and eval mimes when piping
 set thorough_search      # strip headers and eval mimes before searching
 
+
+# Alias Setup ----------------------------------------
+set sort_alias= alias
+set reverse_alias=yes
+source $alias_file
+
 # Sidebar Patch --------------------------------------
 set sidebar_delim   = '  │'
 set sidebar_visible = yes
@@ -93,10 +99,9 @@ set menu_scroll            # scroll in menus
 set tilde                  # show tildes like in vim
 unset markers              # no ugly plus signs
 auto_view html             # automatically use mailcap settings on html mails
-alternative_order text/plain text/enriched text/html 
 
 set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
-alternative_order text/plain text/enriched text/html
+alternative_order text/enriched text/plain text/html
 
 # Pager Key Bindings ---------------------------------
 bind pager k    previous-line
