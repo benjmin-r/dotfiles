@@ -27,11 +27,18 @@ nnoremap W :w<CR>
 nnoremap j gj
 nnoremap k gk
 
-" move between splits easily"
-map <C-J> <C-W>j<C-W>_
-map <C-K> <C-W>k<C-W>_
-map <C-L> <C-W>l<C-W>_
-map <C-H> <C-W>h<C-W>_
+" move between splits easily 
+"  .... commented out because of vim-tmux-navigator plugin
+" map <C-J> <C-W>j<C-W>_
+" map <C-K> <C-W>k<C-W>_
+" map <C-L> <C-W>l<C-W>_
+" map <C-H> <C-W>h<C-W>_
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <C-H> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-J> :TmuxNavigateDown<cr><C-W>_
+nnoremap <silent> <C-K> :TmuxNavigateUp<cr><C-W>_
+nnoremap <silent> <C-L> :TmuxNavigateRight<cr>
+nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
 
 " Execute the tests
 map <silent>tf <Esc>:Pytest file<CR>
