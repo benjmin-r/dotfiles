@@ -106,7 +106,6 @@ set selectmode=key    " to enter visual mode when selecting with mouse
 set ai                " Turn on autoindenting
 set aw                " Save file when compiling, etc.
 set bs=2              " Allow backspacing over everything in insert mode
-" set tw=70             " Limit the width of text to 70
 set viminfo='20,\"50  " Read/write a .viminfo file, don't store more than 50 lines of registers
 set whichwrap=b,s,<,>,[,] " End of line cursor support
 set nobackup          " Do not create backup files
@@ -155,6 +154,11 @@ let g:html5_microdata_attributes_complete = 0
 " omnicomplete
 " only complete the longest common text of all matches (not complete first match) 
 set completeopt+=longest
+
+" indent guide plugin
+let g:indent_guides_guide_size=1
+let g:indent_guides_start_level=2
+let g:indent_guides_enable_on_vim_startup=1
 
 " clear highlighted search results
 nnoremap <leader><space> :noh<cr>
