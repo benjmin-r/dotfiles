@@ -117,13 +117,14 @@ set foldlevelstart=99
 set vb t_vb=
 set showmatch         " show matching brackets
 set mat=5             " how many tenths of a second to blink matching brackets for
+set pastetoggle=<leader>pp
 
 " indent without tabs, default 4 spaces
 set expandtab         " No tabs in the output file!
 set shiftwidth=4      " What you get for ^D
 set softtabstop=4
 map <leader>i2 :set shiftwidth=2 softtabstop=2<CR>
-                   map <leader>i4 :set shiftwidth=4 softtabstop=4<CR>
+map <leader>i4 :set shiftwidth=4 softtabstop=4<CR>
 
 " searching
 set hlsearch        " do not highlight searched for phrases
