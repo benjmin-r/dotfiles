@@ -98,10 +98,10 @@ set pager_stop             # don't go to next message automatically
 set menu_scroll            # scroll in menus
 set tilde                  # show tildes like in vim
 unset markers              # no ugly plus signs
-auto_view html             # automatically use mailcap settings on html mails
+auto_view text/html             # automatically use mailcap settings on html mails
 
 set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
-alternative_order text/enriched text/plain text/html
+alternative_order text/plain text/enriched text/html
 
 # Pager Key Bindings ---------------------------------
 bind pager k    previous-line
@@ -116,6 +116,14 @@ bind pager R  group-reply
 
 # View attachments properly.
 bind attach <return> view-mailcap
+#
+# enable extraction of URLs in attachments menu
+macro attach U ":set pipe_decode\n|urlview\n:unset pipe_decode\n" "call urlview to open links"
+#
+# convert html attachments to text, prepend > characters and copy into system clipboard
+macro attach \Cp "<pipe-entry>~/.mutt/quote-html-message.sh<enter>" "convert msg to text, quote it and copy to clipboard"
+macro pager \Cp "<view-attachments><pipe-entry>~/.mutt/quote-html-message.sh<enter><q>" "convert msg to text, quote it and copy to clipboard"
+
 
 # Saner copy/move dialogs
 macro pager C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
@@ -123,6 +131,8 @@ macro pager M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 
 macro pager U "|urlview<enter>" "call urlview to open links"
 
+macro index A "!$EDITOR ~/.mutt/aliases\n:source ~/.mutt/aliases\n" "Edit aliases file and reload it"
+macro pager A "!$EDITOR ~/.mutt/aliases\n:source ~/.mutt/aliases\n" "Edit aliases file and reload it"
 
 # Compose View Options -------------------------------
 set realname = "Benjamin Reitzammer" # who am i?
