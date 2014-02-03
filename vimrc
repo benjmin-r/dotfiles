@@ -6,9 +6,11 @@ syntax on
 filetype plugin on
 filetype plugin indent on
 
-behave xterm          " Alternative is "mswin"
+behave xterm 
+set term=xterm-256color
 syntax on
 set background=dark
+let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 colorscheme solarized
 
@@ -118,6 +120,9 @@ set vb t_vb=
 set showmatch         " show matching brackets
 set mat=5             " how many tenths of a second to blink matching brackets for
 set pastetoggle=<leader>pp
+" Insert only one space when joining lines that contain sentence-terminating
+" " punctuation like `.`.
+set nojoinspaces"
 
 " indent without tabs, default 4 spaces
 set expandtab         " No tabs in the output file!
