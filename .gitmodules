@@ -60,7 +60,7 @@
 	url = https://github.com/tpope/vim-surround.git
 [submodule "tmuxifier"]
 	path = tmuxifier
-	url = git@github.com:jimeh/tmuxifier.git
+	url = https://github.com/jimeh/tmuxifier.git
 [submodule "funcoo"]
 	path = funcoo
 	url = https://github.com/rizzatti/funcoo.vim.git
@@ -72,7 +72,7 @@
 	url = https://github.com/rizzatti/dash.vim.git
 [submodule "vim/bundle/vim-tmux-navigator"]
 	path = vim/bundle/vim-tmux-navigator
-	url = git@github.com:christoomey/vim-tmux-navigator.git
+	url = https://github.com/christoomey/vim-tmux-navigator.git
 [submodule "vim/bundle/indent-guides"]
 	path = vim/bundle/indent-guides
-	url = git@github.com:nathanaelkane/vim-indent-guides.git
+	url = https://github.com/nathanaelkane/vim-indent-guides.git
