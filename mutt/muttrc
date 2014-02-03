@@ -116,10 +116,10 @@ bind pager R  group-reply
 
 # View attachments properly.
 bind attach <return> view-mailcap
-#
-# enable extraction of URLs in attachments menu
-macro attach U ":set pipe_decode\n|urlview\n:unset pipe_decode\n" "call urlview to open links"
-#
+
+# enable extraction of URLs in pager and attachments menu
+macro pager,attach U "|urlview<enter>" "call urlview to open links"
+
 # convert html attachments to text, prepend > characters and copy into system clipboard
 macro attach \Cp "<pipe-entry>~/.mutt/quote-html-message.sh<enter>" "convert msg to text, quote it and copy to clipboard"
 macro pager \Cp "<view-attachments><pipe-entry>~/.mutt/quote-html-message.sh<enter><q>" "convert msg to text, quote it and copy to clipboard"
@@ -128,8 +128,6 @@ macro pager \Cp "<view-attachments><pipe-entry>~/.mutt/quote-html-message.sh<ent
 # Saner copy/move dialogs
 macro pager C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
 macro pager M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
-
-macro pager U "|urlview<enter>" "call urlview to open links"
 
 macro index A "!$EDITOR ~/.mutt/aliases\n:source ~/.mutt/aliases\n" "Edit aliases file and reload it"
 macro pager A "!$EDITOR ~/.mutt/aliases\n:source ~/.mutt/aliases\n" "Edit aliases file and reload it"
