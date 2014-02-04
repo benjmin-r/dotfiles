@@ -76,3 +76,6 @@
 [submodule "vim/bundle/indent-guides"]
 	path = vim/bundle/indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "autoenv"]
+	path = autoenv
+	url = https://github.com/kennethreitz/autoenv.git

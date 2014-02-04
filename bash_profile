@@ -17,6 +17,8 @@ export TMUXIFIER_LAYOUT_PATH=$HOME/.dotfiles/tmuxifier-layouts
 
 export PATH=/usr/local/share/npm/bin:~/bin:~/.dotfiles/tmuxifier/bin:$PATH
 
+source ~/.dotfiles/autoenv/activate.sh
+
 export WORKON_HOME=~/VirtualEnvs
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh 
@@ -30,14 +32,16 @@ function pless {
   pygmentize $1 | less -r
 }
 
+SSHAGENT=/usr/bin/ssh-agent
+SSHAGENTARGS="-s"
+if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
+  eval `$SSHAGENT $SSHAGENTARGS`
+  trap "kill $SSH_AGENT_PID" 0
+fi
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
   . ~/.bashrc
-fi
-
-if [ -f /usr/local/opt/autoenv/activate.sh ]; then
-  source /usr/local/opt/autoenv/activate.sh
 fi
 
 # rbenv completion ... via homebrew
