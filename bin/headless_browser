@@ -1,9 +1,6 @@
 #!/bin/bash
 
-BROWSER='/usr/bin/firefox'
-
 XVFB_PIDFILE='/tmp/custom_xvfb_99.pid'
-BROWSER_PIDFILE='/tmp/custom_browser.pid'
 
 do_start() {
      /sbin/start-stop-daemon --start \
@@ -12,17 +9,9 @@ do_start() {
          --make-pidfile \
          --background \
          --exec /usr/bin/Xvfb -- :99 > /dev/null 2>&1
-
-     /sbin/start-stop-daemon --start \
-         --quiet \
-         --pidfile $BROWSER_PIDFILE \
-         --make-pidfile \
-         --background \
-         --exec $BROWSER 
 }
 
 do_stop() {
-     /sbin/start-stop-daemon --stop --pidfile $BROWSER_PIDFILE
      /sbin/start-stop-daemon --stop --pidfile $XVFB_PIDFILE 
 }
 
@@ -32,15 +21,15 @@ do_status() {
 
 do_help() {
     cat <<END
-start/stop xvfb and a headless browser
+start/stop xvfb
 
 Syntax: $base [ <command> ] [ <options> ]
 
 Commands:
 
-    start      - start xfvb and the browser
-    stop       - stop xfvb and the browser
-    status     - output if xvfb and browser are running
+    start      - start xfvb 
+    stop       - stop xfvb 
+    status     - output if xvfb is running
 END
 }
 
