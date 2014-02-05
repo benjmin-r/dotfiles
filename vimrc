@@ -120,6 +120,8 @@ set vb t_vb=
 set showmatch         " show matching brackets
 set mat=5             " how many tenths of a second to blink matching brackets for
 set pastetoggle=<leader>pp
+set modeline          " enable applying of modelines (such as for setting ft in file itself)
+set modelines=1
 " Insert only one space when joining lines that contain sentence-terminating
 " " punctuation like `.`.
 set nojoinspaces"
