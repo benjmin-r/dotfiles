@@ -1,4 +1,5 @@
 .netrwhist
+tmux.conf.local
 mutt/cache
 mutt/mailboxes
 mutt/alias
