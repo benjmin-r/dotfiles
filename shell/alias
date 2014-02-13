@@ -1,4 +1,4 @@
-alias l='ls -hal -G --color=auto'
+alias l='ls -hal'
 alias pd=pushd
 
 alias gti='git'
