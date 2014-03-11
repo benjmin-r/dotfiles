@@ -60,13 +60,11 @@ set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 # Index Key Bindings ---------------------------------
 bind index gg       first-entry
 bind index G        last-entry
-
 bind index R        group-reply
 bind index <tab>    sync-mailbox
 bind index <space>  collapse-thread
 bind index p        recall-message
 bind index o        display-message
-bind index N        search-opposite
 bind index \Cd      next-page
 bind index \Cu      previous-page
 
@@ -80,6 +78,7 @@ macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 # reset any limiting
 macro index a "<limit>all\n" "show all messages (undo limit)"
 
+bind index N  toggle-new
 
 # Sidebar Navigation ---------------------------------
 bind index,pager <down>   sidebar-next
@@ -110,7 +109,6 @@ bind pager \Cd  next-page
 bind pager \Cu  previous-page
 bind pager gg   top
 bind pager G    bottom
-bind pager N    search-opposite
 
 bind pager R  group-reply
 
@@ -155,8 +153,6 @@ set sendmail_wait = 0
 bind compose p postpone-message
 
 # Search Options -------------------------------¬  
-bind index N search-opposite
-bind pager N search-opposite
 macro index a "<limit>all\n" "show all messages (undo limit)"
 macro index S "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py.py ~/.mail/temporary/search<enter><change-folder-readonly>+temporary/search<enter>" "search mail (using notmuch)"
 

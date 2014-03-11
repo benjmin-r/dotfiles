@@ -6,6 +6,7 @@ source ~/.mutt/muttrc
 #source ~/.mutt/mailboxes
 
 mailboxes "+ambestengestern.de/INBOX" \
+          "+ambestengestern.de/__toanswer" \
           "+ambestengestern.de/Drafts" \
           "+ambestengestern.de/Archive" \
           "+ambestengestern.de/Sent" \
@@ -26,6 +27,7 @@ set smtp_pass = `python ~/.mutt/offlineimap.py "benjamin@ambestengestern.de" "ma
 set smtp_url = "smtp://benjamin\@ambestengestern.de@mail.ambestengestern.de:25"
 
 macro index,pager s "<save-message>=ambestengestern.de/Junk<enter>" "Junk/Spam"
+macro index,pager 2 "<save-message>=ambestengestern.de/__toanswer<enter>" "move message to __toanswer"
 macro index,pager y "<save-message>=ambestengestern.de/Archive<enter>" "Archive"
 macro index,pager d "<save-message>=ambestengestern.de/Trash<enter>" "Trash"
 
