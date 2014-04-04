@@ -1,5 +1,5 @@
- mutt/certificates
- vim/snippets/mail.snippets
+mutt/certificates
+vim/snippets/mail.snippets
 .netrwhist
 tmux.conf.local
 mutt/cache
