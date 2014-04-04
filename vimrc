@@ -14,6 +14,7 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 colorscheme solarized
 
+let mapleader = ","
 
 " enable arrow keys for easier pairing
 " nnoremap <up> <nop>
@@ -24,8 +25,9 @@ colorscheme solarized
 " inoremap <down> <nop>
 " inoremap <left> <nop>
 " inoremap <right> <nop>
-inoremap jk <ESC>
+inoremap jj <ESC>
 nnoremap W :w<CR>
+nnoremap <leader>s :w<CR>
 nnoremap j gj
 nnoremap k gk
 
@@ -35,12 +37,30 @@ nnoremap k gk
 " map <C-K> <C-W>k<C-W>_
 " map <C-L> <C-W>l<C-W>_
 " map <C-H> <C-W>h<C-W>_
+nnoremap <leader>v :vsplit<CR>
+nnoremap <leader>h :split<CR>
 let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <C-H> :TmuxNavigateLeft<cr>
 nnoremap <silent> <C-J> :TmuxNavigateDown<cr><C-W>_
 nnoremap <silent> <C-K> :TmuxNavigateUp<cr><C-W>_
 nnoremap <silent> <C-L> :TmuxNavigateRight<cr>
 nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
+
+" NERDTree
+map <leader>n :NERDTreeToggle<CR>
+map <leader>f :NERDTreeFind<CR>
+let g:NERDTreeMapOpenVSplit = 's'
+let g:NERDTreeMapOpenSplit = 'i'
+let g:NERDTreeMapCloseChildren = 'X' " Recursively closes all children of the selected directory.
+let g:NERDTreeMapJumpRoot = 'P'     " Jump to the tree root.
+let g:NERDTreeMapJumpParent = 'p'   " Jump to the parent node of the selected node.
+let g:NERDTreeMapChdir = 'C'        " Make the selected directory node the new tree root
+let g:NERDTreeMapUpdir = 'u'        " Move the tree root up a dir (like doing a 'cd ..').
+let g:NERDTreeMapUpdirKeepOpen = 'U' " Like 'u' but leave old tree root open
+let g:NERDTreeMapToggleHidden = 'I' " Toggles whether hidden files are displayed.
+
+" leave vim if NERDTree is the last buffer
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Execute the tests
 map <silent>tf <Esc>:Pytest file<CR>
@@ -61,15 +81,13 @@ nnoremap Q gqap
 map <F12> :set number!<CR>
 map <C-i> :set encoding=utf8<Enter>
 
-let mapleader = ","
-
 " open current line on github ... based on
 " http://felixge.de/2013/08/08/vim-trick-open-current-line-on-github.html
 nnoremap <leader>g :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs open<CR><CR>
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
+nmap <silent> <leader>lv :so $MYVIMRC<CR>
 
 " show invisible characters
 set list
@@ -79,9 +97,6 @@ set listchars=tab:▸\ ,eol:¬
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
-
-" save file when losing focus
-au FocusLost * :wa
 
 " strip all trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
@@ -122,6 +137,8 @@ set mat=5             " how many tenths of a second to blink matching brackets f
 set pastetoggle=<leader>pp
 set modeline          " enable applying of modelines (such as for setting ft in file itself)
 set modelines=1
+set tw=80
+set colorcolumn=+1
 " Insert only one space when joining lines that contain sentence-terminating
 " " punctuation like `.`.
 set nojoinspaces"
@@ -130,8 +147,10 @@ set nojoinspaces"
 set expandtab         " No tabs in the output file!
 set shiftwidth=4      " What you get for ^D
 set softtabstop=4
-map <leader>i2 :set shiftwidth=2 softtabstop=2<CR>
-map <leader>i4 :set shiftwidth=4 softtabstop=4<CR>
+set copyindent        " mimic indent behaviour of current file
+map <leader>i2 :set et nopi shiftwidth=2 softtabstop=2<CR>
+map <leader>i4 :set et nopi shiftwidth=4 softtabstop=4<CR>
+map <leader>it :set noet ci pi sts=0 sw=4 ts=4<CR>
 
 " searching
 set hlsearch        " do not highlight searched for phrases
@@ -152,7 +171,7 @@ map <leader>rc :!run_ctags<Enter>
 
 " Ctrl-P
 let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_custom_ignore = '\v[\/]\.?(git|hg|svn|target|build|node_modules)$'
+let g:ctrlp_custom_ignore = '\v[\/]\.?(git|hg|svn|target|build|dist|node_modules)$'
 
 " html5 plugin
 let g:html5_event_handler_attributes_complete = 0
@@ -209,3 +228,4 @@ nmap <D-k> gk
 nmap <D-4> g$
 nmap <D-6> g^
 nmap <D-0> g^"
+
