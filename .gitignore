@@ -6,3 +6,4 @@ mutt/cache
 mutt/mailboxes
 mutt/alias
 *.pyc
+bin/backup/*.log
