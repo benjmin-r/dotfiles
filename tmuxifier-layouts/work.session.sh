@@ -13,13 +13,19 @@ if initialize_session "work"; then
     new_window "dev-backend"
     split_h
 
-    window_root "~/Documents/Vaamo/projects/vaamo-infrastructure"
+    window_root "~/Documents/Vaamo/projects/infrastructure"
     new_window "dev-infrastructure"
     run_cmd "workon vaamo-infrastructure && clear"
     split_h
     run_cmd "workon vaamo-infrastructure && clear"
 
-    select_window 4
+    window_root "~/Documents/Vaamo/projects/vaamo.de"
+    new_window "dev-vaamo.de"
+    run_cmd "workon vaamo-de && clear"
+    split_h
+    run_cmd "workon vaamo-de && clear"
+
+    select_window 1
 fi
 
 finalize_and_go_to_session
