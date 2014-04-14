@@ -82,3 +82,6 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/expandregion"]
+	path = vim/bundle/expandregion
+	url = https://github.com/terryma/vim-expand-region.git

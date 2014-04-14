@@ -6,32 +6,30 @@ syntax on
 filetype plugin on
 filetype plugin indent on
 
-behave xterm 
+behave xterm
 set term=xterm-256color
 syntax on
 set background=dark
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 colorscheme solarized
+set laststatus=2        " show lightline/airline right after startup
 
-let mapleader = ","
+let mapleader = "\<Space>"
 
-" enable arrow keys for easier pairing
-" nnoremap <up> <nop>
-" nnoremap <down> <nop>
-" nnoremap <left> <nop>
-" nnoremap <right> <nop>
-" inoremap <up> <nop>
-" inoremap <down> <nop>
-" inoremap <left> <nop>
-" inoremap <right> <nop>
 inoremap jj <ESC>
-nnoremap W :w<CR>
 nnoremap <leader>s :w<CR>
 nnoremap j gj
 nnoremap k gk
+nnoremap K <nop>        " Stop opening man pages
+noremap H 0             " Jump to beginning of line
+noremap L $             " Jump to end of line
+nmap <Leader><Leader> V
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+map q: :q               " stop that stupid window from popping up
 
-" move between splits easily 
+" move between splits easily
 "  .... commented out because of vim-tmux-navigator plugin
 " map <C-J> <C-W>j<C-W>_
 " map <C-K> <C-W>k<C-W>_
@@ -49,6 +47,7 @@ nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
 " NERDTree
 map <leader>n :NERDTreeToggle<CR>
 map <leader>f :NERDTreeFind<CR>
+let g:NERDTreeWinSize = '40'
 let g:NERDTreeMapOpenVSplit = 's'
 let g:NERDTreeMapOpenSplit = 'i'
 let g:NERDTreeMapCloseChildren = 'X' " Recursively closes all children of the selected directory.
@@ -72,8 +71,8 @@ nmap <silent>tp <Esc>:Pytest previous<CR>
 nmap <silent>te <Esc>:Pytest error<CR>
 nmap <silent>tee <Esc>:Pytest end<CR>
 
-" With the following mapping you can press Q every time you alter something in 
-" a paragraph, and the line-breaks get sorted out. The default meaning of 
+" With the following mapping you can press Q every time you alter something in
+" a paragraph, and the line-breaks get sorted out. The default meaning of
 " Q is not useful, and anyway gQ makes a better job of it.
 vnoremap Q gq
 nnoremap Q gqap
@@ -102,7 +101,7 @@ vnoremap <F1> <ESC>
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 nnoremap <leader>da :Dash
-nnoremap <leader>a :Ack 
+nnoremap <leader>a :Ack
 
 " save a file with sudo, even if vim wasn't called with sudo
 cmap w!! w !sudo tee % >/dev/null
@@ -179,7 +178,7 @@ let g:html5_rdfa_attributes_complete = 0
 let g:html5_microdata_attributes_complete = 0
 
 " omnicomplete
-" only complete the longest common text of all matches (not complete first match) 
+" only complete the longest common text of all matches (not complete first match)
 set completeopt+=longest
 
 " indent guide plugin
