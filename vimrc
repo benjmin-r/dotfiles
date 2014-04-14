@@ -16,6 +16,9 @@ colorscheme solarized
 set laststatus=2        " show lightline/airline right after startup
 
 let mapleader = "\<Space>"
+set timeout             " the following three lines make for a snappy space key
+set timeoutlen=3000     " reaction even though it's configured as leader key
+set ttimeoutlen=100
 
 inoremap jj <ESC>
 nnoremap <leader>s :w<CR>
