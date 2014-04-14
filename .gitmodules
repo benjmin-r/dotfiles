@@ -85,3 +85,6 @@
 [submodule "vim/bundle/expandregion"]
 	path = vim/bundle/expandregion
 	url = https://github.com/terryma/vim-expand-region.git
+[submodule "vim/bundle/lightline"]
+	path = vim/bundle/lightline
+	url = https://github.com/itchyny/lightline.vim
