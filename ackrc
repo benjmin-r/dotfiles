@@ -1,0 +1,4 @@
+--color
+--ignore-dir=target
+--ignore-dir=play-2.2.2
+--ignore-dir=play-current
