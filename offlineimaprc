@@ -31,7 +31,7 @@ remotehost = mail.ambestengestern.de
 remoteuser = benjamin@ambestengestern.de
 remotepasseval = get_keychain_pass('benjamin@ambestengestern.de', 'mail.ambestengestern.de')
 ssl = yes
-cert_fingerprint = 91d976241f0694a725c0f751d5409fd1a1d1cfc3
+cert_fingerprint = 17e29cd8ca7169be3586910936ab32aaa740e9b3
 
 
 [Account work]
