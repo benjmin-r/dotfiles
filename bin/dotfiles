@@ -17,12 +17,12 @@ DOTFILES_PATH="$HOME/.dotfiles"
 cd $DOTFILES_PATH
 
 die() {
-        echo >&2 $@
-        exit 1
+    echo >&2 $@
+    exit 1
 }
 
 do_file_list() {
-        find . -maxdepth 1 | cut -d / -f 2- | grep -v -e '~$' -e '^\.'
+    find . -maxdepth 1 -type f | cut -d / -f 2- | grep -v -e '~$' -e '^\.'
 }
 
 do_list() {
