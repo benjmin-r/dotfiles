@@ -1,0 +1,9 @@
+#!/bin/sh
+
+HOST=$1
+if [ -z "$HOST" ]; then 
+    echo "Need hostname as first and only argument! Exiting" >&2 
+    exit 1
+fi
+
+rsync --info=progress2 -b --backup-dir=~/private-backup ~/data/private-tc/private.tc $HOST:~/ 
