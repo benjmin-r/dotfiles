@@ -1,0 +1,14 @@
+#!/bin/sh
+
+source ~/bin/setup/recipe-packages
+source ~/bin/setup/recipe-node
+source ~/bin/setup/recipe-protobuf
+source ~/bin/setup/recipe-rvm
+source ~/bin/setup/recipe-dotfiles
+
+install_packages
+install_node
+install_protobuf
+install_rvm
+install_dotfiles
+

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+function install_dotfiles {
+    cd ~
+    git clone https://github.com/nureineide/dotfiles.git .dotfiles
+    cd .dotfiles && git submodule init && git submodule update
+    ln -s ~/.dotfiles/bin ~/bin
+    ~/bin/dotfiles install -f
+
+}

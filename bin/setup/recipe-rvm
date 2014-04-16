@@ -1,0 +1,7 @@
+#!/bin/sh
+
+function install_rvm() {
+    RUBY_VERSION=ruby-1.9.3-p545
+    \curl -sSL https://get.rvm.io | bash -s --ruby=$RUBY_VERSION -- --ignore-dotfiles
+    rvm use $RUBY_VERSION --default
+}

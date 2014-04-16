@@ -1,0 +1,8 @@
+#!/bin/sh
+
+adduser benjamin
+usermod -G sudo benjamin
+mkdir -p /home/benjamin/.ssh
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA0h2jeLkLDHQbf8oOxyiVZRPfxEpqqilGIPU3MWzwIIKG5lkElORWme24h6P8nRujCYLtWGm7E4OJGG/H4p2VQ67rU7wTiwxyiw7T87d3TuBM/Y1WCP5RIAKPkgMHfbGYQteKkTFg+2cmW91rvpV8qsxLOObagC5gIz6X0eOmRM8bxtui+YiJC12e3Oh/I2B6GubGdzsPAHammCJfSyg/1huRir/HUGU1mwA/xrc92Fy/5tCzEucAMJ0GByh1ZJn/PGFExrH0tiqGTzLh33+bQoV3BtBvEaZxizoQnPgU4UCvfePSxO73tfi//6noY6k8X7UDx1dzrvvv+SFkj6I8eQ== benjamin@pluto" \
+    >> /home/benjamin/.ssh/authorized_keys2        
+chown -R benjamin.benjamin /home/benjamin/.ssh

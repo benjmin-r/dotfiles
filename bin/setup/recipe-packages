@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# NOTE: the following obviously only works on Debian/Ubuntu
+
+function install_packages() {
+    sudo bash -c "echo 'deb http://ftp.de.debian.org/debian wheezy-backports main' >> /etc/apt/sources.list"
+
+    sudo apt-get update -qq -y 
+    sudo apt-get upgrade -qq -y
+    sudo apt-get -t wheezy-backports install tmux
+    sudo apt-get install -qq -y \
+                        xvfb \
+                        git \
+                        iceweasel \
+                        openjdk-7-jdk \
+                        python-virtualenv \
+                        python-pip \
+                        virtualenvwrapper \
+                        exuberant-ctags \
+                        ack-grep \
+                        curl \
+                        tree 
+}
