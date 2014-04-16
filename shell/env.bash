@@ -1,3 +1,4 @@
+export CLICOLOR=1
 export EDITOR=vi
 export TZ='Europe/Berlin'
 
