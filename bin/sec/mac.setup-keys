@@ -1,0 +1,15 @@
+#!/bin/sh
+
+cd ~/.ssh
+ln -s /Volumes/untitled/ssh-keys/id_rsa* .
+ln -s /Volumes/untitled/ssh-keys/config .
+
+cd ~
+ln -s /Volumes/untitled/gnupg ~/.gnupg
+
+ln -s /Volumes/untitled/s3cfg ~/.s3cfg
+ln -s /Volumes/untitled/boto ~/.boto
+
+mkdir -p .khal
+ln -s /Volumes/untitled/khal.conf ~/.khal/khal.conf
+

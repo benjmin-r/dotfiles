@@ -1,0 +1,2 @@
+#!/bin/sh
+truecrypt --filesystem=hfsplus ~/data/private.tc ~/mnt/private
