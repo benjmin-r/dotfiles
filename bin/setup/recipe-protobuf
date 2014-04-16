@@ -1,0 +1,23 @@
+#!/bin/bash
+
+PROTOBUF_INSTALL_DIR=~/pbuf-2.5
+
+function install_protobuf() {
+    if [[ `protoc --version` == "libprotoc 2.5.0" ]]; then
+        echo "Protobuf is installed! No extra steps necessary."
+    else
+        echo "Installing protobuf now!"
+        src=$(mktemp -d) && cd $src
+        wget http://protobuf.googlecode.com/files/protobuf-2.5.0.tar.gz
+        tar xzf protobuf-2.5.0.tar.gz
+
+        (cd protobuf-2.5.0 && \ 
+            mkdir -p $PROTOBUF_INSTALL_DIR && \
+            ./configure --prefix=$PROTOBUF_INSTALL_DIR && \
+            make && \
+            make install)
+
+        cd .. && rm -r $src
+    fi
+}
+

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+source ~/bin/setup/recipe-protobuf
+
+install_protobuf
+
