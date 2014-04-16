@@ -19,5 +19,6 @@ function install_packages() {
                         exuberant-ctags \
                         ack-grep \
                         curl \
-                        tree 
+                        tree \
+                        cmake
 }

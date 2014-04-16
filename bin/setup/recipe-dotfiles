@@ -7,4 +7,9 @@ function install_dotfiles {
     ln -s ~/.dotfiles/bin ~/bin
     ~/bin/dotfiles install -f
 
+    cd /tmp
+    wget https://github.com/thewtex/tmux-mem-cpu-load/archive/v2.2.1.tar.gz
+    tar xfz v2.2.1.tar.gz
+    cd tmux-mem-cpu-load-2.2.1 && cmake . && make && make install
+    rm tmux-mem-cpu-load-2.2.1
 }
