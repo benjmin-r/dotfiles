@@ -1,2 +1,7 @@
 #!/bin/sh
-truecrypt --filesystem=hfsplus ~/data/private.tc ~/mnt/private
+mkdir -p ~/mnt/private.hfs
+mkdir -p ~/mnt/private
+truecrypt --filesystem=hfsplus ~/data/private.tc ~/mnt/private.hfs
+
+# map userid from the mac to userids under linux
+sudo bindfs --map=501/1000 ~/mnt/private.hfs ~/mnt/private

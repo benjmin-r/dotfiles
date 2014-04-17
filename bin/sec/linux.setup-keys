@@ -1,6 +1,6 @@
 #!/bin/sh
 
-BASE_DIR=~/Volumes/untitled
+export BASE_DIR=~/mnt/private
 
 cd ~/.ssh
 ln -s $BASE_DIR/ssh-keys/id_rsa* .
