@@ -1,0 +1,8 @@
+#!/bin/sh
+
+source ~/bin/setup/recipe-packages
+source ~/bin/setup/recipe-dotfiles
+
+install_packages
+install_dotfiles
+

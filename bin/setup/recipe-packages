@@ -10,6 +10,7 @@ function install_packages() {
     sudo apt-get -t wheezy-backports install tmux
     sudo apt-get install -qq -y \
                         xvfb \
+                        vim \
                         git \
                         iceweasel \
                         openjdk-7-jdk \
@@ -17,8 +18,11 @@ function install_packages() {
                         python-pip \
                         virtualenvwrapper \
                         exuberant-ctags \
+                        build-essential \
                         ack-grep \
                         curl \
                         tree \
+                        htop \
+                        bindfs \
                         cmake
 }

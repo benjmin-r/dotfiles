@@ -6,4 +6,4 @@ if [ -z "$HOST" ]; then
     exit 1
 fi
 
-rsync --info=progress2 -b --backup-dir=~/private-backup ~/data/private-tc/private.tc $HOST:~/ 
+rsync --info=progress2 -b --backup-dir=~/private-backup ~/data/private.tc $HOST:~/data

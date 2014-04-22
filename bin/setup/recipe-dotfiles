@@ -6,10 +6,11 @@ function install_dotfiles {
     cd .dotfiles && git submodule init && git submodule update
     ln -s ~/.dotfiles/bin ~/bin
     ~/bin/dotfiles install -f
+    ln -s ~/.dotfiles/vim .vim
 
     cd /tmp
     wget https://github.com/thewtex/tmux-mem-cpu-load/archive/v2.2.1.tar.gz
     tar xfz v2.2.1.tar.gz
-    cd tmux-mem-cpu-load-2.2.1 && cmake . && make && make install
+    cd tmux-mem-cpu-load-2.2.1 && cmake . && make && sudo make install
     rm tmux-mem-cpu-load-2.2.1
 }
