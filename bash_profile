@@ -8,6 +8,7 @@ source ~/.dotfiles/shell/git-completion.bash
 source ~/.dotfiles/shell/pip-completion.bash
 source ~/.dotfiles/shell/rbenv-completion.bash
 source ~/.dotfiles/shell/gpg.bash
+source ~/.dotfiles/shell/pontoon.bash
 source ~/.dotfiles/autoenv/activate.sh
 
 [ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
