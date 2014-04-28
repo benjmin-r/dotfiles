@@ -24,3 +24,4 @@
 --exclude=*.js
 --exclude=*.css
 --exclude=play-*
+--python-kinds=-i
