@@ -1,3 +1,6 @@
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
 #!bash
 #
 # bash/zsh completion support for core Git.

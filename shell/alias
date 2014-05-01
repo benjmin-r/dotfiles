@@ -1,5 +1,6 @@
 alias l='ls -hal'
 alias pd=pushd
+alias flush-gpg-pass='gpgconf --reload gpg-agent'
 
 alias gti='git'
 alias gitp='git-smart-pull'
