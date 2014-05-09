@@ -6,6 +6,7 @@ source ~/.dotfiles/shell/functions.bash
 source ~/.dotfiles/shell/prompt.bash
 source ~/.dotfiles/shell/git-completion.bash
 source ~/.dotfiles/shell/pip-completion.bash
+source ~/.dotfiles/shell/ssh-completion.bash
 source ~/.dotfiles/shell/rbenv-completion.bash
 source ~/.dotfiles/shell/gpg.bash
 source ~/.dotfiles/shell/pontoon.bash
