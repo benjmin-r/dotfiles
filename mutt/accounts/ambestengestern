@@ -27,7 +27,6 @@ set smtp_pass = `python ~/.mutt/offlineimap.py "benjamin@ambestengestern.de" "ma
 set smtp_url = "smtp://benjamin\@ambestengestern.de@mail.ambestengestern.de:25"
 
 macro index,pager s "<save-message>=ambestengestern.de/Junk<enter>" "Junk/Spam"
-macro index,pager 2 "<save-message>=ambestengestern.de/__toanswer<enter>" "move message to __toanswer"
 macro index,pager y "<save-message>=ambestengestern.de/Archive<enter>" "Archive"
 macro index,pager d "<save-message>=ambestengestern.de/Trash<enter>" "Trash"
 
@@ -41,7 +40,7 @@ set mbox      = "+ambestengestern.de/Archive"
 set postponed = "+ambestengestern.de/Drafts"
 
 
-alternates benjamin@nur-eine-i.de breitzammer@gmail.com
+alternates benjamin@nur-eine-i.de breitzammer@gmail.com, benjamin@squeakyvessel.com
 
 alias identity_1    Benjamin Reitzammer <benjamin@ambestengestern.de>
 alias identity_2    Benjamin Reitzammer <benjamin@squeakyvessel.com>

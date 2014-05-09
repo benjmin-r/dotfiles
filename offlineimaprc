@@ -38,7 +38,6 @@ cert_fingerprint = 17e29cd8ca7169be3586910936ab32aaa740e9b3
 localrepository = work-Local
 remoterepository = work-Remote
 status_backend = sqlite
-#postsynchook = notmuch new
 
 [Repository work-Local]
 type = Maildir
