@@ -19,12 +19,6 @@ if initialize_session "work"; then
     split_h
     run_cmd "workon vaamo-infrastructure && clear"
 
-    window_root "~/Documents/Vaamo/projects/vaamo.de"
-    new_window "dev-vaamo.de"
-    run_cmd "workon vaamo-de && clear"
-    split_h
-    run_cmd "workon vaamo-de && clear"
-
     select_window 1
 fi
 
