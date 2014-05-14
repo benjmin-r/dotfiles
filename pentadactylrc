@@ -9,6 +9,7 @@ nnoremap j 5j
 map <C-l> :tabnext<CR>
 map <C-h> :tabprevious<CR>
 map <leader>n :noh<CR>
+map -arg <leader>b :buffer <arg><CR>
 
 " make textareas editable in macvim
 set editor='bash -lc "mvim -f \$*" mvim '

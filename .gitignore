@@ -7,3 +7,5 @@ mutt/mailboxes
 mutt/alias
 *.pyc
 bin/backup/*.log
+pentadactyl/info/default/register-ring
+pentadactyl/info/default/command-history
