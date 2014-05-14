@@ -1,4 +1,0 @@
-#!/bin/sh
-
-# probably only shows correct values for dual-core CPUs
-while true; do ps aux | awk {'sum+=$3;print sum/2'} | tail -n 1; sleep 2; done
