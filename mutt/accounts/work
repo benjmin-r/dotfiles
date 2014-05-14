@@ -9,6 +9,8 @@ set record    = "+work/Sent"
 set mbox      = "+work/Archive"
 set postponed = "+work/Drafts"
 
+set pgp_sign_as = BD2B61EE
+
 #color status red default
 mailboxes +work/INBOX \
           +work/Archive \
