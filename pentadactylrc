@@ -15,7 +15,7 @@ map -arg <leader>b :buffer <arg><CR>
 set editor='bash -lc "mvim -f \$*" mvim '
 set titlestring=""
 set guioptions=bCrsn
-
+set findcase=smart
 " passkeys to certain webapp
 set passkeys+=trello.com:@#^abcdfxqvnslte?123456<><space><left><right><up><down><Esc><cr>
 set passkeys+=wiki.vaamo-ag.de:ec
