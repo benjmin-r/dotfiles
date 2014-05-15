@@ -23,6 +23,7 @@ function install_packages() {
                         curl \
                         tree \
                         htop \
+                        iftop \
                         bindfs \
                         cmake
 }
