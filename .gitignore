@@ -9,3 +9,4 @@ mutt/alias
 bin/backup/*.log
 pentadactyl/info/default/register-ring
 pentadactyl/info/default/command-history
+pentadactyl/info/default/local-marks
