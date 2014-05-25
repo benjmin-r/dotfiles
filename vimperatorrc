@@ -1,0 +1,37 @@
+let mapleader = ","
+
+map <leader>lv :source ~/.vimperatorrc<CR>
+nnoremap k 5k
+nnoremap j 5j
+map <C-l> :tabnext<CR>
+map <C-h> :tabprevious<CR>
+map <leader>n :noh<CR>
+
+" make textareas editable in macvim
+set editor='bash -lc "mvim -f \$*" mvim '
+set titlestring=""
+set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs
+set tabnumbers
+set defsearch=google
+set showstatuslinks=2
+
+" no search engine completions
+set complete=l
+
+" no close buttons on tabs
+set! browser.tabs.closeButtons=2
+
+" Find
+"" perform incremental searching
+set incsearch
+"" highlight search results
+set hlsearch
+"" typically (see below) ignore case
+set ignorecase
+"" only consider case if an upper case char is used
+set smartcase
+
+colorscheme solarized_dark
+hi Normal -append font-size: 13px !important; font-family: "Menlo";
+hi StatusLine -append font-size:13px;
+

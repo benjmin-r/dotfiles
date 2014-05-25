@@ -1,0 +1,67 @@
+" ==VimperatorColorSchema==
+" name: Solarized Dark
+" ==/VimperatorColorSchema==
+"
+
+hi  Bell  border: none; background-color: #93A1A1;
+hi  Boolean   color: #DC322F;
+hi  CmdLine   background: #073642; color: #93A1A1; transition: all 0.25s;
+hi  CmdLine>*   font-family: monospace;
+hi  CmdOutput   white-space: pre;
+hi  CompDesc  width: 500px; max-width: 500px; color: #859900; overflow: hidden;
+"hi  CompGroup
+hi  CompGroup:not(:first-of-type)   margin-top: 1ex;
+hi  CompIcon  width: 16px; min-width: 16px; display: inline-block; margin-right: .5ex;
+hi  CompIcon>img  max-width: 16px; max-height: 16px; vertical-align: middle;
+"hi  CompItem
+hi  CompItem[selected]  background: #073642; box-shadow: 0px 0px 1px #B58900;
+hi  CompItem>*  height: 18px; min-height: 18px; padding: 0 0.5ex;
+hi  CompMsg   font-style: italic; margin-left: 16px;
+hi  CompResult  width: 500px; max-width: 500px; overflow: hidden;
+hi  CompTitle   font-weight: bold; background: linear-gradient(to top, #073642 0%, #002B36 50%, #586E75 100%);
+hi  CompTitle>*   color: #93A1A1; border-top: 1px solid #586E75; border-bottom: 1px solid #586E75; padding: 1px 0.5ex; text-shadow: 1px 1px 0px #586E75;
+hi  ContentSeparator  border-top: 1px dotted #93A1A1; display: -moz-box;
+hi  Disabled  color: #DC322F;
+hi  Enabled   color: #859900;
+hi  ErrorMsg  color: #FDF6E3; background: #DC322F; font-weight: bold;
+hi  Filter  color: #CB4B16; font-weight: bold;
+hi  FrameIndicator  background-color: #DC322F; opacity: 0.5; z-index: 999; position: fixed; top: 0; bottom: 0; left: 0; right: 0;
+hi  Function  color: 268bd2;
+hi  Hint  font-family: monospace; font-size: medium; font-weight: bold; text-transform: uppercase; color: #FDF6E3; background-color: #DC322F; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 1px; z-index: 9999;
+hi  Hint::after   content: attr(number);
+hi  HintActive  background-color: #859900; color: #002B36;
+hi  HintElem  background-color: #B58900;  color: #002B36;
+hi  HintImage   opacity: 0.5;
+hi  Indicator   color: #268BD2;
+hi  InfoMsg   color: #D33682; background: #002B36;
+hi  Key   font-weight: bold;
+hi  Keyword   color: #DC322F;
+hi  LineNr  color: #CB4B16; background: #002B36;
+"hi  Logo
+hi  Mapping   color: #D33682;
+hi  Message   white-space: normal; min-width: 100%; padding-left: 2em; text-indent: -2em; display: block;
+hi  ModeMsg   color: #FDF6E3; background: #859900; border-radius: 1px; padding: 0px 5px;
+hi  MoreMsg   color: #859900; background: #002B36;
+hi  NonText   color: #268BD2; min-height: 16px; padding-left: 2px;
+hi  Normal  color: #93A1A1; background: #002B36;
+hi  Null  color: #268BD2;
+hi  Number  color: #268BD2;
+hi  Object  color: #B58900;
+hi  Preview   color: #586E75;
+hi  Prompt  background: url("chrome://liberator/skin/prompt.png"); width: 10px; background-position: center; background-repeat: no-repeat;
+hi  PromptText  color: #002B36; background: #6C71C4;
+hi  Question  color: #859900; background: #002B36; font-weight: bold;
+"hi  Search
+hi  StatusLine  color: #839496; background: transparent; font-weight: normal;
+hi  String  color: #859900;
+"hi  TabClose
+"hi  TabIcon
+"hi  TabIconNumber
+hi  TabNumber   font-weight: bold; margin: 0px; padding-right: .3ex;
+"hi  TabText
+hi  Tag   color: #268BD2;
+hi  Title   color: #6C71C4; background: #002B36; font-weight: bold; font-size: 120%;
+hi  URL   text-decoration: none; color: #268BD2;
+hi  URL:hover   text-decoration: underline; cursor: pointer;
+hi  WarningMsg  color: #DC322F; background: #002B36;
+

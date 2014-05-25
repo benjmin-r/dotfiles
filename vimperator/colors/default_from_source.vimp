@@ -1,0 +1,66 @@
+" ==VimperatorColorSchema==
+" name: default from source
+" ==/VimperatorColorSchema==
+"
+
+hi  Bell  border: none; background-color: black;
+hi  Boolean   color: red;
+hi  CmdLine   background: white; color: black; transition: all 0.25s;
+hi  CmdLine>*   font-family: monospace;
+hi  CmdOutput   white-space: pre;
+hi  CompDesc  width: 500px; max-width: 500px; color: gray;
+"hi  CompGroup
+hi  CompGroup:not(:first-of-type)   margin-top: 1ex;
+hi  CompIcon  width: 16px; min-width: 16px; display: inline-block; margin-right: .5ex;
+hi  CompIcon>img  max-width: 16px; max-height: 16px; vertical-align: middle;
+"hi  CompItem
+hi  CompItem[selected]  background: #FFEC8B; box-shadow: 0px 0px 1px #CC0;
+hi  CompItem>*  height: 18px; min-height: 18px; padding: 0 0.5ex;
+hi  CompMsg   font-style: italic; margin-left: 16px;
+hi  CompResult  width: 500px; max-width: 500px; overflow: hidden;
+hi  CompTitle   font-weight: bold; background: linear-gradient(to top, #DBDBDB 19%, #D9D9D9, #E7E7E7 100%);
+hi  CompTitle>*   color: #333; border-top: 1px solid gray; border-bottom: 1px solid #BBB; padding: 1px 0.5ex; text-shadow: 1px 1px 0px #E0E0E0;
+hi  ContentSeparator  border-top: 1px dotted gray; display: -moz-box;
+hi  Disabled  color: red;
+hi  Enabled   color: green;
+hi  ErrorMsg  color: white; background: red; font-weight: bold;
+hi  Filter  border-radius: 2px; background: #FFEC8B; border: 1px solid orange;
+hi  FrameIndicator  background-color: red; opacity: 0.5; z-index: 999; position: fixed; top: 0; bottom: 0; left: 0; right: 0;
+hi  Function  color: navy;
+hi  Hint  font-family: monospace; font-size: 10px; font-weight: bold; text-transform: uppercase; color: white; background-color: red; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px;
+hi  Hint::after   content: attr(number);
+hi  HintActive  background-color: #88FF00; color: black;
+hi  HintElem  background-color: yellow;  color: black;
+hi  HintImage   opacity: 0.5;
+hi  Indicator   color: blue;
+hi  InfoMsg   color: magenta; background: white;
+hi  Key   font-weight: bold;
+hi  Keyword   color: red;
+hi  LineNr  color: orange; background: white;
+"hi  Logo
+hi  Mapping   color: magenta;
+hi  Message   white-space: normal; min-width: 100%; padding-left: 2em; text-indent: -2em; display: block;
+hi  ModeMsg   color: white; background: green; border-radius: 1px; padding: 0px 5px;
+hi  MoreMsg   color: green; background: white;
+hi  NonText   color: blue; min-height: 16px; padding-left: 2px;
+hi  Normal  color: black; background: white;
+hi  Null  color: blue;
+hi  Number  color: blue;
+hi  Object  color: maroon;
+hi  Preview   color: gray;
+hi  Prompt  background: url("chrome://liberator/skin/prompt.png"); width: 10px; background-position: center; background-repeat: no-repeat;
+hi  PromptText  color: white; background: purple;
+hi  Question  color: green; background: white; font-weight: bold;
+"hi  Search
+hi  StatusLine  color: gray; background: transparent; font-weight: normal;
+hi  String  color: green;
+"hi  TabClose
+"hi  TabIcon
+"hi  TabIconNumber
+hi  TabNumber   font-weight: bold; margin: 0px; padding-right: .3ex;
+"hi  TabText
+hi  Tag   color: blue;
+hi  Title   color: magenta; background: white; font-weight: bold;
+hi  URL   text-decoration: none; color: green;
+hi  URL:hover   text-decoration: underline; cursor: pointer;
+hi  WarningMsg  color: red; background: white;
