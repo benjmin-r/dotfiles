@@ -33,5 +33,5 @@ set smartcase
 
 colorscheme solarized_dark
 hi Normal -append font-size: 13px !important; font-family: "Menlo";
-hi StatusLine -append font-size:13px;
+hi StatusLine -append font-size:13px; font-family: "Menlo";
 
