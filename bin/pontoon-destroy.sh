@@ -3,8 +3,6 @@
 DROPLET=${1:-dev}
 SNAPSHOTNAME="$DROPLET-`date +%Y%m%d`"
 
-workon pontoon
-
 pontoon droplet shutdown $DROPLET
 echo "sleeping for 30s" && sleep 30
 pontoon droplet poweroff $DROPLET

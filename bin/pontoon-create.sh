@@ -1,6 +1,5 @@
 #!/bin/sh
 
-workon pontoon
 DROPLET=${1:-dev}
 SNAPSHOT=`pontoon snapshot list | tail -n +2 | sort | tail -n 1 | sed "s/ - //"`
 pontoon droplet create $DROPLET --image=$SNAPSHOT
