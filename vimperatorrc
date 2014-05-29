@@ -11,6 +11,7 @@ map <leader>n :noh<CR>
 set editor='bash -lc "mvim -f \$*" mvim '
 set titlestring=""
 set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs
+set status=input,location,ssl
 set tabnumbers
 set defsearch=google
 set showstatuslinks=2
