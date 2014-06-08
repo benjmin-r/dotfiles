@@ -1,6 +1,7 @@
 alias l='ls -hal'
 alias pd=pushd
 alias vi='vim'
+alias tmux-attach="tmux attach-session -t 0"
 
 alias flush-gpg-pass='gpgconf --reload gpg-agent'
 alias flush-gpg-agent='pgrkill gpg && eval $(gpg-agent --daemon)'
