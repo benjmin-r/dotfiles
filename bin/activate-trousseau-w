@@ -1,3 +1,0 @@
-eval $(gpg-agent --daemon)
-export TROUSSEAU_MASTER_GPG_ID=benjamin.reitzammer@vaamo.de
-export TROUSSEAU_STORE=~/Documents/Vaamo/projects/infrastructure/secrets/trousseau.asc

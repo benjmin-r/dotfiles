@@ -12,6 +12,7 @@ source ~/.dotfiles/shell/ssh-completion.bash
 source ~/.dotfiles/shell/rbenv-completion.bash
 source ~/.dotfiles/shell/knife-completion.bash
 source ~/.dotfiles/shell/homebrew-completion.bash
+source ~/.dotfiles/shell/trousseau-completion.bash
 source ~/.dotfiles/shell/gpg.bash
 source ~/.dotfiles/autoenv/activate.sh
 

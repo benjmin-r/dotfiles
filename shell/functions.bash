@@ -11,6 +11,10 @@ function pgrkill() {
     pgrid $1 | xargs kill
 }
 
+copy-file-content() {
+    cat $1 | pbcopy
+}
+
 upgrade() {
     local retry=5 count=0
 

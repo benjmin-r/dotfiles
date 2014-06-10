@@ -1,10 +1,14 @@
 alias l='ls -hal'
 alias pd=pushd
-alias flush-gpg-pass='gpgconf --reload gpg-agent'
 alias vi='vim'
 
+alias flush-gpg-pass='gpgconf --reload gpg-agent'
+alias flush-gpg-agent='pgrkill gpg && eval $(gpg-agent --daemon)'
+
+alias t='trousseau'
 alias tk='trousseau keys|sort'
 alias tg='trousseau get'
+alias td='trousseau del'
 alias ts='trousseau set'
 tgc() { 
     tg $1 | pbcopy 
