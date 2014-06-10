@@ -1,5 +1,7 @@
 # vim:ft=sh
 
+set -o vi
+
 source ~/.dotfiles/shell/alias
 source ~/.dotfiles/shell/env.bash
 source ~/.dotfiles/shell/functions.bash
