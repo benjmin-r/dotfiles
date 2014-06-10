@@ -66,6 +66,7 @@ set undolevels=1000      " use many muchos levels of undo
 set nobackup
 set noswapfile
 set wildignore=*.swp,*.bak,*.pyc,*.class
+set noesckeys
 set title                " change the terminal's title
 set nowrap
 set selectmode=key    " to enter visual mode when selecting with mouse
@@ -76,8 +77,8 @@ set nobackup          " Do not create backup files
 set hidden
 set ruler
 set showcmd           " display incomplete commands
-set foldmethod=indent
-set foldlevelstart=99
+set foldmethod=marker
+set foldlevelstart=2
 set vb t_vb=
 set showmatch         " show matching brackets
 set mat=5             " how many tenths of a second to blink matching brackets for
@@ -107,7 +108,19 @@ set ignorecase      " make searching case-insensitive
 set smartcase       " make searches with mixed case, case-sensitive
 set gdefault        " always substitute globally
 
+command SetIndent2Spaces set nopi shiftwidth=2 softtabstop=2
+command SetIndent4Spaces set nopi shiftwidth=4 softtabstop=4
+command SetIndentTabs set noet ci pi sts=0 sw=4 ts=4
 
+if has("autocmd")
+  " Enable file type detection
+  filetype on
+  autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
+  autocmd BufNewFile,BufRead,BufEnter *.css SetIndent2Spaces
+  autocmd BufNewFile,BufRead,BufEnter *.js SetIndent2Spaces
+  autocmd BufNewFile,BufRead,BufEnter *.html SetIndent2Spaces
+  autocmd BufNewFile,BufRead,BufEnter *.scala SetIndent2Spaces
+endif
 
 
 
