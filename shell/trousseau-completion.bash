@@ -24,4 +24,5 @@ _trousseau() {
     esac
 }
 
-complete -F _trousseau trousseau
+# also map alias 't' to be completed
+complete -F _trousseau trousseau t
