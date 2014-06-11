@@ -122,7 +122,6 @@ macro pager,attach U "|urlview<enter>" "call urlview to open links"
 macro attach \Cp "<pipe-entry>~/.mutt/quote-html-message.sh<enter>" "convert msg to text, quote it and copy to clipboard"
 macro pager \Cp "<view-attachments><pipe-entry>~/.mutt/quote-html-message.sh<enter><q>" "convert msg to text, quote it and copy to clipboard"
 
-
 # Saner copy/move dialogs
 macro pager C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
 macro pager M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"

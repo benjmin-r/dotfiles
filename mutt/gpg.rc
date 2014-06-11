@@ -26,6 +26,8 @@
 # %r In many contexts, mutt passes key IDs to pgp. %r expands to
 # a list of key IDs.
 
+macro attach m "<enter-command>set wait_key\n<pipe-entry>gpg -d -<enter><enter-command>unset wait_key\n" "pipe attachment through 'gpg -d'"
+
 set pgp_decode_command="gpg --status-fd=2 %?p?--passphrase-fd 0? --no-verbose --quiet --batch --output - %f"
 set pgp_verify_command="gpg --status-fd=2 --no-verbose --quiet --batch --output - --verify %s %f"
 set pgp_decrypt_command="gpg --status-fd=2 %?p?--passphrase-fd 0? --no-verbose --quiet --batch --output - %f"
