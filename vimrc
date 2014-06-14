@@ -67,6 +67,8 @@ set nobackup
 set noswapfile
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set noesckeys
+set autoread             " reload file w/o asking if it changed outside of vim
+set undoreload=15000     " increase memory for undo after file reload
 set title                " change the terminal's title
 set nowrap
 set selectmode=key    " to enter visual mode when selecting with mouse
@@ -120,6 +122,8 @@ if has("autocmd")
   autocmd BufNewFile,BufRead,BufEnter *.js SetIndent2Spaces
   autocmd BufNewFile,BufRead,BufEnter *.html SetIndent2Spaces
   autocmd BufNewFile,BufRead,BufEnter *.scala SetIndent2Spaces
+  autocmd BufNewFile,BufRead,BufEnter *.yml SetIndent2Spaces
+  autocmd BufNewFile,BufRead,BufEnter *.rb SetIndent2Spaces
 endif
 
 
