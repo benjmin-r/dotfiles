@@ -4,7 +4,7 @@
 # http://www.scala-sbt.org/0.13/tutorial/Manual-Installation.html
 
 readonly PROGNAME=$(basename $0)
-readonly PROGDIR=$(readlink -m $(dirname $0))
+readonly PROGDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 readonly ARGS="$@"
 
 readonly LAUNCHER_DOWNLOAD_URL="http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch/0.13.5/sbt-launch.jar"
