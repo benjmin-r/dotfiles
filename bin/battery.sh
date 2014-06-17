@@ -39,14 +39,12 @@ __battery_osx() {
                     return
                 fi
                 charge=$(( 100 * $curcap / $maxcap ))
-                if [[ "$extconnect" == "Yes" ]]; then
-                    echo "$charge"
-                else
-                    if [[ $charge -lt 50 ]]; then
-                        echo -n "#[fg=red]"
-                    fi
-                    echo "$charge"
+                if [[ $charge -lt 20 ]]; then
+                    echo -n "#[fg=red]"
+                else 
+                    echo -n "#[fg=blue]"
                 fi
+                echo "$charge"
                 break
             fi
         done
