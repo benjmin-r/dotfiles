@@ -3,6 +3,8 @@
 	email = benjamin@ambestengestern.de
 
 [alias]
+    rev = rev-parse HEAD
+    revs = rev-parse --short HEAD
     st = status
     sti = status --ignored
     ci = commit -v
