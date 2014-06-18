@@ -11,9 +11,8 @@ output_perc() {
         battery_status=$(__battery_osx)
     fi
 
-    output="${HEART_FULL} ${battery_status}%"
-    if [ -n "$output" ]; then
-        echo "$output"
+    if [ -n "$battery_status" ]; then
+        echo "${battery_status}%"
     fi
 }
 
@@ -40,11 +39,10 @@ __battery_osx() {
                 fi
                 charge=$(( 100 * $curcap / $maxcap ))
                 if [[ $charge -lt 20 ]]; then
-                    echo -n "#[fg=red]"
+                    echo "#[fg=red] ${HEART_EMPTY} $charge"
                 else 
-                    echo -n "#[fg=blue]"
+                    echo "#[fg=blue] ${HEART_FULL} $charge"
                 fi
-                echo "$charge"
                 break
             fi
         done
