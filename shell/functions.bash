@@ -1,4 +1,8 @@
 
+function ssh_tail() {
+    ssh $1 "tail -f /var/log/upstart/${2}.log"
+}
+
 function pgr() {
     ps -xeo pid,command | grep -i $1 | grep -v grep
 }
