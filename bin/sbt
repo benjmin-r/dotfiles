@@ -9,10 +9,11 @@ readonly ARGS="$@"
 
 readonly LAUNCHER_DOWNLOAD_URL="http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch/0.13.5/sbt-launch.jar"
 readonly LAUNCHER_JAR="$PROGDIR/sbt-launch.jar"
-readonly SBT_OPTS="-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
+readonly SBT_DEFAULT_OPTS="-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
+readonly SBT_CURRENT_OPTS=${SBT_OPTS:-$SBT_DEFAULT_OPTS}
 
 if [ ! -f $LAUNCHER_JAR ]; then
     curl $LAUNCHER_DOWNLOAD_URL > $LAUNCHER_JAR
 fi
 
-java $SBT_OPTS -jar $LAUNCHER_JAR $ARGS
+java $SBT_CURRENT_OPTS -jar $LAUNCHER_JAR $ARGS
