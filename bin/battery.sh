@@ -41,7 +41,7 @@ __battery_osx() {
                 if [[ $charge -lt 20 ]]; then
                     echo "#[fg=red] ${HEART_EMPTY} $charge"
                 else 
-                    echo "#[fg=blue] ${HEART_FULL} $charge"
+                    echo "#[fg=yellow] ${HEART_FULL} $charge"
                 fi
                 break
             fi
