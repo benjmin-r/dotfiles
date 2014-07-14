@@ -13,20 +13,12 @@ source ~/.dotfiles/shell/ssh-completion.bash
 source ~/.dotfiles/shell/knife-completion.bash
 source ~/.dotfiles/shell/homebrew-completion.bash
 source ~/.dotfiles/shell/trousseau-completion.bash
-source ~/.dotfiles/shell/gpg.bash
 source ~/.dotfiles/autoenv/activate.sh
+
+source ~/.dotfiles/shell/ssh-agent.bash
+source ~/.dotfiles/shell/gpg.bash
 
 [ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
 [ -f /Users/benjamin/.travis/travis.sh ] && source /Users/benjamin/.travis/travis.sh
 
 eval "$(tmuxifier init -)"
-
-SSHAGENT=/usr/bin/ssh-agent
-SSHAGENTARGS="-s"
-if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
-  eval $($SSHAGENT $SSHAGENTARGS) > /dev/null
-  trap "kill $SSH_AGENT_PID" 0
-fi
-
-
-
