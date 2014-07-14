@@ -1,3 +1,6 @@
+function view_markdown() {
+    /Applications/Marked.app/Contents/MacOS/Marked $1 &
+}
 
 function ssh_tail() {
     ssh $1 "tail -f /var/log/upstart/${2}.log"
