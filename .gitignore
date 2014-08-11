@@ -7,8 +7,10 @@ mutt/mailboxes
 mutt/alias
 *.pyc
 bin/backup/*.log
+bin/backup/*.txt
 bin/sbt-launch.jar
 vimperator/info
 pentadactyl/info/default/register-ring
 pentadactyl/info/default/command-history
 pentadactyl/info/default/local-marks
+weechat/*.log

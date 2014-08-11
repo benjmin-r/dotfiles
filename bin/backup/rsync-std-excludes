@@ -3,3 +3,6 @@
 .TemporaryItems
 .Trashes
 .DS_Store
+.nvm
+.rvm
+.ivy2
