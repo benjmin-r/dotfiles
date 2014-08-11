@@ -1,6 +1,7 @@
 export CLICOLOR=1
 export EDITOR=vi
 export TZ='Europe/Berlin'
+export LESS=R
 
 export WORKON_HOME=~/VirtualEnvs
 export PIP_REQUIRE_VIRTUALENV=false
