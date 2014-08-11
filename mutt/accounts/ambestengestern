@@ -10,13 +10,14 @@ mailboxes "+ambestengestern.de/INBOX" \
           "+ambestengestern.de/Drafts" \
           "+ambestengestern.de/Archive" \
           "+ambestengestern.de/Sent" \
-          "+ambestengestern.de/Trash" \
-          "+ambestengestern.de/Junk" \
           "+ambestengestern.de/rss" \
           "+ambestengestern.de/root" \
-          "+ambestengestern.de/fail2ban" \
           "+ambestengestern.de/sc" \
           "+ambestengestern.de/sc.SC" \
+          "+ambestengestern.de/leadership_sparks" \
+          "+ambestengestern.de/fail2ban" \
+          "+ambestengestern.de/Trash" \
+          "+ambestengestern.de/Junk" \
           "+temporary/search"
 
 
