@@ -1,0 +1,4 @@
+convert `crt` to `pem` with 
+```
+openssl x509 -inform der -in GandiStandardSSLCA.crt -out gandi.pem
+```
