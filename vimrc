@@ -55,9 +55,10 @@ set ttimeoutlen=200
 
 set laststatus=2         " show lightline/airline right after startup
 set list                 " show invisible characters
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:.,trail:·
 set relativenumber
-set scrolloff=999        " keeps current line centered on screen
+set scrolloff=7          " keeps current line from reaching top or bottom
+set cursorline           " highlight current line
 set confirm
 set mouse=a              " Enable mouse support
 set number               " always show line numbers
@@ -67,6 +68,8 @@ set nobackup
 set noswapfile
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set noesckeys
+set wildmenu             " Enhance command-line completion
+set clipboard=unnamed    " use system clipboard
 set autoread             " reload file w/o asking if it changed outside of vim
 set undoreload=15000     " increase memory for undo after file reload
 set title                " change the terminal's title
@@ -126,6 +129,13 @@ if has("autocmd")
   autocmd BufNewFile,BufRead,BufEnter *.rb SetIndent2Spaces
 endif
 
-
-
-
+" Rename current file, thanks to Gary Bernhardt
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
