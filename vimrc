@@ -69,7 +69,7 @@ set noswapfile
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set noesckeys
 set wildmenu             " Enhance command-line completion
-set clipboard=unnamed    " use system clipboard
+"set clipboard=unnamed    " use system clipboard
 set autoread             " reload file w/o asking if it changed outside of vim
 set undoreload=15000     " increase memory for undo after file reload
 set title                " change the terminal's title
