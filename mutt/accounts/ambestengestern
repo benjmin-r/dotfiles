@@ -33,6 +33,8 @@ macro index,pager d "<save-message>=ambestengestern.de/Trash<enter>" "Trash"
 
 macro index gi "<change-folder>+ambestengestern.de/INBOX<enter>" "Jump to Inbox"
 macro pager gi "<change-folder>+ambestengestern.de/INBOX<enter>" "Jump to Inbox"
+macro index ga "<change-folder>+ambestengestern.de/Archive<enter>" "Jump to Archive"
+macro pager ga "<change-folder>+ambestengestern.de/Archive<enter>" "Jump to Archive"
 
 
 set from      = "benjamin@ambestengestern.de"

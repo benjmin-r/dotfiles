@@ -28,7 +28,7 @@ source $alias_file
 
 # Sidebar Patch --------------------------------------
 set sidebar_delim   = '  │'
-set sidebar_visible = yes
+set sidebar_visible = no
 set sidebar_width   = 25
 set sidebar_shortpath=yes
 set sidebar_format = "%B%* %N"      # folder name, soft pad with spaces, unread msg count
