@@ -64,7 +64,6 @@ set mouse=a              " Enable mouse support
 set number               " always show line numbers
 set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
-set nobackup
 set noswapfile
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set noesckeys
