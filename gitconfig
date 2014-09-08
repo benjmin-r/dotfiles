@@ -23,6 +23,7 @@
     ada = add --all
     ac = commit --all -v
     rst = reset --hard HEAD
+    d = difftool --tool=vimdiff -U99999
 [color]
     ui = true
 [core]
@@ -35,3 +36,5 @@
     default = current
 [init]
     templatedir = ~/.git_template
+[difftool]
+    prompt=false
