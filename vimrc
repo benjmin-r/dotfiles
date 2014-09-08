@@ -138,3 +138,9 @@ function! RenameFile()
         redraw!
     endif
 endfunction
+
+highlight GitGutterAdd ctermfg=darkgreen
+highlight GitGutterChange ctermfg=darkyellow
+highlight GitGutterDelete ctermfg=darkred
+highlight GitGutterChangeDelete ctermfg=darkyellow
+highlight SignColumn ctermbg=black
