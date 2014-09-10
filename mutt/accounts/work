@@ -30,6 +30,7 @@ mailboxes +work/INBOX \
           +work/FE-Dev-Phase2 \
           +work/FE-Dev-Phase3 \
           +work/Umzug \
+          +work/travel \
 
 
 set header_cache     = ~/.mutt/cache/work-headers # where to store headers
