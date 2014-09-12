@@ -1,0 +1,190 @@
+#!/bin/bash
+#
+# Script for easily running development systems in docker containers
+# https://github.com/bripkens/dock
+#
+
+remote_repo=https://github.com/bripkens/dock.git
+local_repo=$HOME/.dock-formulas
+
+
+version() {
+  echo "$(basename $0) 0.6.3 by Ben Ripkens <bripkens.dev@gmail.com>"
+  echo "https://github.com/bripkens/dock"
+}
+
+
+usage() {
+    version
+cat << EOF >&2
+
+easily bootstrap development tools with Docker
+
+Usage:
+    $(basename $0) [options]
+    $(basename $0) [formula...]
+
+Example:
+    $(basename $0) redis
+
+Options:
+    -l, --list               List available formulas
+    -c, --cat [formula]      Display formula details
+    -u, --upgrade            Upgrade list of available formulas
+    -d, --rm                 Stop and remove all containers
+    -h, --help               Display this help text
+    -v, --version            Display current script version
+EOF
+}
+
+
+clone() {
+  if [ $1 -a $1 = '--silently' ]; then
+    git clone -q "$remote_repo" "$local_repo"
+  else
+    echo "Cloning $remote_repo to $local_repo"
+    git clone "$remote_repo" "$local_repo"
+  fi
+}
+
+
+upgrade() {
+  if [ ! -e "$local_repo/.git" ]; then
+    clone
+  else
+    cd "$local_repo"
+    git pull origin master
+  fi
+}
+
+
+init() {
+  if [ ! -e "$local_repo/.git" ]; then
+    clone $1
+  fi
+}
+
+
+list() {
+  init --silently
+
+  echo ":: Available Formulas"
+  for path in $(ls "$local_repo"/formulas | sort -f); do
+    filename=$(basename $path)
+    echo "${filename%.*}"
+  done
+}
+
+
+redock() {
+  if hash boot2docker 2>/dev/null; then
+    export DOCKER_IP=$(boot2docker ip 2>/dev/null)
+    export DOCKER_HOST="tcp://$DOCKER_IP:2375"
+  fi
+}
+
+
+unknown_formula() {
+  echo "Unknown formula: $1" >&2
+  echo >&2
+  echo "If you feel like $1 should be supported by dock, please" >&2
+  echo "consider opening an issue or sending a pull request to" >&2
+  echo >&2
+  echo "       https://github.com/bripkens/dock" >&2
+  echo >&2
+  echo "Thanks!" >&2
+}
+
+
+dump() {
+  init --silently
+
+  formula="$local_repo/formulas/$1"
+
+  if [ -e "$formula" ]; then
+    cat $formula
+  else
+    unknown_formula $1
+  fi
+}
+
+
+check_docker_usage_possible() {
+  docker ps > /dev/null
+  local status=$?
+  if [ $status -ne 0 ]; then
+    echo >&2
+    echo "It seems like there are issues with your" >&2
+    echo "Docker setup. Please see the error above." >&2
+    exit 1
+  fi
+}
+
+
+start() {
+  init --silently
+  redock
+  check_docker_usage_possible
+
+  formula="$local_repo/formulas/$1"
+
+  if [ -e "$formula" ]; then
+    echo
+    echo "Starting $1 (using $formula)"
+    bash $formula
+  else
+    unknown_formula $1
+  fi
+}
+
+
+stop_and_remove() {
+  check_docker_usage_possible
+
+  container=$(docker ps -a -q)
+  if [ -n "$container" ]; then
+    docker stop $container
+    docker rm $container
+  fi
+}
+
+
+# --- Main entry point ----------------------
+if [ $# -eq 0 ]; then
+  usage
+  exit 0
+fi
+
+# Parse comand-line options
+while [ $# -gt 0 ]; do
+  case $1 in
+    -v | --version )
+      version
+      exit 1
+      ;;
+    -l | --list )
+      list
+      exit
+      ;;
+    -u | --upgrade )
+      upgrade
+      exit
+      ;;
+    -h | --help )
+      usage
+      exit 1
+      ;;
+    -c | --cat )
+      dump $2
+      exit
+      ;;
+    -d | --rm )
+      stop_and_remove
+      exit
+      ;;
+    * ) # default case
+      start $1
+      ;;
+  esac
+  shift
+done
