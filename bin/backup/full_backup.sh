@@ -35,7 +35,7 @@ check_file_checksums() {
 main() {
     # be sure to end source dirs with slash
     backup "/Users/benjamin/" "/Volumes/FullBackup/benjamin/"
-    backup "/Volumes/Music/" "/Volumes/FullBackup/music/"
+    backup "/Volumes/Backup160/music/" "/Volumes/FullBackup/music/"
     backup "/Volumes/Filme/" "/Volumes/FullBackup/movies/"
 }
 
