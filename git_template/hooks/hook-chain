@@ -6,7 +6,7 @@
 hookname=`basename $0`
 
 
-FILE=`mktemp`
+FILE=`mktemp tmp.XXXXXXX`
 trap 'rm -f $FILE' EXIT
 cat - > $FILE
 
