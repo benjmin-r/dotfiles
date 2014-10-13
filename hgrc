@@ -7,6 +7,7 @@ cdiff = -q
 username = nureineide
 
 [extensions]
+color =
 hgext.extdiff =
 bookmarks =
 fetch = 
@@ -15,3 +16,23 @@ prompt = ~/data/projects/hg-projects/hg-prompt/prompt.py
 [extdiff]
 cmd.cdiff = colordiff
 opts.cdiff = -uprN
+
+
+[color]
+# configure colors for each possible hg status
+status.modified = blue bold
+status.added = green bold
+status.removed = red bold
+status.deleted = cyan bold
+status.unknown = magenta bold
+status.ignored = white bold
+# and for hg diff output also
+diff.diffline = bold
+diff.extended = cyan bold
+diff.file_a = red bold
+diff.file_b = green bold
+diff.hunk = magenta
+diff.deleted = red
+diff.inserted = green
+diff.changed = white
+diff.trailingwhitespace = bold red_background
