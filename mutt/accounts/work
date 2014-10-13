@@ -13,6 +13,10 @@ set pgp_sign_as = BD2B61EE
 
 #color status red default
 mailboxes +work/INBOX \
+          +work/1on1.verena \
+          +work/1on1.jezen \
+          +work/1on1.timo \
+          +work/1on1.niklas \
           +work/Archive \
           +work/Drafts \
           +work/Sent \
@@ -40,11 +44,13 @@ macro index,pager s "<save-message>+work/Junk<enter>" "Junk/Spam"
 macro index,pager y "<save-message>+work/Archive<enter>" "Archive"
 macro index,pager d "<save-message>+work/Trash<enter>" "Trash"
 
-# jump to inbox
 macro index gi "<change-folder>+work/INBOX<enter>" "Jump to Inbox"
 macro pager gi "<change-folder>+work/INBOX<enter>" "Jump to Inbox"
+macro index ga "<change-folder>+work/Archive<enter>" "Jump to Archive"
+macro pager ga "<change-folder>+work/Archive<enter>" "Jump to Archive"
+macro index gs "<change-folder>+work/Sent<enter>" "Jump to Sent"
+macro pager gs "<change-folder>+work/Sent<enter>" "Jump to Sent"
 
-# Sync email
 macro index F "<shell-escape>offlineimap -a work<enter>"           "run offlineimap to sync all mail"
 macro index f "<shell-escape>offlineimap -qf INBOX -a work<enter>" "run offlineimap to sync inbox"
 

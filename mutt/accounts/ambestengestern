@@ -6,7 +6,7 @@ source ~/.mutt/muttrc
 #source ~/.mutt/mailboxes
 
 mailboxes "+ambestengestern.de/INBOX" \
-          "+ambestengestern.de/__toanswer" \
+          "+ambestengestern.de/lists" \
           "+ambestengestern.de/Drafts" \
           "+ambestengestern.de/Archive" \
           "+ambestengestern.de/Sent" \
