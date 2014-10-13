@@ -24,6 +24,7 @@
     ac = commit --all -v
     rst = reset --hard HEAD
     d = difftool --tool=vimdiff -U99999
+    remotes = remote -v
 [color]
     ui = true
 [core]
