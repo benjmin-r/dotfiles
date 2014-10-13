@@ -21,9 +21,6 @@ alias gitl='git-smart-log'
 
 alias composer="php composer.phar"
 
-alias mutt-personal='cd ~/Downloads && mutt -n -e "source ~/.mutt/accounts/ambestengestern"'
-alias mutt-work='cd ~/Downloads && mutt -n -e "source ~/.mutt/accounts/work"'
-
 alias highlightrb='pbpaste | pygmentize -f rtf -l ruby -O style=solarized | pbcopy'
 alias highlightpy='pbpaste | pygmentize -f rtf -l python -O style=solarized | pbcopy'
 alias highlightjava='pbpaste | pygmentize -f rtf -l java -O style=solarized | pbcopy'

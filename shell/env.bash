@@ -9,5 +9,6 @@ export PIP_RESPECT_VIRTUALENV=true
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 export TMUXIFIER_LAYOUT_PATH=$HOME/.dotfiles/tmuxifier-layouts
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+export GOPATH=$HOME/go
 
-export PATH=/usr/local/bin:/usr/local/share/npm/bin:~/bin:~/local-bin:~/.local/bin:~/.dotfiles/tmuxifier/bin:$PATH
+export PATH=~/bin:~/local-bin:$GOPATH/bin:/usr/local/bin:/usr/local/share/npm/bin:~/.local/bin:~/.dotfiles/tmuxifier/bin:$PATH

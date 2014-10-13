@@ -18,11 +18,21 @@ function pgrkill() {
     pgrid $1 | xargs kill
 }
 
-copy-file-content() {
+function copy-file-content() {
     cat $1 | pbcopy
 }
 
-upgrade() {
+function mutt-personal() {
+    cd ~/Downloads \
+        && mutt -n -e "source ~/.mutt/accounts/ambestengestern" $@
+}
+
+function mutt-work() {
+    cd ~/Downloads \
+        && mutt -n -e "source ~/.mutt/accounts/work" $@
+}
+
+function upgrade() {
     local retry=5 count=0
 
     # retry at most $retry times, waiting 1 minute between each try
