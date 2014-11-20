@@ -81,8 +81,8 @@ set nobackup          " Do not create backup files
 set hidden
 set ruler
 set showcmd           " display incomplete commands
-set foldmethod=marker
-set foldlevelstart=2
+set foldmethod=indent
+set foldlevelstart=999
 set vb t_vb=
 set showmatch         " show matching brackets
 set mat=5             " how many tenths of a second to blink matching brackets for
