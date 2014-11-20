@@ -33,5 +33,7 @@ bakwht='\e[47m'   # White
 txtrst='\e[0m'    # Text Reset
 
 
-export PS1="$txtpur\u$txtrst at $txtblu\h$txtrst in $txtgrn\w$txtrst $txtblu \$(__git_ps1 'on (%s)')$txtrst\n$ "
+export PS1="$txtblu\u$txtrst@$txtblu\h$txtrst in $txtylw\w$txtrst $txtred\$(__git_ps1 'on (%s)')$txtrst\n$ "
+#export PS1="  \w$ "
+#export PS1=" $txtblu\u$txtrst in $txtred\w$txtrst \n $ "
 
