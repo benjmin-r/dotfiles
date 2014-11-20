@@ -11,4 +11,6 @@ export TMUXIFIER_LAYOUT_PATH=$HOME/.dotfiles/tmuxifier-layouts
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 export GOPATH=$HOME/go
 
+export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/etc/Caskroom"
+
 export PATH=~/bin:~/local-bin:$GOPATH/bin:/usr/local/bin:/usr/local/share/npm/bin:~/.local/bin:~/.dotfiles/tmuxifier/bin:$PATH
