@@ -6,10 +6,11 @@
 
 remote_repo=https://github.com/bripkens/dock.git
 local_repo=$HOME/.dock-formulas
+working_dir=`pwd`
 
 
 version() {
-  echo "$(basename $0) 0.6.3 by Ben Ripkens <bripkens.dev@gmail.com>"
+  echo "$(basename $0) 1.2.1 by Ben Ripkens <bripkens.dev@gmail.com>"
   echo "https://github.com/bripkens/dock"
 }
 
@@ -68,18 +69,25 @@ init() {
 list() {
   init --silently
 
-  echo ":: Available Formulas"
-  for path in $(ls "$local_repo"/formulas | sort -f); do
+  echo ":: Build-in Formulas"
+  listFormulas "$local_repo"/formulas
+  if [ -d "$working_dir"/.dock-formulas ]; then
+    echo ":: Project Formulas"
+    listFormulas "$working_dir"/.dock-formulas
+  fi
+}
+
+listFormulas() {
+  for path in $(ls "$1" | sort -f); do
     filename=$(basename $path)
     echo "${filename%.*}"
   done
 }
 
-
 redock() {
   if hash boot2docker 2>/dev/null; then
     export DOCKER_IP=$(boot2docker ip 2>/dev/null)
-    export DOCKER_HOST="tcp://$DOCKER_IP:2375"
+    export DOCKER_HOST="tcp://$DOCKER_IP:2376"
   fi
 }
 
@@ -126,22 +134,28 @@ start() {
   redock
   check_docker_usage_possible
 
-  formula="$local_repo/formulas/$1"
+  project_formula="$working_dir/.dock-formulas/$1"
+  builtin_formula="$local_repo/formulas/$1"
 
-  if [ -e "$formula" ]; then
-    echo
-    echo "Starting $1 (using $formula)"
-    bash $formula
+  if [ -e "$project_formula" ]; then
+    startFormula $1 $project_formula
+  elif [ -e "$builtin_formula" ]; then
+    startFormula $1 $builtin_formula
   else
     unknown_formula $1
   fi
 }
 
+startFormula() {
+  echo
+  echo "Starting $1 (using $2)..."
+  bash $2
+}
 
 stop_and_remove() {
   check_docker_usage_possible
 
-  container=$(docker ps -a -q)
+  container=$(docker ps -a | grep dock- | awk '{print $1}')
   if [ -n "$container" ]; then
     docker stop $container
     docker rm $container
