@@ -3,8 +3,8 @@
 set -o vi
 
 source ~/.dotfiles/shell/alias
-source ~/.dotfiles/shell/rbenv-completion.bash
 source ~/.dotfiles/shell/env.bash
+source ~/.dotfiles/shell/rbenv-completion.bash
 source ~/.dotfiles/shell/functions.bash
 source ~/.dotfiles/shell/prompt.bash
 source ~/.dotfiles/shell/git-completion.bash
@@ -22,3 +22,5 @@ source ~/.dotfiles/shell/gpg.bash
 [ -f /Users/benjamin/.travis/travis.sh ] && source /Users/benjamin/.travis/travis.sh
 
 eval "$(tmuxifier init -)"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

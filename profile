@@ -60,3 +60,7 @@ hg_ps1() {
         hg prompt "{{branch}}{ at {bookmark}}{status}" 2> /dev/null
 }
 export PS1="$txtpur\u$txtrst at $txtblu\h$txtrst in $txtgrn\w$txtrst $txtblu \$(__git_ps1 'on (%s)')$txtrst\n$ "
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
