@@ -112,6 +112,9 @@ set ignorecase      " make searching case-insensitive
 set smartcase       " make searches with mixed case, case-sensitive
 set gdefault        " always substitute globally
 
+function SetIndentScala()
+    setlocal nopi shiftwidth=2 softtabstop=2 textwidth=120
+endfunction
 command SetIndent2Spaces set nopi shiftwidth=2 softtabstop=2
 command SetIndent4Spaces set nopi shiftwidth=4 softtabstop=4
 command SetIndentTabs set noet ci pi sts=0 sw=4 ts=4
@@ -123,9 +126,9 @@ if has("autocmd")
   autocmd BufNewFile,BufRead,BufEnter *.css SetIndent2Spaces
   autocmd BufNewFile,BufRead,BufEnter *.js SetIndent2Spaces
   autocmd BufNewFile,BufRead,BufEnter *.html SetIndent2Spaces
-  autocmd BufNewFile,BufRead,BufEnter *.scala SetIndent2Spaces
   autocmd BufNewFile,BufRead,BufEnter *.yml SetIndent2Spaces
   autocmd BufNewFile,BufRead,BufEnter *.rb SetIndent2Spaces
+  autocmd BufNewFile,BufRead,BufEnter *.scala call SetIndentScala()
 endif
 
 " Rename current file, thanks to Gary Bernhardt
