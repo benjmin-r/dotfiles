@@ -27,14 +27,16 @@ set spoolfile = "+ambestengestern.de/INBOX"
 set smtp_pass = "`python ~/.mutt/offlineimap.py "benjamin@ambestengestern.de" "mail.ambestengestern.de"`"
 set smtp_url = "smtp://benjamin\@ambestengestern.de@mail.ambestengestern.de:25"
 
-macro index,pager s "<save-message>=ambestengestern.de/Junk<enter>" "Junk/Spam"
 macro index,pager y "<save-message>=ambestengestern.de/Archive<enter>" "Archive"
+macro index,pager L "<save-message>=ambestengestern.de/lists<enter>" "Move to 'lists' folder"
 macro index,pager d "<save-message>=ambestengestern.de/Trash<enter>" "Trash"
 
 macro index gi "<change-folder>+ambestengestern.de/INBOX<enter>" "Jump to Inbox"
 macro pager gi "<change-folder>+ambestengestern.de/INBOX<enter>" "Jump to Inbox"
 macro index ga "<change-folder>+ambestengestern.de/Archive<enter>" "Jump to Archive"
 macro pager ga "<change-folder>+ambestengestern.de/Archive<enter>" "Jump to Archive"
+macro index gs "<change-folder>+ambestengestern.de/Sent<enter>" "Jump to Sent"
+macro pager gs "<change-folder>+ambestengestern.de/Sent<enter>" "Jump to Sent"
 
 
 set from      = "benjamin@ambestengestern.de"
