@@ -1,12 +1,12 @@
 [submodule "vim/bundle/ack"]
 	path = vim/bundle/ack
-	url = http://github.com/mileszs/ack.vim.git
+	url = https://github.com/mileszs/ack.vim.git
 [submodule "vim/bundle/markdown"]
 	path = vim/bundle/markdown
-	url = http://github.com/tpope/vim-markdown.git
+	url = https://github.com/tpope/vim-markdown.git
 [submodule "vim/bundle/kwbdi"]
 	path = vim/bundle/kwbdi
-	url = http://github.com/vim-scripts/kwbdi.vim.git
+	url = https://github.com/vim-scripts/kwbdi.vim.git
 [submodule "vim/bundle/py.test"]
 	path = vim/bundle/py.test
 	url = https://github.com/alfredodeza/pytest.vim.git
