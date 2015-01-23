@@ -22,14 +22,8 @@ function copy-file-content() {
     cat $1 | pbcopy
 }
 
-function mutt-personal() {
-    cd ~/Downloads \
-        && mutt -n -e "source ~/.mutt/accounts/ambestengestern" $@
-}
-
-function mutt-work() {
-    cd ~/Downloads \
-        && mutt -n -e "source ~/.mutt/accounts/work" $@
+function m() {
+    cd ~/Downloads && mutt -n -e "source ~/.mutt/accounts/$1"
 }
 
 function upgrade() {

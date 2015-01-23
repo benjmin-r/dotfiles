@@ -2,22 +2,22 @@ session_root "~/"
 
 if initialize_session "work"; then
     window_root "~/Downloads"
-    new_window "mutt-personal"
-    run_cmd "mutt-personal"
+    new_window "m uberspace"
+    run_cmd "m uberspace"
     split_h
-    run_cmd "mutt-personal -f ~/.mail/ambestengestern.de/lists/"
+    #run_cmd "mutt-personal -f ~/.mail/ambestengestern.de/lists/"
 
     window_root "~/Downloads"
-    new_window "mutt-work"
-    run_cmd "mutt-work"
+    new_window "m work"
+    run_cmd "m work"
 
 
     window_root "~/Documents/Vaamo/projects/vaamo-backend"
     new_window "vaamo-backend"
     split_h
 
-    window_root "~/Documents/Vaamo/projects"
-    new_window "vaamo-projects"
+    window_root "~/Documents/Vaamo/projects/vaamo-web-frontend"
+    new_window "vaamo-frontend"
     split_h
 
     select_window 1
