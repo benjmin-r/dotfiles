@@ -10,7 +10,7 @@ backup() {
     local target=$2
 
     echo "Backing up '$source' to '$target'"
-    sudo rsync -cvaxAX --delete --ignore-errors --delete-excluded --cvs-exclude \
+    sudo rsync -cvaxAX --delete --ignore-errors --delete-excluded \
         --exclude-from="$HOME/bin/backup/rsync-std-excludes" \
         "$source" \
         "$target" >> "$LOGFILE" 2>&1
@@ -35,8 +35,6 @@ check_file_checksums() {
 main() {
     # be sure to end source dirs with slash
     backup "/Users/benjamin/" "/Volumes/FullBackup/benjamin/"
-    backup "/Volumes/Backup160/music/" "/Volumes/FullBackup/music/"
-    backup "/Volumes/Filme/" "/Volumes/FullBackup/movies/"
 }
 
 main
