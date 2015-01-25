@@ -1,6 +1,6 @@
 [general]
 ui = ttyui
-accounts = ambestengestern.de, uberspace, work, work-new
+accounts = personal, work, work-new
 pythonfile=~/.mutt/offlineimap.py
 fsync = False
 
@@ -14,17 +14,18 @@ sep = " "
 footer = "\n"
 
 
-[Account uberspace]
-localrepository = uberspace-Local
-remoterepository = uberspace-Remote
+
+[Account personal]
+localrepository = personal-local
+remoterepository = personal-remote
 status_backend = sqlite
 
-[Repository uberspace-Local]
+[Repository personal-local]
 type = Maildir
-localfolders = ~/.mail/uberspace
+localfolders = ~/.mail/personal
 
-[Repository uberspace-Remote]
-maxconnections = 2
+[Repository personal-remote]
+maxconnections = 1
 type = IMAP
 remotehost = arcturus.uberspace.de
 remoteuser = bnjmin-benjamin
@@ -32,24 +33,6 @@ remotepasseval = get_keychain_pass('bnjmin-benjamin', 'arcturus.uberspace.de')
 ssl = yes
 cert_fingerprint = 7dacae9ab7d1631d0e9a0abbe4df974edaf442a0
 
-
-[Account ambestengestern.de]
-localrepository = ambestengestern.de-Local
-remoterepository = ambestengestern.de-Remote
-status_backend = sqlite
-
-[Repository ambestengestern.de-Local]
-type = Maildir
-localfolders = ~/.mail/ambestengestern.de
-
-[Repository ambestengestern.de-Remote]
-maxconnections = 1
-type = IMAP
-remotehost = mail.ambestengestern.de
-remoteuser = benjamin@ambestengestern.de
-remotepasseval = get_keychain_pass('benjamin@ambestengestern.de', 'mail.ambestengestern.de')
-ssl = yes
-cert_fingerprint = 17e29cd8ca7169be3586910936ab32aaa740e9b3
 
 
 [Account work]
@@ -83,6 +66,8 @@ folderfilter = lambda folder: folder not in ['Calendar',
                                              'Notes',
                                              'Journal',
                                              'Contacts', ]
+
+
 
 [Account work-new]
 localrepository = work-new-local

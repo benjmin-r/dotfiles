@@ -23,7 +23,9 @@ function copy-file-content() {
 }
 
 function m() {
-    cd ~/Downloads && mutt -n -e "source ~/.mutt/accounts/$1"
+    local accountname=$1
+    shift
+    cd ~/Downloads && mutt -n -e "source ~/.mutt/accounts/$accountname" $@
 }
 
 function upgrade() {

@@ -2,10 +2,10 @@ session_root "~/"
 
 if initialize_session "work"; then
     window_root "~/Downloads"
-    new_window "m uberspace"
-    run_cmd "m uberspace"
+    new_window "m personal"
+    run_cmd "m personal"
     split_h
-    #run_cmd "mutt-personal -f ~/.mail/ambestengestern.de/lists/"
+    run_cmd "m personal -f ~/.mail/personal/lists/"
 
     window_root "~/Downloads"
     new_window "m work"
