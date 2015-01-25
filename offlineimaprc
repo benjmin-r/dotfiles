@@ -1,6 +1,6 @@
 [general]
 ui = ttyui
-accounts = ambestengestern.de, work
+accounts = ambestengestern.de, uberspace, work, work-new
 pythonfile=~/.mutt/offlineimap.py
 fsync = False
 
@@ -14,18 +14,36 @@ sep = " "
 footer = "\n"
 
 
+[Account uberspace]
+localrepository = uberspace-Local
+remoterepository = uberspace-Remote
+status_backend = sqlite
+
+[Repository uberspace-Local]
+type = Maildir
+localfolders = ~/.mail/uberspace
+
+[Repository uberspace-Remote]
+maxconnections = 2
+type = IMAP
+remotehost = arcturus.uberspace.de
+remoteuser = bnjmin-benjamin
+remotepasseval = get_keychain_pass('bnjmin-benjamin', 'arcturus.uberspace.de')
+ssl = yes
+cert_fingerprint = 7dacae9ab7d1631d0e9a0abbe4df974edaf442a0
+
+
 [Account ambestengestern.de]
 localrepository = ambestengestern.de-Local
 remoterepository = ambestengestern.de-Remote
 status_backend = sqlite
-postsynchook = notmuch new
 
 [Repository ambestengestern.de-Local]
 type = Maildir
 localfolders = ~/.mail/ambestengestern.de
 
 [Repository ambestengestern.de-Remote]
-maxconnections = 2
+maxconnections = 1
 type = IMAP
 remotehost = mail.ambestengestern.de
 remoteuser = benjamin@ambestengestern.de
@@ -62,6 +80,38 @@ folderfilter = lambda folder: folder not in ['Calendar',
                                              'Outbox',
                                              'Tasks',
                                              'Junk E-Mail',
+                                             'Notes',
+                                             'Journal',
+                                             'Contacts', ]
+
+[Account work-new]
+localrepository = work-new-local
+remoterepository = work-new-remote
+status_backend = sqlite
+filterheaders = Disposition-Notification-To
+
+[Repository work-new-local]
+type = Maildir
+localfolders = ~/.mail/work-new
+nametrans = lambda folder: {'Sent':             'Sent Items',
+                            'Trash':            'Deleted Items',
+                            }.get(folder, folder)
+
+[Repository work-new-remote]
+maxconnections = 1
+type = IMAP
+remotehost = outlook.office365.com
+remoteuser = benjamin.reitzammer@vaamofinanz.onmicrosoft.com
+remotepasseval = get_keychain_pass('benjamin.reitzammer@vaamofinanz.onmicrosoft.com', 'outlook.office365.com')
+cert_fingerprint = a951794d690a9505753e37fa6bddc3a1dcda2d05
+ssl = yes
+nametrans = lambda folder: {'Sent Items':       'Sent',
+                            'Deleted Items':    'Trash',
+                            }.get(folder, folder)
+folderfilter = lambda folder: folder not in ['Calendar', 
+                                             'Outbox',
+                                             'Tasks',
+                                             'Junk Email',
                                              'Notes',
                                              'Journal',
                                              'Contacts', ]

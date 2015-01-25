@@ -5,6 +5,8 @@ source ~/.mutt/muttrc
 #color status green default
 #source ~/.mutt/mailboxes
 
+set pgp_sign_as = 7600BD53
+
 mailboxes "+ambestengestern.de/INBOX" \
           "+ambestengestern.de/lists" \
           "+ambestengestern.de/Drafts" \
@@ -17,15 +19,14 @@ mailboxes "+ambestengestern.de/INBOX" \
           "+ambestengestern.de/leadership_sparks" \
           "+ambestengestern.de/fail2ban" \
           "+ambestengestern.de/Trash" \
-          "+ambestengestern.de/Junk" \
-          "+temporary/search"
+          "+ambestengestern.de/Junk"
 
 
 set header_cache     = ~/.mutt/cache/abg-headers # where to store headers
 set message_cachedir = ~/.mutt/cache/abg-bodies  # where to store bodies
 set spoolfile = "+ambestengestern.de/INBOX"
-set smtp_pass = "`python ~/.mutt/offlineimap.py "benjamin@ambestengestern.de" "mail.ambestengestern.de"`"
-set smtp_url = "smtp://benjamin\@ambestengestern.de@mail.ambestengestern.de:25"
+set smtp_pass = "`python ~/.mutt/offlineimap.py "bnjmin-benjamin" "arcturus.uberspace.de"`"
+set smtp_url = "smtp://bnjmin-benjamin@arcturus.uberspace.de:587"
 
 macro index,pager y "<save-message>=ambestengestern.de/Archive<enter>" "Archive"
 macro index,pager L "<save-message>=ambestengestern.de/lists<enter>" "Move to 'lists' folder"
@@ -49,7 +50,7 @@ alternates benjamin@nur-eine-i.de breitzammer@gmail.com, benjamin@squeakyvessel.
 
 alias identity_1    Benjamin Reitzammer <benjamin@ambestengestern.de>
 alias identity_2    Benjamin Reitzammer <benjamin@squeakyvessel.com>
-macro compose v "<edit-from>^Uidentity_<tab>" "Select from" 
+macro compose v "<edit-from>^Uidentity_<tab>" "Select from (1=abg, 2=sq)" 
 
 # Sync email
 macro index F "<shell-escape>offlineimap -a ambestengestern.de<enter>"           "run offlineimap to sync all mail"

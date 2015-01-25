@@ -1,0 +1,47 @@
+# vi: ft=muttrc
+
+source ~/.mutt/muttrc
+
+#color status green default
+#source ~/.mutt/mailboxes
+
+set mbox=~/.mail
+
+set pgp_sign_as = 7600BD53
+macro index C "<copy-message>?<enter>" "copy a message to a mailbox"
+macro index M "<save-message>?<enter>" "move a message to a mailbox"
+
+
+set header_cache     = ~/.mutt/cache/abg-headers # where to store headers
+set message_cachedir = ~/.mutt/cache/abg-bodies  # where to store bodies
+set spoolfile = "+uberspace/INBOX"
+set smtp_pass = "`python ~/.mutt/offlineimap.py "bnjmin-benjamin" "arcturus.uberspace.de"`"
+set smtp_url = "smtp://bnjmin-benjamin@arcturus.uberspace.de:587"
+
+macro index,pager y "<save-message>=uberspace/Archive<enter>" "Archive"
+macro index,pager L "<save-message>=uberspace/lists<enter>" "Move to 'lists' folder"
+macro index,pager d "<save-message>=uberspace/Trash<enter>" "Trash"
+
+macro index gi "<change-folder>+uberspace/INBOX<enter>" "Jump to Inbox"
+macro pager gi "<change-folder>+uberspace/INBOX<enter>" "Jump to Inbox"
+macro index ga "<change-folder>+uberspace/Archive<enter>" "Jump to Archive"
+macro pager ga "<change-folder>+uberspace/Archive<enter>" "Jump to Archive"
+macro index gs "<change-folder>+uberspace/Sent<enter>" "Jump to Sent"
+macro pager gs "<change-folder>+uberspace/Sent<enter>" "Jump to Sent"
+
+
+set from      = "benjamin@ambestengestern.de"
+set record    = "+uberspace/Sent"
+set postponed = "+uberspace/Drafts"
+
+
+alternates benjamin@nur-eine-i.de breitzammer@gmail.com, benjamin@squeakyvessel.com
+
+alias identity_1    Benjamin Reitzammer <benjamin@ambestengestern.de>
+alias identity_2    Benjamin Reitzammer <benjamin@squeakyvessel.com>
+macro compose v "<edit-from>^Uidentity_<tab>" "Select from" 
+
+# Sync email
+macro index F "<shell-escape>offlineimap -a uberspace<enter>"           "run offlineimap to sync all mail"
+macro index f "<shell-escape>offlineimap -qf INBOX -a uberspace<enter>" "run offlineimap to sync inbox"
+
