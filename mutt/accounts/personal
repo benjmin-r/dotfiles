@@ -2,9 +2,6 @@
 
 source ~/.mutt/muttrc
 
-#color status green default
-#source ~/.mutt/mailboxes
-
 set pgp_sign_as = 7600BD53
 
 mailboxes "+personal.de/INBOX" \
@@ -43,13 +40,11 @@ set from      = "benjamin@ambestengestern.de"
 set record    = "+personal/Sent"
 set postponed = "+personal/Drafts"
 
-
 alternates benjamin@nur-eine-i.de breitzammer@gmail.com, benjamin@squeakyvessel.com
 
 alias identity_1    Benjamin Reitzammer <benjamin@ambestengestern.de>
 alias identity_2    Benjamin Reitzammer <benjamin@squeakyvessel.com>
 macro compose v "<edit-from>^Uidentity_<tab>" "Select from" 
 
-# Sync email
 macro index F "<shell-escape>offlineimap -a personal<enter>"           "run offlineimap to sync all mail"
 macro index f "<shell-escape>offlineimap -qf INBOX -a personal<enter>" "run offlineimap to sync inbox"

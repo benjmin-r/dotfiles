@@ -1,8 +1,11 @@
+# vi: ft=muttrc
+
 source ~/.mutt/muttrc
 
 
 set from      = "benjamin.reitzammer@vaamo.de"
-set sendmail = "/usr/local/bin/msmtp -a work"
+set smtp_pass = "`python ~/.mutt/offlineimap.py "benjamin.reitzammer@vaamo.de" "smtp.office365.com"`"
+set smtp_url = "smtp://benjamin.reitzammer\@vaamo.de@smtp.office365.com:587"
 
 set spoolfile = "+work/INBOX"
 set record    = "+work/Sent"
@@ -11,7 +14,6 @@ set postponed = "+work/Drafts"
 
 set pgp_sign_as = BD2B61EE
 
-#color status red default
 mailboxes +work/INBOX \
           +work/1on1.jezen \
           +work/1on1.jan \
@@ -25,24 +27,11 @@ mailboxes +work/INBOX \
           +work/Sent \
           +work/Trash \
           +work/Reading \
-          +work/R-mgmt \
-          +work/R-ops \
-          +work/R-product \
           +work/Invoices \
-          +work/Invoices-done \
-          +work/Hiring \
-          +work/FE-Dev \
-          +work/FE-Dev-no \
-          +work/FE-Dev-Phase1 \
-          +work/FE-Dev-Phase2 \
-          +work/FE-Dev-Phase3 \
-          +work/Umzug \
-          +work/travel \
-          +work/coaching \
+          +work/FE-Dev
 
-
-set header_cache     = ~/.mutt/cache/work-headers # where to store headers
-set message_cachedir = ~/.mutt/cache/work-bodies  # where to store bodies
+set header_cache     = ~/.mutt/cache/work-headers
+set message_cachedir = ~/.mutt/cache/work-bodies
 
 macro index,pager s "<save-message>+work/Junk<enter>" "Junk/Spam"
 macro index,pager y "<save-message>+work/Archive<enter>" "Archive"

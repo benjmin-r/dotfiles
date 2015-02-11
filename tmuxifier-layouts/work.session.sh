@@ -1,4 +1,4 @@
-session_root "~/"
+#session_root "~/"
 
 if initialize_session "work"; then
     window_root "~/Downloads"

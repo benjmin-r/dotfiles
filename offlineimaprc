@@ -1,6 +1,6 @@
 [general]
 ui = ttyui
-accounts = personal, work, work-new
+accounts = personal, work
 pythonfile=~/.mutt/offlineimap.py
 fsync = False
 
@@ -36,59 +36,25 @@ cert_fingerprint = 7dacae9ab7d1631d0e9a0abbe4df974edaf442a0
 
 
 [Account work]
-localrepository = work-Local
-remoterepository = work-Remote
+localrepository = work-local
+remoterepository = work-remote
 status_backend = sqlite
 filterheaders = Disposition-Notification-To
 
-[Repository work-Local]
+[Repository work-local]
 type = Maildir
 localfolders = ~/.mail/work
 nametrans = lambda folder: {'Sent':             'Sent Items',
                             'Trash':            'Deleted Items',
                             }.get(folder, folder)
 
-[Repository work-Remote]
-maxconnections = 1
-type = IMAP
-remotehost = mail.hostedoffice.ag
-remoteuser = benjamin.reitzammer@vaamo.de
-remotepasseval = get_keychain_pass('benjamin.reitzammer@vaamo.de', 'mail.hostedoffice.ag')
-cert_fingerprint = 6edd31540e615f0a28e08d864a3a3edf3186439e
-ssl = yes
-nametrans = lambda folder: {'Sent Items':       'Sent',
-                            'Deleted Items':    'Trash',
-                            }.get(folder, folder)
-folderfilter = lambda folder: folder not in ['Calendar', 
-                                             'Outbox',
-                                             'Tasks',
-                                             'Junk E-Mail',
-                                             'Notes',
-                                             'Journal',
-                                             'Contacts', ]
-
-
-
-[Account work-new]
-localrepository = work-new-local
-remoterepository = work-new-remote
-status_backend = sqlite
-filterheaders = Disposition-Notification-To
-
-[Repository work-new-local]
-type = Maildir
-localfolders = ~/.mail/work-new
-nametrans = lambda folder: {'Sent':             'Sent Items',
-                            'Trash':            'Deleted Items',
-                            }.get(folder, folder)
-
-[Repository work-new-remote]
+[Repository work-remote]
 maxconnections = 1
 type = IMAP
 remotehost = outlook.office365.com
-remoteuser = benjamin.reitzammer@vaamofinanz.onmicrosoft.com
-remotepasseval = get_keychain_pass('benjamin.reitzammer@vaamofinanz.onmicrosoft.com', 'outlook.office365.com')
-cert_fingerprint = a951794d690a9505753e37fa6bddc3a1dcda2d05
+remoteuser = benjamin.reitzammer@vaamo.de
+remotepasseval = get_keychain_pass('benjamin.reitzammer@vaamo.de', 'outlook.office365.com')
+cert_fingerprint = 69ed4537b8357ea7ae0fb88ebe2beb957a184dc7
 ssl = yes
 nametrans = lambda folder: {'Sent Items':       'Sent',
                             'Deleted Items':    'Trash',
