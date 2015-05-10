@@ -1,0 +1,16 @@
+[DEFAULT]
+# If not given here, email and password is taken from .netrc using
+# machine google.com
+email: benjamin@ambestengestern.de
+#password:
+passwordeval: python ~/.mutt/offlineimap.py "benjamin@ambestengestern.de" "calendar.google.com"
+# The following are optional, defaults are shown
+cache_filename: ~/.goobook_cache
+cache_expiry_hours: 24
+filter_groupless_contacts: yes
+# New contacts will be added to this group in addition to "My Contacts"
+# Note that the group has to already exist on google or an error will occur.
+# One use for this is to add new contacts to an "Unsorted" group, which can
+# be sorted easier than all of "My Contacts". searching for groupless users is a bit painful.
+#;default_group:
+

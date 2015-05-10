@@ -175,6 +175,7 @@ source ~/.mutt/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc
 
 
 # Contacts w/ autocomplete -------------------------------¬
-set query_command = "~/.mutt/contacts-filter.sh %s"
+set query_command = "goobook query '%s'"
 bind editor <Tab> complete-query
 bind editor ^T    complete
+macro index,pager a "<pipe-message>goobook add<return>" "add the sender address to Google contacts"
