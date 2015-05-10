@@ -16,10 +16,6 @@ if initialize_session "work"; then
     new_window "vaamo-backend"
     split_h
 
-    window_root "~/Documents/Vaamo/projects/vaamo-web-frontend"
-    new_window "vaamo-frontend"
-    split_h
-
     select_window 1
 fi
 
