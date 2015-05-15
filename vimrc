@@ -129,6 +129,9 @@ if has("autocmd")
   autocmd BufNewFile,BufRead,BufEnter *.yml SetIndent2Spaces
   autocmd BufNewFile,BufRead,BufEnter *.rb SetIndent2Spaces
   autocmd BufNewFile,BufRead,BufEnter *.scala call SetIndentScala()
+
+  autocmd FileType mail setlocal spell spelllang=de_de
+  autocmd FileType markdown setlocal spell spelllang=en_gb
 endif
 
 " Rename current file, thanks to Gary Bernhardt
