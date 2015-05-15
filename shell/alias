@@ -2,6 +2,7 @@ alias l='ls -hal'
 alias pd=pushd
 alias vi='vim'
 alias tmux-attach="tmux attach-session -t 0"
+alias gq='goobook query'
 
 alias tx='tmuxifier'
 complete -F _tmuxifier tmuxifier tx
@@ -21,6 +22,8 @@ tgc() {
 alias gti='git'
 alias gitp='git-smart-pull'
 alias gitl='git-smart-log'
+alias gs='git st'
+alias gac='git ac'
 
 alias composer="php composer.phar"
 

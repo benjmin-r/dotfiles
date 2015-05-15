@@ -5,7 +5,7 @@
 [alias]
     rev = rev-parse HEAD
     revs = rev-parse --short HEAD
-    st = status
+    st = status -s
     sti = status --ignored
     ci = commit -v
     br = branch
