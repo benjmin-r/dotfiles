@@ -5,7 +5,7 @@
 [alias]
     rev = rev-parse HEAD
     revs = rev-parse --short HEAD
-    st = status -s
+    st = status
     sti = status --ignored
     ci = commit -v
     br = branch
@@ -25,6 +25,7 @@
     rst = reset --hard HEAD
     d = difftool --tool=vimdiff -U99999
     remotes = remote -v
+    change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ $`echo $VAR` = \\\"$OLD\\\" ]]; then export $VAR=\\\"$NEW\\\"; fi\" $@; }; f "
 [color]
     ui = true
 [core]

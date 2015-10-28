@@ -22,10 +22,19 @@ function copy-file-content() {
     cat $1 | pbcopy
 }
 
+function gpg-launch() {
+    pgrkill gpg && gpg-agent --daemon | pbcopy
+    echo "GPG-Agent launched, env info in clipboard"
+}
+
 function m() {
     local accountname=$1
     shift
     cd ~/Downloads && mutt -n -e "source ~/.mutt/accounts/$accountname" $@
+}
+
+function json-prettyprint() {
+    cat $1 | python -m json.tool
 }
 
 function upgrade() {
