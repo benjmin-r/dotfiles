@@ -54,7 +54,7 @@ type = IMAP
 remotehost = outlook.office365.com
 remoteuser = benjamin.reitzammer@vaamo.de
 remotepasseval = get_keychain_pass('benjamin.reitzammer@vaamo.de', 'outlook.office365.com')
-sslcacertfile = ~/dummycert.pem
+sslcacertfile = ~/certs.pem
 ssl = yes
 nametrans = lambda folder: {'Sent Items':       'Sent',
                             'Deleted Items':    'Trash',

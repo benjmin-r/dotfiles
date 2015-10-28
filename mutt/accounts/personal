@@ -4,7 +4,7 @@ source ~/.mutt/muttrc
 
 set pgp_sign_as = 7600BD53
 
-mailboxes "+personal.de/INBOX" \
+mailboxes "+personal/INBOX" \
           "+personal/lists" \
           "+personal/Drafts" \
           "+personal/Archive" \
