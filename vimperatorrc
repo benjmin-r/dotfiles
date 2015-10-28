@@ -12,7 +12,7 @@ set editor='bash -lc "mvim -f \$*" mvim '
 set titlestring=""
 set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs
 set status=input,location,ssl
-set tabnumbers
+set notabnumbers
 set defsearch=google
 set showstatuslinks=2
 
@@ -43,6 +43,8 @@ qmark L http://localhost:8000/
 qmark k http://localhost:4000/
 qmark m http://www.mutt.org/doc/manual/manual-4.html#patterns
 qmark w https://wiki.vaamo-ag.de/dashboard.action
+qmark h https://wiki.vaamo-ag.de/display/VAAMO/Holidays
 qmark s https://www.softwerkskammer.org/
 qmark v https://github.com/Vaamo
+qmark c https://outlook.office365.com/owa/?realm=vaamo.de#path=/calendar/view/Week
 
