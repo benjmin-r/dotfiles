@@ -1,3 +1,7 @@
+function count_filesize() {
+    find $1 -name "*.$2" -ls | awk '{total += $7} END {print total}'
+}
+
 function view_markdown() {
     /Applications/Marked.app/Contents/MacOS/Marked $1 &
 }

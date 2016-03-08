@@ -10,6 +10,8 @@ complete -F _tmuxifier tmuxifier tx
 alias flush-gpg-pass='gpgconf --reload gpg-agent'
 alias flush-gpg-agent='pgrkill gpg && eval $(gpg-agent --daemon)'
 
+alias kb="keybase --standalone"
+
 alias t='trousseau'
 alias tk='trousseau keys|sort'
 alias tg='trousseau get'

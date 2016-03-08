@@ -12,6 +12,7 @@
     branches= branch -lav
     co = checkout
     df = diff --check
+    dc = diff --cached
     difflog = log -p
     lgs = log --pretty=format:\"%C(yellow)%h%Creset %Cgreen%ar%Creset %Cblue%an%Creset %s %C(white)%d%Creset\" --graph --all
     lg = log --graph --oneline --decorate --all
@@ -22,6 +23,7 @@
     unstage = reset HEAD --
     ada = add --all
     ac = commit --all -v
+    aca = commit --all -v --amend
     rst = reset --hard HEAD
     d = difftool --tool=vimdiff -U99999
     remotes = remote -v
