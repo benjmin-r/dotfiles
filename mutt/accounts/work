@@ -15,6 +15,7 @@ set postponed = "+work/Drafts"
 set pgp_sign_as = BD2B61EE
 
 mailboxes +work/INBOX \
+          +work/gotober-raffle \
           +work/1on1.jezen \
           +work/1on1.jan \
           +work/1on1.marko \

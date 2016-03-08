@@ -20,7 +20,8 @@ set beep_new             # bell on new mails
 set pipe_decode          # strip headers and eval mimes when piping
 set thorough_search      # strip headers and eval mimes before searching
 set sleep_time=0         # don't pause when switching folders
-
+set charset="utf-8"
+set send_charset="utf-8"
 
 # Alias Setup ----------------------------------------
 set sort_alias= alias
