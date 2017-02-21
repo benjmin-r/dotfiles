@@ -42,3 +42,5 @@
     templatedir = ~/.git_template
 [difftool]
     prompt=false
+[ghi]
+	token = !security find-internet-password -a nureineide -s github.com -l 'ghi token' -w
