@@ -119,6 +119,9 @@ command SetIndent2Spaces set nopi shiftwidth=2 softtabstop=2
 command SetIndent4Spaces set nopi shiftwidth=4 softtabstop=4
 command SetIndentTabs set noet ci pi sts=0 sw=4 ts=4
 
+command ShowLineNumbers set relativenumber number
+command DontShowLineNumbers set norelativenumber nonumber
+
 if has("autocmd")
   " Enable file type detection
   filetype on
@@ -132,6 +135,12 @@ if has("autocmd")
 
   autocmd FileType mail setlocal spell spelllang=de_de
   autocmd FileType markdown setlocal spell spelllang=en_gb
+
+  augroup pencil
+    autocmd!
+    autocmd FileType markdown,mkd,md call pencil#init()
+    autocmd FileType txt,text         call pencil#init()
+  augroup END
 endif
 
 " Rename current file, thanks to Gary Bernhardt
