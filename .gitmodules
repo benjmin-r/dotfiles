@@ -115,9 +115,3 @@
 [submodule "vim/bundle/zenroom2"]
 	path = vim/bundle/zenroom2
 	url = https://github.com/amix/vim-zenroom2.git
-[submodule "scm_breeze"]
-	path = scm_breeze
-	url = git://github.com/ndbroadbent/scm_breeze.git
-[submodule "tmux-fingers"]
-	path = tmux-fingers
-	url = https://github.com/Morantron/tmux-fingers
