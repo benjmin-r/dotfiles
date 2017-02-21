@@ -1,6 +1,6 @@
 [general]
 ui = ttyui
-accounts = personal, work
+accounts = personal, work, work-new
 pythonfile=~/.mutt/offlineimap.py
 fsync = False
 
@@ -31,7 +31,9 @@ remotehost = arcturus.uberspace.de
 remoteuser = bnjmin-benjamin
 remotepasseval = get_keychain_pass('bnjmin-benjamin', 'arcturus.uberspace.de')
 ssl = yes
-cert_fingerprint = 7dacae9ab7d1631d0e9a0abbe4df974edaf442a0
+cert_fingerprint = afe378d8c458fb9be4c8601b7b3864664156d9f2
+folderfilter = lambda folder: folder not in ['Trash', 
+                                             'Junk', ]
 
 
 
@@ -61,8 +63,26 @@ nametrans = lambda folder: {'Sent Items':       'Sent',
                             }.get(folder, folder)
 folderfilter = lambda folder: folder not in ['Calendar', 
                                              'Outbox',
+                                             'Clutter',
+                                             'Junk',
+                                             'Deleted Items',
+                                             'Conversation History',
                                              'Tasks',
                                              'Junk Email',
                                              'Notes',
                                              'Journal',
                                              'Contacts', ]
+
+[Account work-new]
+localrepository = work-new-local
+remoterepository = work-remote
+status_backend = sqlite
+filterheaders = Disposition-Notification-To
+
+[Repository work-new-local]
+type = Maildir
+localfolders = ~/.mail/work-new
+nametrans = lambda folder: {'Sent':             'Sent Items',
+                            'Trash':            'Deleted Items',
+                            }.get(folder, folder)
+

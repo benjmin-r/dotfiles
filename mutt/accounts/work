@@ -12,9 +12,13 @@ set record    = "+work/Sent"
 set mbox      = "+work/Archive"
 set postponed = "+work/Drafts"
 
-set pgp_sign_as = BD2B61EE
+set pgp_sign_as = 0xBD2B61EE
+
+set pgp_encrypt_only_command="pgpewrap gpg --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust --encrypt-to 0xBD2B61EE -- -r %r -- %f"
+set pgp_encrypt_sign_command="pgpewrap gpg %?p?--passphrase-fd 0? --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust --encrypt-to 0xBD2B61EE -- -r %r -- %f"
 
 mailboxes +work/INBOX \
+          +work/2answer \
           +work/gotober-raffle \
           +work/1on1.jezen \
           +work/1on1.jan \
@@ -34,7 +38,7 @@ mailboxes +work/INBOX \
 set header_cache     = ~/.mutt/cache/work-headers
 set message_cachedir = ~/.mutt/cache/work-bodies
 
-macro index,pager s "<save-message>+work/Junk<enter>" "Junk/Spam"
+macro index,pager A "<save-message>+work/2answer<enter>" "2answer"
 macro index,pager y "<save-message>+work/Archive<enter>" "Archive"
 macro index,pager d "<save-message>+work/Trash<enter>" "Trash"
 
@@ -44,7 +48,9 @@ macro index ga "<change-folder>+work/Archive<enter>" "Jump to Archive"
 macro pager ga "<change-folder>+work/Archive<enter>" "Jump to Archive"
 macro index gs "<change-folder>+work/Sent<enter>" "Jump to Sent"
 macro pager gs "<change-folder>+work/Sent<enter>" "Jump to Sent"
+macro index gA "<change-folder>+work/2answer<enter>" "Jump to 2answer"
+macro pager gA "<change-folder>+work/2answer<enter>" "Jump to 2answer"
 
 macro index F "<shell-escape>offlineimap -a work<enter>"           "run offlineimap to sync all mail"
-macro index f "<shell-escape>offlineimap -qf INBOX -a work<enter>" "run offlineimap to sync inbox"
+macro index f "<shell-escape>offlineimap -qf INBOX,2answer -a work<enter>" "run offlineimap to sync inbox"
 

@@ -29,12 +29,13 @@ set reverse_alias=yes
 source $alias_file
 
 # Sidebar Patch --------------------------------------
-set sidebar_delim   = '  │'
-set sidebar_visible = no
-set sidebar_width   = 25
-set sidebar_shortpath=yes
-set sidebar_format = "%B%* %N"      # folder name, soft pad with spaces, unread msg count
-color sidebar_new yellow default
+# commented out since using neomutt
+# set sidebar_delim   = '  │'
+# set sidebar_visible = no
+# set sidebar_width   = 25
+# set sidebar_shortpath=yes
+# set sidebar_format = "%B%* %N"      # folder name, soft pad with spaces, unread msg count
+# color sidebar_new yellow default
 
 # Status Bar -----------------------------------------
 set status_chars  = " *%A"
@@ -84,9 +85,10 @@ macro index a "<limit>all\n" "show all messages (undo limit)"
 bind index N  toggle-new
 
 # Sidebar Navigation ---------------------------------
-bind index,pager <down>   sidebar-next
-bind index,pager <up>     sidebar-prev
-bind index,pager <right>  sidebar-open
+# commented out since using neomutt
+# bind index,pager <down>   sidebar-next
+# bind index,pager <up>     sidebar-prev
+# bind index,pager <right>  sidebar-open
 
 # b toggles sidebar visibility
 macro index b "<enter-command>toggle sidebar_visible<enter>"
