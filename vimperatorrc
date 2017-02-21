@@ -36,15 +36,10 @@ colorscheme solarized_dark
 hi Normal -append font-size: 13px !important; font-family: "Menlo";
 hi StatusLine -append font-size:13px; font-family: "Menlo";
 
-qmark p https://www.playframework.com/documentation/2.3.x/ScalaHome
-qmark p https://github.com/playframework/playframework/
 qmark l http://localhost:9000/
 qmark L http://localhost:8000/
 qmark k http://localhost:4000/
-qmark m http://www.mutt.org/doc/manual/manual-4.html#patterns
 qmark w https://wiki.vaamo-ag.de/dashboard.action
-qmark h https://wiki.vaamo-ag.de/display/VAAMO/Holidays
-qmark s https://www.softwerkskammer.org/
 qmark v https://github.com/Vaamo
-qmark c https://outlook.office365.com/owa/?realm=vaamo.de#path=/calendar/view/Week
 
+js services.services.autoCompleteSearch.class_="@mozilla.org/autocomplete/search;1?name=unifiedcomplete"

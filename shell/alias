@@ -3,6 +3,7 @@ alias pd=pushd
 alias vi='vim'
 alias tmux-attach="tmux attach-session -t 0"
 alias gq='goobook query'
+alias ghi='TERM=xterm-256color ghi'
 
 alias tx='tmuxifier'
 complete -F _tmuxifier tmuxifier tx
@@ -11,15 +12,6 @@ alias flush-gpg-pass='gpgconf --reload gpg-agent'
 alias flush-gpg-agent='pgrkill gpg && eval $(gpg-agent --daemon)'
 
 alias kb="keybase --standalone"
-
-alias t='trousseau'
-alias tk='trousseau keys|sort'
-alias tg='trousseau get'
-alias td='trousseau del'
-alias ts='trousseau set'
-tgc() { 
-    tg $1 | pbcopy 
-}
 
 alias gti='git'
 alias gitp='git-smart-pull'
