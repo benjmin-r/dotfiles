@@ -10,7 +10,7 @@ backup() {
     local target=$2
 
     echo "Backing up '$source' to '$target'"
-    sudo rsync -cvaxAX --delete --ignore-errors --delete-excluded \
+    sudo rsync -cvaxAX --info=progress2 --delete --ignore-errors --delete-excluded \
         --exclude-from="$HOME/bin/backup/rsync-std-excludes" \
         "$source" \
         "$target" >> "$LOGFILE" 2>&1

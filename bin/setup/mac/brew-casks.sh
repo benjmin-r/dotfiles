@@ -15,6 +15,7 @@ brew cask install skype
 brew cask install spotify
 brew cask install alfred
 brew cask install dropbox
-brew cask install truecrypt
 brew cask install vlc
 brew cask install moneymoney
+
+brew cask install truecrypt

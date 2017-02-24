@@ -17,11 +17,10 @@ function bi {
 
 function init {
     brew tap homebrew/dupes
-    brew tap nureineide/devel
 }
 
 function main {
-    brew install mutt-1.5.21 --with-s-lang --with-sidebar-patch
+    bi mutt
     bi ack
     bi automake
     bi bash
@@ -32,7 +31,6 @@ function main {
     bi exiftool
     bi git
     bi grep
-    bi htop-osx
     bi ifstat
     bi iftop
     bi md5sha1sum
@@ -47,13 +45,11 @@ function main {
     bi reattach-to-user-namespace
     bi rsync
     bi sqlite
-    bi tig
     bi tmux
     bi tmux-mem-cpu-load
     bi urlview
     bi vim
     bi macvim
-    bi weechat
     bi wget
 }
 

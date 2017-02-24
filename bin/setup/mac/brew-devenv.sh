@@ -1,18 +1,17 @@
 #!/bin/bash
 
-brew cask install java
-brew cask install postgres # which is postgres.app
+# brew cask install java
+# brew cask install postgres # which is postgres.app
 
 brew install node
-brew install protobuf
-brew install qt
+#brew install qt
 brew install pyenv
 brew install pyenv-virtualenv
 brew install pyenv-virtualenvwrapper
 
 ### install pipsi
-###  curl https://raw.githubusercontent.com/mitsuhiko/pipsi/master/get-pipsi.py | python
-### pipsi install goobook
+curl https://raw.githubusercontent.com/mitsuhiko/pipsi/master/get-pipsi.py | python
+pipsi install goobook
 
 # autoconf
 # bats
