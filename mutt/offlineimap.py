@@ -6,7 +6,7 @@ import re, subprocess
 def get_keychain_pass(account=None, server=None):
     params = {
         'security': '/usr/bin/security',
-        'command': 'find-internet-password',
+        'command': 'find-generic-password',
         'account': account,
         'server': server,
         'keychain': '~/Library/Keychains/login.keychain',

@@ -41,48 +41,31 @@ folderfilter = lambda folder: folder not in ['Trash',
 localrepository = work-local
 remoterepository = work-remote
 status_backend = sqlite
-filterheaders = Disposition-Notification-To
 
 [Repository work-local]
 type = Maildir
 localfolders = ~/.mail/work
-nametrans = lambda folder: {'Sent':             'Sent Items',
-                            'Trash':            'Deleted Items',
+nametrans = lambda folder: {'Archive': '[Gmail]/All Mail',
+                            'Drafts': '[Gmail]/Drafts',
+                            'Sent': '[Gmail]/Sent Mail',
+                            'Starred': '[Gmail]/Starred',
                             }.get(folder, folder)
 
 [Repository work-remote]
 maxconnections = 1
 type = IMAP
-remotehost = outlook.office365.com
-remoteuser = benjamin.reitzammer@vaamo.de
-remotepasseval = get_keychain_pass('benjamin.reitzammer@vaamo.de', 'outlook.office365.com')
-sslcacertfile = ~/certs.pem
+remotehost = imap.gmail.com
+remoteuser = br@crispymtn.com
+remotepasseval = get_keychain_pass('br@crispymtn.com', 'imap.gmail.com')
+sslcacertfile = /usr/local/etc/openssl/cert.pem
 ssl = yes
-nametrans = lambda folder: {'Sent Items':       'Sent',
-                            'Deleted Items':    'Trash',
+nametrans = lambda folder: {
+                            '[Gmail]/All Mail': 'Archive',
+                            '[Gmail]/Drafts': 'Drafts',
+                            '[Gmail]/Sent Mail': 'Sent',
+                            '[Gmail]/Starred': 'Starred',
                             }.get(folder, folder)
-folderfilter = lambda folder: folder not in ['Calendar', 
-                                             'Outbox',
-                                             'Clutter',
-                                             'Junk',
-                                             'Deleted Items',
-                                             'Conversation History',
-                                             'Tasks',
-                                             'Junk Email',
-                                             'Notes',
-                                             'Journal',
-                                             'Contacts', ]
-
-[Account work-new]
-localrepository = work-new-local
-remoterepository = work-remote
-status_backend = sqlite
-filterheaders = Disposition-Notification-To
-
-[Repository work-new-local]
-type = Maildir
-localfolders = ~/.mail/work-new
-nametrans = lambda folder: {'Sent':             'Sent Items',
-                            'Trash':            'Deleted Items',
-                            }.get(folder, folder)
+#folderfilter = lambda folder: folder not in ['Calendar', 
+#                                             'Journal',
+#                                             'Contacts', ]
 
