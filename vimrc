@@ -136,11 +136,6 @@ if has("autocmd")
   autocmd FileType mail setlocal spell spelllang=de_de
   autocmd FileType markdown setlocal spell spelllang=en_gb
 
-  augroup pencil
-    autocmd!
-    autocmd FileType markdown,mkd,md call pencil#init()
-    autocmd FileType txt,text         call pencil#init()
-  augroup END
 endif
 
 " Rename current file, thanks to Gary Bernhardt
