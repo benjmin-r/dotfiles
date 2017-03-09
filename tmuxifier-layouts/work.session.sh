@@ -2,14 +2,10 @@
 
 if initialize_session "work"; then
     window_root "~/Downloads"
-    new_window "m personal"
+    new_window "mails"
     run_cmd "m personal"
     split_h
     run_cmd "m work"
-
-    window_root "~/data/blog-drafts"
-    new_window "blog-drafts"
-    split_h
 
     window_root "~/Documents/crispymtn/projects/keyline"
     new_window "keyline"
