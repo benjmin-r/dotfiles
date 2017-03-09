@@ -15,6 +15,8 @@ alias kb="keybase --standalone"
 alias gti='git'
 alias gitp='git-smart-pull'
 alias gitl='git-smart-log'
+alias gc='git commit -v'
+alias gac='git commit -v --amend'
 
 alias highlightrb='pbpaste | pygmentize -f rtf -l ruby -O style=solarized | pbcopy'
 alias highlightpy='pbpaste | pygmentize -f rtf -l python -O style=solarized | pbcopy'
