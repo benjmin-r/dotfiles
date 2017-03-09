@@ -15,7 +15,7 @@ COMPLETION_WAITING_DOTS="true"
 # HIST_STAMPS="mm/dd/yyyy"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-plugins=(rails git autoenv rbenv vi-mode heroku httpie autojump tig)
+plugins=(rails autoenv rbenv vi-mode heroku httpie autojump tig)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -28,4 +28,5 @@ source ~/.dotfiles/shell/pyenv.sh
 source ~/.dotfiles/shell/rbenv.sh
 source ~/.dotfiles/shell/alias.zsh
 source ~/.dotfiles/shell/functions.sh
+source ~/.dotfiles/shell/scm_breeze.sh
 source ~/.dotfiles/shell/tmuxifier.sh
