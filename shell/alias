@@ -13,13 +13,13 @@ alias flush-gpg-agent='pgrkill gpg && eval $(gpg-agent --daemon)'
 
 alias kb="keybase --standalone"
 
-alias gti='git'
+#alias git='hub'
+#alias gti='git'
 alias gitp='git-smart-pull'
-alias gitl='git-smart-log'
-alias gs='git st'
-alias gac='git ac'
-
-alias composer="php composer.phar"
+#alias gitl='git-smart-log'
+#alias gs='git st'
+#alias gac='git ac'
+#alias gp='git pull-request'
 
 alias highlightrb='pbpaste | pygmentize -f rtf -l ruby -O style=solarized | pbcopy'
 alias highlightpy='pbpaste | pygmentize -f rtf -l python -O style=solarized | pbcopy'
