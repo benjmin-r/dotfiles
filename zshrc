@@ -30,3 +30,5 @@ source ~/.dotfiles/shell/alias.zsh
 source ~/.dotfiles/shell/functions.sh
 source ~/.dotfiles/shell/scm_breeze.sh
 source ~/.dotfiles/shell/tmuxifier.sh
+
+bindkey -M viins 'jk' vi-cmd-mode
