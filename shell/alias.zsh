@@ -6,20 +6,15 @@ alias gq='goobook query'
 alias ghi='TERM=xterm-256color ghi'
 
 alias tx='tmuxifier'
-complete -F _tmuxifier tmuxifier tx
 
 alias flush-gpg-pass='gpgconf --reload gpg-agent'
 alias flush-gpg-agent='pgrkill gpg && eval $(gpg-agent --daemon)'
 
 alias kb="keybase --standalone"
 
-#alias git='hub'
-#alias gti='git'
+alias gti='git'
 alias gitp='git-smart-pull'
-#alias gitl='git-smart-log'
-#alias gs='git st'
-#alias gac='git ac'
-#alias gp='git pull-request'
+alias gitl='git-smart-log'
 
 alias highlightrb='pbpaste | pygmentize -f rtf -l ruby -O style=solarized | pbcopy'
 alias highlightpy='pbpaste | pygmentize -f rtf -l python -O style=solarized | pbcopy'
