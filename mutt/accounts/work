@@ -22,6 +22,7 @@ set message_cachedir = ~/.mutt/cache/work-bodies
 
 macro index,pager A "<save-message>+work/Starred<enter>" "Starred"
 macro index,pager y "<save-message>+work/Archive<enter>" "Archive"
+macro index,pager z "<save-message>+work/Archive<enter>" "Archive"
 macro index,pager d "<save-message>+work/Trash<enter>" "Trash"
 
 macro index gi "<change-folder>+work/INBOX<enter>" "Jump to Inbox"
