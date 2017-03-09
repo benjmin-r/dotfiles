@@ -130,3 +130,6 @@
 	path = vim/bundle/bundler
 	url = https://github.com/tpope/vim-bundler.git
         ignore = dirty
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git
