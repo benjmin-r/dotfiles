@@ -36,6 +36,9 @@ colorscheme solarized_dark
 hi Normal -append font-size: 14px !important; font-family: "Menlo";
 hi StatusLine -append font-size:13px; font-family: "Menlo";
 
-qmark l http://keyline.dev/
+qmark l http://keyline.dev/tower/printeries
+qmark L http://localhost:3000/
+qmark w http://www.keyline-mis.de/
+qmark k https://github.com/crispymtn/keyline
 
 js services.services.autoCompleteSearch.class_="@mozilla.org/autocomplete/search;1?name=unifiedcomplete"
