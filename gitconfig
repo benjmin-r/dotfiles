@@ -31,7 +31,7 @@
 [color]
 	ui = always
 [core]
-    excludesfile = ~/.gitignore_global
+	excludesfile = /Users/benjamin/.gitignore_global
     editor = vim -f
     whitespace = tab-in-indent
 [github]
