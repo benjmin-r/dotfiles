@@ -12,6 +12,7 @@ brew cask install vlc
 brew cask install moneymoney
 brew cask install things
 brew cask install istat-menus
+brew cask install knox
 
 brew cask install truecrypt
 
