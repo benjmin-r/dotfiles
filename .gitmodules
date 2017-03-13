@@ -130,3 +130,6 @@
 	path = oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
         ignore = dirty
+[submodule "oh-my-zsh_custom/plugins/autoenv"]
+	path = oh-my-zsh_custom/plugins/autoenv
+	url = https://github.com/zpm-zsh/autoenv.git

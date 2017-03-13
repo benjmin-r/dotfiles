@@ -1,6 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/benjamin/.dotfiles/oh-my-zsh
 
+ZSH_CUSTOM=$HOME/.dotfiles/oh-my-zsh_custom
 ZSH_THEME="benjamin"
 
 HYPHEN_INSENSITIVE="true"
@@ -32,3 +33,11 @@ source ~/.dotfiles/shell/scm_breeze.sh
 source ~/.dotfiles/shell/tmuxifier.sh
 
 bindkey -M viins 'jk' vi-cmd-mode
+
+# enables to foreground first job with ctrl-z if it's in background
+# ... more or less enables toggling between shell and vi with ctrl-z
+foreground-firstjob() {
+  fg %1
+}
+zle -N foreground-firstjob
+bindkey '^Z' foreground-firstjob
