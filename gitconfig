@@ -7,6 +7,7 @@
     revs = rev-parse --short HEAD
     st = status
     sti = status --ignored
+    ss = --no-pager diff --cached
     ci = commit -v
     br = branch
     branches= branch -lav
