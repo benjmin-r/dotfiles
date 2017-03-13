@@ -78,10 +78,6 @@
 	path = vim/bundle/indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides.git
         ignore = dirty
-[submodule "autoenv"]
-	path = autoenv
-	url = https://github.com/kennethreitz/autoenv.git
-        ignore = dirty
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
