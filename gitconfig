@@ -7,13 +7,13 @@
     revs = rev-parse --short HEAD
     st = status
     sti = status --ignored
-    ss = --no-pager diff --cached
     ci = commit -v
     br = branch
     branches= branch -lav
     co = checkout
     df = diff --check
     dc = diff --cached
+    ndc = diff --name-only --cached
     difflog = log -p
     lgs = log --pretty=format:\"%C(yellow)%h%Creset %Cgreen%ar%Creset %Cblue%an%Creset %s %C(white)%d%Creset\" --graph --all
     lg = log --graph --oneline --decorate --all
