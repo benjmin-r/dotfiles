@@ -136,3 +136,9 @@
 [submodule "vim/bundle/rails-i18n"]
 	path = vim/bundle/rails-i18n
 	url = https://github.com/stefanoverna/vim-i18n.git
+[submodule "vim/bundle/yaml"]
+	path = vim/bundle/yaml
+	url = https://github.com/stephpy/vim-yaml.git
+[submodule "vim/bundle/unimpaired"]
+	path = vim/bundle/unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
