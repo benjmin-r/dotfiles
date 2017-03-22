@@ -142,3 +142,6 @@
 [submodule "vim/bundle/unimpaired"]
 	path = vim/bundle/unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "vim/bundle/nerdtree-git-markers"]
+	path = vim/bundle/nerdtree-git-markers
+	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
