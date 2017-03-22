@@ -50,7 +50,7 @@ command! -nargs=* Wrap set wrap linebreak nolist
 
 syntax on
 set timeout              " the following three lines make for a snappy space key
-set timeoutlen=3000      " reaction even though it's configured as leader key
+set timeoutlen=500      " reaction even though it's configured as leader key
 set ttimeoutlen=200
 
 set laststatus=2         " show lightline/airline right after startup
