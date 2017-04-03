@@ -33,6 +33,7 @@ source ~/.dotfiles/shell/scm_breeze.sh
 source ~/.dotfiles/shell/tmuxifier.sh
 
 bindkey -M viins 'jk' vi-cmd-mode
+bindkey -M viins 'kk' vi-cmd-mode
 
 # enables to foreground first job with ctrl-z if it's in background
 # ... more or less enables toggling between shell and vi with ctrl-z
