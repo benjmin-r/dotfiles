@@ -8,6 +8,7 @@
     st = status
     sti = status --ignored
     ci = commit -v
+    ca = commit -v --amend
     br = branch
     branches= branch -lav
     co = checkout

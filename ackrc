@@ -1,4 +1,7 @@
 --color
+--smart-case
 --ignore-dir=target
 --ignore-dir=play-2.2.2
 --ignore-dir=play-current
+--ignore-dir=log
+--ignore-dir=app/assets/javascripts/i18n/
