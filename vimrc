@@ -15,11 +15,19 @@ filetype plugin indent on
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 behave xterm
-set term=xterm-256color
-set background=dark
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-colorscheme solarized
+
+if has('nvim')
+    set background=light
+    colorscheme solarized
+    set colorcolumn=85
+else
+    set term=xterm-256color
+    let g:solarized_termcolors=256
+    let g:solarized_termtrans=1
+    set background=dark
+    colorscheme solarized
+end
+
 
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -27,10 +35,10 @@ colorscheme solarized
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 let mapleader = "\<Space>"
-source ~/.vim/keymappings.conf
-source ~/.vim/nerdtree.conf
-source ~/.vim/lightline.conf
-source ~/.vim/plugins.conf
+source ~/.dotfiles/vim/keymappings.conf
+source ~/.dotfiles/vim/nerdtree.conf
+source ~/.dotfiles/vim/lightline.conf
+source ~/.dotfiles/vim/plugins.conf
 
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -86,6 +94,8 @@ set foldlevelstart=999
 set vb t_vb=
 set showmatch         " show matching brackets
 set mat=5             " how many tenths of a second to blink matching brackets for
+packadd! matchit      " enable matchit plugin
+let b:match_words = '\<do\>:\<end\>'
 set pastetoggle=<leader>pp
 set modeline          " enable applying of modelines (such as for setting ft in file itself)
 set modelines=1
@@ -93,9 +103,9 @@ set tw=80
 set colorcolumn=+1
 set tags=./tags,.git/tags,tags;/
 set encoding=utf-8
-" Insert only one space when joining lines that contain sentence-terminating
-" " punctuation like `.`.
-set nojoinspaces"
+
+set nojoinspaces"     " Insert only one space when joining lines that contain sentence-terminating
+"set winminheight=0    " windows have zero height when being resized with ctl-w_
 
 " indent without tabs, default 4 spaces
 set ai                " Turn on autoindenting
@@ -107,7 +117,6 @@ set copyindent        " mimic indent behaviour of current file
 " searching
 set hlsearch        " do not highlight searched for phrases
 set incsearch       " BUT do highlight as you type you search phrase
-set showmatch
 set ignorecase      " make searching case-insensitive
 set smartcase       " make searches with mixed case, case-sensitive
 set gdefault        " always substitute globally
@@ -138,17 +147,6 @@ if has("autocmd")
   autocmd FileType markdown setlocal spell spelllang=en_gb
 
 endif
-
-" Rename current file, thanks to Gary Bernhardt
-function! RenameFile()
-    let old_name = expand('%')
-    let new_name = input('New file name: ', expand('%'), 'file')
-    if new_name != '' && new_name != old_name
-        exec ':saveas ' . new_name
-        exec ':silent !rm ' . old_name
-        redraw!
-    endif
-endfunction
 
 highlight GitGutterAdd ctermfg=darkgreen
 highlight GitGutterChange ctermfg=darkyellow
