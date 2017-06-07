@@ -13,7 +13,8 @@ backup() {
     sudo rsync -caxAX --info=progress2 --delete --ignore-errors --delete-excluded \
         --exclude-from="$HOME/bin/backup/rsync-std-excludes" \
         "$source" \
-        "$target" >> "$LOGFILE" 2>&1
+        "$target" 
+    #>> "$LOGFILE" 2>&1
 }
 
 check_file_checksums() {
@@ -37,4 +38,4 @@ main() {
     backup "/Users/benjamin/" "/Volumes/FullBackup/benjamin/"
 }
 
-main
+#main
