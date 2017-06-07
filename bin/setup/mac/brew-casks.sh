@@ -16,6 +16,10 @@ brew cask install knox
 
 brew cask install truecrypt
 
+## for contacts searching ... `cargo install mates`
+brew cask install cargo
+
+
 # brew cask install firefox
 # brew cask install iterm2
 # brew cask install moom

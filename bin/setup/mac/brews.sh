@@ -51,6 +51,7 @@ function main {
     bi vim
     bi macvim
     bi wget
+    bi vdirsyncer
 }
 
 

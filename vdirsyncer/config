@@ -1,0 +1,21 @@
+[general]
+status_path = "~/.vdirsyncer/status/"
+
+[pair personal_contacts]
+a = "personal_local"
+b = "personal_remote"
+
+## sync collection '32' from side b (remote) with
+## collection 'personal' from side a (local)
+collections = [["personal_contacts", "personal", "32"]]
+
+[storage personal_local]
+type = "filesystem"
+path = "~/.contacts/"
+fileext = ".vcf"
+
+[storage personal_remote]
+type = "carddav"
+url = "https://dav.mailbox.org:443"
+username = "benjmin-r@mailbox.org"
+password = "FzythJrQasnPyuDyoTZFPLr8b8wmhm"
