@@ -148,3 +148,9 @@
 [submodule "vim/bundle/coffee-script"]
 	path = vim/bundle/coffee-script
 	url = git@github.com:kchmck/vim-coffee-script.git
+[submodule "vim/bundle/vimux"]
+	path = vim/bundle/vimux
+	url = git@github.com:benmills/vimux.git
+[submodule "vim/bundle/auto-pairs"]
+	path = vim/bundle/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git

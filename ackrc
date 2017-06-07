@@ -4,4 +4,5 @@
 --ignore-dir=play-2.2.2
 --ignore-dir=play-current
 --ignore-dir=log
+--ignore-dir=_site
 --ignore-dir=app/assets/javascripts/i18n/
