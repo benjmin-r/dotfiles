@@ -7,24 +7,18 @@ set pgp_encrypt_only_command="pgpewrap gpg --batch --quiet --no-verbose --output
 set pgp_encrypt_sign_command="pgpewrap gpg %?p?--passphrase-fd 0? --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust --encrypt-to 0x7600BD53 -- -r %r -- %f"
 
 mailboxes "+personal/INBOX" \
-          "+personal/lists" \
           "+personal/Drafts" \
           "+personal/Archive" \
           "+personal/Sent" \
-          "+personal/rss" \
-          "+personal/root" \
-          "+personal/sc" \
-          "+personal/sc.SC" \
           "+personal/leadership_spark" \
-          "+personal/fail2ban" \
           "+personal/Trash" \
           "+personal/Junk"
 
 set header_cache     = ~/.mutt/cache/personal-headers # where to store headers
 set message_cachedir = ~/.mutt/cache/personal-bodies  # where to store bodies
 set spoolfile = "+personal/INBOX"
-set smtp_pass = "`python ~/.mutt/offlineimap.py "bnjmin-benjamin" "arcturus.uberspace.de"`"
-set smtp_url = "smtp://bnjmin-benjamin@arcturus.uberspace.de:587"
+set smtp_pass = "`python ~/.mutt/offlineimap.py "benjamin@ambestengestern.de" "mailbox.org"`"
+set smtp_url = "smtp://benjamin\@ambestengestern.de@smtp.mailbox.org:587"
 
 macro index,pager y "<save-message>=personal/Archive<enter>" "Archive"
 macro index,pager z "<save-message>=personal/Archive<enter>" "Archive"

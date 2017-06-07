@@ -14,27 +14,25 @@ sep = " "
 footer = "\n"
 
 
-
 [Account personal]
 localrepository = personal-local
-remoterepository = personal-remote
+remoterepository = personal-mailbox-org
 status_backend = sqlite
 
 [Repository personal-local]
 type = Maildir
 localfolders = ~/.mail/personal
 
-[Repository personal-remote]
+[Repository personal-mailbox-org]
 maxconnections = 1
 type = IMAP
-remotehost = arcturus.uberspace.de
-remoteuser = bnjmin-benjamin
-remotepasseval = get_keychain_pass('bnjmin-benjamin', 'arcturus.uberspace.de')
+remotehost = imap.mailbox.org
+remoteuser = 'benjamin@ambestengestern.de'
+remotepasseval = get_keychain_pass('benjamin@ambestengestern.de', 'mailbox.org')
 ssl = yes
-cert_fingerprint = afe378d8c458fb9be4c8601b7b3864664156d9f2
+cert_fingerprint = bca2f26f7c82fae9f4d0fd46bb3de8750bca216b
 folderfilter = lambda folder: folder not in ['Trash', 
                                              'Junk', ]
-
 
 
 [Account work]
