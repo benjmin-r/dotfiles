@@ -17,9 +17,12 @@ filetype plugin indent on
 behave xterm
 
 if has('nvim')
-    set background=light
-    colorscheme solarized
+    set background=dark
+    colorscheme dracula
     set colorcolumn=85
+
+    hi IndentGuidesOdd  guifg=#e3ddcc guibg=#efe6d0
+    hi IndentGuidesEven guifg=#ccc6b7 guibg=#e5dece
 else
     set term=xterm-256color
     let g:solarized_termcolors=256
@@ -74,7 +77,7 @@ set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
 set noswapfile
 set wildignore=*.swp,*.bak,*.pyc,*.class
-set noesckeys
+"set noesckeys
 set wildmenu             " Enhance command-line completion
 "set clipboard=unnamed    " use system clipboard
 set autoread             " reload file w/o asking if it changed outside of vim
@@ -94,8 +97,6 @@ set foldlevelstart=999
 set vb t_vb=
 set showmatch         " show matching brackets
 set mat=5             " how many tenths of a second to blink matching brackets for
-packadd! matchit      " enable matchit plugin
-let b:match_words = '\<do\>:\<end\>'
 set pastetoggle=<leader>pp
 set modeline          " enable applying of modelines (such as for setting ft in file itself)
 set modelines=1
@@ -120,6 +121,11 @@ set incsearch       " BUT do highlight as you type you search phrase
 set ignorecase      " make searching case-insensitive
 set smartcase       " make searches with mixed case, case-sensitive
 set gdefault        " always substitute globally
+
+
+" navigate ruby blocks with %
+"packadd! matchit      " enable matchit plugin
+"let b:match_words = '\<do\>:\<end\>'
 
 function SetIndentScala()
     setlocal nopi shiftwidth=2 softtabstop=2 textwidth=120
