@@ -1,6 +1,7 @@
 alias l='ls -hal'
 alias pd=pushd
-alias vi='vim'
+alias vi='nvim'
+alias vim='nvim'
 alias tmux-attach="tmux attach-session -t 0"
 alias gq='goobook query'
 alias ghi='TERM=xterm-256color ghi'

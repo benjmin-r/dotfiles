@@ -1,14 +1,31 @@
 set nocompatible      " Don't force vi compatibility
 
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" Pathogen loads plugins
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-call pathogen#infect()
-filetype off
-filetype plugin on
-filetype plugin indent on
-
+call plug#begin('~/.neovim/plugged')
+    Plug 'frankier/neovim-colors-solarized-truecolor-only'
+    Plug 'kien/ctrlp.vim'
+    Plug 'itchyny/lightline.vim'
+    Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+    Plug 'tomtom/tlib_vim'
+    Plug 'MarcWeber/vim-addon-mw-utils'
+    Plug 'tpope/vim-rails'
+    Plug 'tpope/vim-surround'
+    Plug 'ervandew/supertab'
+    Plug 'tpope/vim-unimpaired'
+    Plug 'christoomey/vim-tmux-navigator'
+    Plug 'benmills/vimux'
+    Plug 'vim-ruby/vim-ruby'
+    Plug 'stephpy/vim-yaml'
+    Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'terryma/vim-expand-region'
+    Plug 'tpope/vim-fugitive'
+    Plug 'garbas/vim-snipmate'
+    Plug 'kchmck/vim-coffee-script'
+    Plug 'jlanzarotta/bufexplorer'
+    Plug 'mileszs/ack.vim'
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'IN3D/vim-raml'
+call plug#end()
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " color scheme
@@ -16,16 +33,10 @@ filetype plugin indent on
 
 behave xterm
 
-set term=xterm-256color
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
+set termguicolors
 set background=dark
 colorscheme solarized
-
-" navigate ruby blocks with %
-packadd! matchit      " enable matchit plugin
-let b:match_words = '\<do\>:\<end\>'
-
+set colorcolumn=85
 
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -35,8 +46,8 @@ let b:match_words = '\<do\>:\<end\>'
 let mapleader = "\<Space>"
 source ~/.dotfiles/vim/keymappings.conf
 source ~/.dotfiles/vim/nerdtree.conf
-source ~/.dotfiles/vim/lightline.conf
 source ~/.dotfiles/vim/plugins.conf
+source ~/.dotfiles/vim/lightline.conf
 
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -95,12 +106,12 @@ set mat=5             " how many tenths of a second to blink matching brackets f
 set pastetoggle=<leader>pp
 set modeline          " enable applying of modelines (such as for setting ft in file itself)
 set modelines=1
-set tw=120
+set tw=80
 set colorcolumn=+1
 set tags=./tags,.git/tags,tags;/
 set encoding=utf-8
 
-set nojoinspaces"     " Insert only one space when joining lines that contain sentence-terminating
+set nojoinspaces      " Insert only one space when joining lines that contain sentence-terminating
 "set winminheight=0    " windows have zero height when being resized with ctl-w_
 
 " indent without tabs, default 4 spaces
@@ -118,13 +129,9 @@ set smartcase       " make searches with mixed case, case-sensitive
 set gdefault        " always substitute globally
 
 
-function SetIndentScala()
-    setlocal nopi shiftwidth=2 softtabstop=2 textwidth=120
-endfunction
 command SetIndent2Spaces set nopi shiftwidth=2 softtabstop=2
 command SetIndent4Spaces set nopi shiftwidth=4 softtabstop=4
 command SetIndentTabs set noet ci pi sts=0 sw=4 ts=4
-
 command ShowLineNumbers set relativenumber number
 command DontShowLineNumbers set norelativenumber nonumber
 
@@ -137,16 +144,8 @@ if has("autocmd")
   autocmd BufNewFile,BufRead,BufEnter *.html SetIndent2Spaces
   autocmd BufNewFile,BufRead,BufEnter *.yml SetIndent2Spaces
   autocmd BufNewFile,BufRead,BufEnter *.rb SetIndent2Spaces
-  autocmd BufNewFile,BufRead,BufEnter *.scala call SetIndentScala()
   au BufNewFile,BufRead *.prawn set filetype=ruby
 
   autocmd FileType mail setlocal spell spelllang=de_de
   autocmd FileType markdown setlocal spell spelllang=en_gb
-
 endif
-
-highlight GitGutterAdd ctermfg=darkgreen
-highlight GitGutterChange ctermfg=darkyellow
-highlight GitGutterDelete ctermfg=darkred
-highlight GitGutterChangeDelete ctermfg=darkyellow
-highlight SignColumn ctermbg=black
