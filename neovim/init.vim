@@ -5,6 +5,7 @@ call plug#begin('~/.neovim/plugged')
     Plug 'kien/ctrlp.vim'
     Plug 'itchyny/lightline.vim'
     Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+    Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
     Plug 'tomtom/tlib_vim'
     Plug 'MarcWeber/vim-addon-mw-utils'
     Plug 'tpope/vim-rails'
@@ -15,7 +16,6 @@ call plug#begin('~/.neovim/plugged')
     Plug 'benmills/vimux'
     Plug 'vim-ruby/vim-ruby'
     Plug 'stephpy/vim-yaml'
-    Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'airblade/vim-gitgutter'
     Plug 'terryma/vim-expand-region'
     Plug 'tpope/vim-fugitive'
