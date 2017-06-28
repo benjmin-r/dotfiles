@@ -26,3 +26,5 @@ alias highlightrb='pbpaste | pygmentize -f rtf -l ruby -O style=solarized | pbco
 alias highlightpy='pbpaste | pygmentize -f rtf -l python -O style=solarized | pbcopy'
 alias highlightjava='pbpaste | pygmentize -f rtf -l java -O style=solarized | pbcopy'
 alias start-postgres='postgres -D /usr/local/var/postgres'
+
+alias sync-contacts="PYTHONPATH='' vdirsyncer sync && mates index"

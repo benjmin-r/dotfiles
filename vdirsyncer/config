@@ -5,8 +5,8 @@ status_path = "~/.vdirsyncer/status/"
 a = "personal_local"
 b = "personal_remote"
 
-## sync collection '32' from side b (remote) with
-## collection 'personal' from side a (local)
+## sync collection "32" from side b (remote) with
+## collection "personal" from side a (local)
 collections = [["personal_contacts", "personal", "32"]]
 
 [storage personal_local]
@@ -17,5 +17,5 @@ fileext = ".vcf"
 [storage personal_remote]
 type = "carddav"
 url = "https://dav.mailbox.org:443"
-username = "benjmin-r@mailbox.org"
-password = "FzythJrQasnPyuDyoTZFPLr8b8wmhm"
+username = "benjamin@ambestengestern.de"
+password.fetch = ["command", "python", "/Users/benjamin/.mutt/offlineimap.py", "benjamin@ambestengestern.de", "mailbox.org"]

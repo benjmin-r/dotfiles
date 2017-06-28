@@ -11,4 +11,7 @@ export TMUXIFIER_LAYOUT_PATH=$HOME/.dotfiles/tmuxifier-layouts
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 export GOPATH=$HOME/go
 
-export PATH=~/bin:~/local-bin:$GOPATH/bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:~/.local/bin:~/.dotfiles/tmuxifier/bin:$PATH
+export MATES_DIR=~/.contacts/personal
+export CARGO_BIN_PATH=~/.cargo/bin
+
+export PATH=~/bin:~/local-bin:$CARGO_BIN_PATH:$GOPATH/bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:~/.local/bin:~/.dotfiles/tmuxifier/bin:$PATH
