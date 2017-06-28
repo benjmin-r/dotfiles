@@ -157,3 +157,6 @@
 [submodule "vim/bundle/dracula"]
 	path = vim/bundle/dracula
 	url = https://github.com/dracula/vim.git
+[submodule "vim/bundle/vim-raml"]
+	path = vim/bundle/vim-raml
+	url = https://github.com/kennethzfeng/vim-raml.git
