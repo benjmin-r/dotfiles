@@ -25,6 +25,9 @@ call plug#begin('~/.neovim/plugged')
     Plug 'mileszs/ack.vim'
     Plug 'jiangmiao/auto-pairs'
     Plug 'IN3D/vim-raml'
+    Plug 'qpkorr/vim-bufkill'
+    Plug 'dracula/vim'
+    Plug 'tpope/vim-endwise'
 call plug#end()
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -36,7 +39,7 @@ behave xterm
 set termguicolors
 set background=dark
 colorscheme solarized
-set colorcolumn=85
+set colorcolumn=120
 
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -106,8 +109,8 @@ set mat=5             " how many tenths of a second to blink matching brackets f
 set pastetoggle=<leader>pp
 set modeline          " enable applying of modelines (such as for setting ft in file itself)
 set modelines=1
-set tw=80
-set colorcolumn=+1
+set tw=120
+set colorcolumn=120
 set tags=./tags,.git/tags,tags;/
 set encoding=utf-8
 
