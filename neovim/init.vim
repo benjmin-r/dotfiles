@@ -37,6 +37,7 @@ call plug#end()
 behave xterm
 
 set termguicolors
+let g:solarized_termtrans = 1
 set background=dark
 colorscheme solarized
 set colorcolumn=120
