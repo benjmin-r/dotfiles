@@ -151,7 +151,7 @@ set reverse_name                     # reply as whomever it was to
 set include                          # include message in replies
 set forward_quote                    # include message in forwards
 
-set editor = "vim +9"
+set editor = "nvim +9"
 
 set sendmail_wait = 0
 bind compose p postpone-message
