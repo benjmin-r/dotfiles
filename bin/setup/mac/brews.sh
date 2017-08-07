@@ -52,6 +52,7 @@ function main {
     bi macvim
     bi wget
     bi vdirsyncer
+    bi exa
 }
 
 
