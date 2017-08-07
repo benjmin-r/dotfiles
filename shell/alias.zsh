@@ -1,4 +1,6 @@
-alias l='ls -hal'
+#alias l='ls -hal'
+alias l='exa -la --git --group-directories-first'
+alias lt='exa -la --git --group-directories-first --sort modified'
 alias pd=pushd
 alias vi='nvim'
 alias vim='nvim'
