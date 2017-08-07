@@ -17,7 +17,6 @@ footer = "\n"
 [Account personal]
 localrepository = personal-local
 remoterepository = personal-mailbox-org
-status_backend = sqlite
 
 [Repository personal-local]
 type = Maildir
@@ -38,7 +37,6 @@ folderfilter = lambda folder: folder not in ['Trash',
 [Account work]
 localrepository = work-local
 remoterepository = work-remote
-status_backend = sqlite
 
 [Repository work-local]
 type = Maildir
