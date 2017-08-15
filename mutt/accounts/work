@@ -3,7 +3,7 @@
 source ~/.mutt/muttrc
 
 
-set from      = "br@crispymtn.com"
+set from      = "Benjamin Reitzammer <br@crispymtn.com>"
 set sendmail = "/usr/local/bin/msmtp -a work"
 
 set spoolfile = "+work/INBOX"
