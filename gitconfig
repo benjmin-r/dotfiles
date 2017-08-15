@@ -48,3 +48,5 @@
 	token = !security find-internet-password -a benjmin-r -s github.com -l 'ghi token' -w
 [pull]
 	rebase = true
+[url "ssh://git@heroku.com/"]
+	insteadOf = https://git.heroku.com/
