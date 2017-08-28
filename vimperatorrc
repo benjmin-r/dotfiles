@@ -6,6 +6,7 @@ nnoremap j 5j
 map <C-l> :tabnext<CR>
 map <C-h> :tabprevious<CR>
 map <leader>n :noh<CR>
+nmap x :set apptab=true    " pin tab
 
 " make textareas editable in macvim
 set editor='bash -lc "mvim -f \$*" mvim '
@@ -42,5 +43,6 @@ qmark L http://localhost:3000/
 qmark w http://www.keyline-mis.de/
 qmark k https://github.com/crispymtn/keyline
 qmark h https://dashboard.heroku.com/pipelines/2c7e17c7-700c-49e2-8447-568ea1c77fc9
+qmark i https://www.instapaper.com/u
 
 js services.services.autoCompleteSearch.class_="@mozilla.org/autocomplete/search;1?name=unifiedcomplete"
