@@ -1,5 +1,8 @@
 abbr -a g git
 abbr -a gc git commit -v
+abbr -a gac git commit -v --all
+abbr -a gca git commit -v --append
+abbr -a gaca git commit -v --append --all
 abbr -a ga git add
 abbr -a gd git diff
 abbr -a gdc git diff --cached
