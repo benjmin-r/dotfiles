@@ -4,30 +4,35 @@ call plug#begin('~/.neovim/plugged')
     Plug 'frankier/neovim-colors-solarized-truecolor-only'
     Plug 'kien/ctrlp.vim'
     Plug 'itchyny/lightline.vim'
-    Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-    Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
+    Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind']}
+    Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': ['NERDTreeToggle', 'NERDTreeFind']}
     Plug 'tomtom/tlib_vim'
     Plug 'MarcWeber/vim-addon-mw-utils'
     Plug 'tpope/vim-rails'
     Plug 'tpope/vim-surround'
     Plug 'ervandew/supertab'
-    Plug 'tpope/vim-unimpaired'
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'benmills/vimux'
     Plug 'vim-ruby/vim-ruby'
     Plug 'stephpy/vim-yaml'
     Plug 'airblade/vim-gitgutter'
-    "Plug 'terryma/vim-expand-region'
-    Plug 'tpope/vim-fugitive'
     Plug 'garbas/vim-snipmate'
     Plug 'kchmck/vim-coffee-script'
     Plug 'jlanzarotta/bufexplorer'
-    Plug 'mileszs/ack.vim'
+    Plug 'mileszs/ack.vim', { 'on': ['Ack', 'Ack!'] }
     Plug 'jiangmiao/auto-pairs'
-    "Plug 'IN3D/vim-raml'
+    Plug 'IN3D/vim-raml'
     Plug 'qpkorr/vim-bufkill'
-    Plug 'dracula/vim'
     Plug 'tpope/vim-endwise'
+    Plug 'skalnik/vim-vroom'
+    Plug 'sunaku/vim-ruby-minitest'
+    Plug 'dag/vim-fish'
+
+    "Plug 'tpope/vim-fireplace'
+    "Plug 'tpope/vim-unimpaired'
+    "Plug 'terryma/vim-expand-region'
+    "Plug 'tpope/vim-fugitive'
+    "Plug 'dracula/vim'
 call plug#end()
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
