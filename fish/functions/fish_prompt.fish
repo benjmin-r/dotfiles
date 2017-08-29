@@ -3,6 +3,12 @@
 
 set -g pad " "
 
+## Function to show current time prompt was rendered
+function show_time
+  set -l time (date +%H:%M)
+  prompt_segment normal yellow "$time"
+end
+
 ## Function to show a segment
 function prompt_segment -d "Function to show a segment"
   # Get colors
@@ -22,7 +28,7 @@ end
 ## Function to show current status
 function show_status -d "Function to show the current status"
   if [ $RETVAL -ne 0 ]
-    prompt_segment red white " ▲ "
+    prompt_segment magenta white " ▲ "
     set pad ""
     end
   if [ -n "$SSH_CLIENT" ]
@@ -79,8 +85,9 @@ end
 function fish_prompt
   set -g RETVAL $status
   show_status
+  show_time
   show_virtualenv
-  show_user
+  #show_user
   show_pwd
   show_prompt
 end
