@@ -5,7 +5,7 @@ set -g pad " "
 
 ## Function to show current time prompt was rendered
 function show_time
-  set -l time (date +%H:%M)
+  set -l time (date +%H:%M:%S)
   prompt_segment normal yellow "$time"
 end
 
@@ -44,27 +44,17 @@ function show_virtualenv -d "Show active python virtual environments"
   end
 end
 
-## Show user if not default
-function show_user -d "Show user"
-  if [ "$USER" != "$default_user" -o -n "$SSH_CLIENT" ]
-    set -l host (hostname -s)
-    set -l who (whoami)
-    #prompt_segment normal yellow " $who"
-    prompt_segment normal yellow "$who"
-
-    ## Skip @ bit if hostname == username
-    #if [ "$USER" != "$HOST" ]
-    #  prompt_segment normal white "@"
-    #  prompt_segment normal green "$host "
-    #  set pad ""
-    #end
-  end
-end
-
 # Show directory
 function show_pwd -d "Show the current directory"
   set -l pwd (prompt_pwd)
   prompt_segment normal blue "$pad$pwd"
+end
+
+# reuse builtin git prompt function
+function show_git_prompt
+  set -g __fish_git_prompt_show_informative_status true
+  set -g __fish_git_prompt_showcolorhints true
+  __fish_git_prompt
 end
 
 # Show prompt w/ privilege cue
@@ -87,7 +77,7 @@ function fish_prompt
   show_status
   show_time
   show_virtualenv
-  #show_user
   show_pwd
+  show_git_prompt
   show_prompt
 end
