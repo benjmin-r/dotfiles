@@ -1,4 +1,5 @@
 abbr -a g git
+abbr -a gp git smart-pull
 abbr -a gc git commit -v
 abbr -a gac git commit -v --all
 abbr -a gca git commit -v --amend

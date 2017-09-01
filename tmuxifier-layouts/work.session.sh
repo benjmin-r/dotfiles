@@ -1,11 +1,15 @@
-#session_root "~/"
-
 if initialize_session "work"; then
     window_root "~/Downloads"
-    new_window "mails"
+    new_window "personal"
     run_cmd "m personal"
     split_h
+    run_cmd "cd ~/data/notes"
+
+    window_root "~/Downloads"
+    new_window "work"
     run_cmd "m work"
+    split_h 70
+    run_cmd "cd ~/.todo; and todotxt-machine"
 
     window_root "~/Documents/crispymtn/projects/keyline"
     new_window "keyline"
