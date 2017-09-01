@@ -27,11 +27,13 @@ call plug#begin('~/.neovim/plugged')
     Plug 'skalnik/vim-vroom'
     Plug 'sunaku/vim-ruby-minitest'
     Plug 'dag/vim-fish'
+    Plug 'ecomba/vim-ruby-refactoring'
+    Plug 'vim-syntastic/syntastic/', { 'on': ['SyntasticToggleMode', 'SyntasticCheck'] }
+    Plug 'tpope/vim-fugitive'
 
     "Plug 'tpope/vim-fireplace'
     "Plug 'tpope/vim-unimpaired'
     "Plug 'terryma/vim-expand-region'
-    "Plug 'tpope/vim-fugitive'
     "Plug 'dracula/vim'
 call plug#end()
 
