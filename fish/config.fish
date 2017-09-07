@@ -26,3 +26,5 @@ status --is-interactive; and source (pyenv virtualenv-init -|psub)
 
 # ... and in case installing pipsi fails
 # ~/.pyenv/shims/pip install -U pip pipsi
+
+set -gx NVM_DIR ~/.nvm
