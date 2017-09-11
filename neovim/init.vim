@@ -2,7 +2,7 @@ set nocompatible      " Don't force vi compatibility
 
 call plug#begin('~/.neovim/plugged')
     Plug 'frankier/neovim-colors-solarized-truecolor-only'
-    Plug 'kien/ctrlp.vim'
+    "Plug 'kien/ctrlp.vim'
     Plug 'itchyny/lightline.vim'
     Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind']}
     Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': ['NERDTreeToggle', 'NERDTreeFind']}
@@ -18,7 +18,6 @@ call plug#begin('~/.neovim/plugged')
     Plug 'airblade/vim-gitgutter'
     Plug 'garbas/vim-snipmate'
     Plug 'kchmck/vim-coffee-script'
-    Plug 'jlanzarotta/bufexplorer'
     Plug 'mileszs/ack.vim', { 'on': ['Ack', 'Ack!'] }
     Plug 'jiangmiao/auto-pairs'
     Plug 'IN3D/vim-raml'
@@ -30,6 +29,7 @@ call plug#begin('~/.neovim/plugged')
     Plug 'ecomba/vim-ruby-refactoring'
     Plug 'vim-syntastic/syntastic/', { 'on': ['SyntasticToggleMode', 'SyntasticCheck'] }
     Plug 'tpope/vim-fugitive'
+    Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'  " Tell fzf plugin to use homebrew installed fzf
 
     "Plug 'tpope/vim-fireplace'
     "Plug 'tpope/vim-unimpaired'
