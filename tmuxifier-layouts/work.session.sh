@@ -9,7 +9,7 @@ if initialize_session "work"; then
     new_window "work"
     run_cmd "m work"
     split_h 70
-    run_cmd "cd ~/.todo; and work-todos"
+    run_cmd "work-todos"
 
     window_root "~/work/crispymtn/projects/keyline"
     new_window "keyline"
