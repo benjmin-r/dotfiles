@@ -29,7 +29,11 @@ call plug#begin('~/.neovim/plugged')
     Plug 'ecomba/vim-ruby-refactoring'
     Plug 'vim-syntastic/syntastic/', { 'on': ['SyntasticToggleMode', 'SyntasticCheck'] }
     Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-rhubarb'
     Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'  " Tell fzf plugin to use homebrew installed fzf
+    Plug 'benjmin-r/vim-i18n'
+
+    Plug 'dermusikman/sonicpi.vim'
 
     "Plug 'tpope/vim-fireplace'
     "Plug 'tpope/vim-unimpaired'
