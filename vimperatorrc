@@ -5,6 +5,8 @@ nnoremap k 5k
 nnoremap j 5j
 map <C-l> :tabnext<CR>
 map <C-h> :tabprevious<CR>
+map <C-b> :bmarks 
+map <C-k> :bmarks -tags keyline
 map <leader>n :noh<CR>
 nmap x :set apptab=true    " pin tab
 
