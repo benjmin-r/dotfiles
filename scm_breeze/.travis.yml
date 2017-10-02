@@ -1,3 +1,0 @@
-script: ./run_tests.sh
-before_script:
-  - sudo apt-get install zsh
