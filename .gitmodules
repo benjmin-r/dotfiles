@@ -126,13 +126,6 @@
 	path = vim/bundle/bundler
 	url = https://github.com/tpope/vim-bundler.git
         ignore = dirty
-[submodule "oh-my-zsh"]
-	path = oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
-        ignore = dirty
-[submodule "oh-my-zsh_custom/plugins/autoenv"]
-	path = oh-my-zsh_custom/plugins/autoenv
-	url = https://github.com/zpm-zsh/autoenv.git
 [submodule "vim/bundle/rails-i18n"]
 	path = vim/bundle/rails-i18n
 	url = https://github.com/stefanoverna/vim-i18n.git
