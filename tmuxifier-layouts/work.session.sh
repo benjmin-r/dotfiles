@@ -13,7 +13,7 @@ if initialize_session "work"; then
 
     window_root "~/work/crispymtn/projects/keyline"
     new_window "keyline"
-    split_h
+    split_h 60
 
     select_window 1
 fi
