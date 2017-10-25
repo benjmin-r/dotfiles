@@ -27,7 +27,6 @@ call plug#begin('~/.neovim/plugged')
     Plug 'sunaku/vim-ruby-minitest'
     Plug 'dag/vim-fish'
     Plug 'ecomba/vim-ruby-refactoring'
-    Plug 'vim-syntastic/syntastic/', { 'on': ['SyntasticToggleMode', 'SyntasticCheck'] }
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
     Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'  " Tell fzf plugin to use homebrew installed fzf
