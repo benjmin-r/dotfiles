@@ -14,6 +14,7 @@ brew cask install things
 brew cask install istat-menus
 brew cask install knox
 brew cask install keycastr   # for displaying keystrokes during screencasts or presentations
+brew cask install qutebrowser
 
 
 brew cask install truecrypt
