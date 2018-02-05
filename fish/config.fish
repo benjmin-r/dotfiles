@@ -50,3 +50,6 @@ set -gx NVM_DIR ~/.nvm
 # ~/.pyenv/shims/pip install -U pip pipsi
 status --is-interactive; and source (pyenv init -|psub)
 status --is-interactive; and source (pyenv virtualenv-init -|psub)
+
+# make crystal work
+set -g fish_user_paths "/usr/local/opt/llvm/bin" $fish_user_paths
