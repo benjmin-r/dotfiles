@@ -39,7 +39,7 @@ call plug#begin('~/.neovim/plugged')
     Plug 'dermusikman/sonicpi.vim'
 
     "Plug 'tpope/vim-fireplace'
-    "Plug 'tpope/vim-unimpaired'
+    Plug 'tpope/vim-unimpaired'
 call plug#end()
 
 
