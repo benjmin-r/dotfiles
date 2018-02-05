@@ -29,7 +29,7 @@ remotehost = imap.mailbox.org
 remoteuser = 'benjamin@ambestengestern.de'
 remotepasseval = get_keychain_pass('benjamin@ambestengestern.de', 'mailbox.org')
 ssl = yes
-cert_fingerprint = bca2f26f7c82fae9f4d0fd46bb3de8750bca216b
+cert_fingerprint = 65149f34d0fb7d832c93ef845d4440c4b6fc8965
 folderfilter = lambda folder: folder not in ['Trash', 
                                              'Junk', ]
 
