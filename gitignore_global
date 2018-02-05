@@ -2,4 +2,6 @@
 .DS_Store
 .env*
 *.vim-session
+*.vimsession
+*.vimsession*
 .development.log.filter
