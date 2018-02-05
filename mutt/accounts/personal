@@ -36,11 +36,12 @@ set from      = "benjamin@ambestengestern.de"
 set record    = "+personal/Sent"
 set postponed = "+personal/Drafts"
 
-alternates benjamin@nur-eine-i.de breitzammer@gmail.com, benjamin@squeakyvessel.com
+alternates benjamin@nur-eine-i.de breitzammer@gmail.com, benjamin@squeakyvessel.com, benjamin@cto.coffee
 
 alias identity_1    Benjamin Reitzammer <benjamin@ambestengestern.de>
 alias identity_2    Benjamin Reitzammer <benjamin@squeakyvessel.com>
-alias identity_3    B Reitzammer <breitzammer@gmail.com>
+alias identity_3    Benjamin Reitzammer <benjamin@cto.coffee>
+alias identity_4    B Reitzammer <breitzammer@gmail.com>
 macro compose v "<edit-from>^Uidentity_<tab>" "Select from" 
 
 macro index F "<shell-escape>offlineimap -a personal<enter>"           "run offlineimap to sync all mail"
