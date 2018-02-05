@@ -8,7 +8,7 @@ if initialize_session "work"; then
     window_root "~/Downloads"
     new_window "work"
     run_cmd "m work"
-    split_h 70
+    split_h 60
     run_cmd "work-todos"
 
     window_root "~/work/crispymtn/projects/keyline"
