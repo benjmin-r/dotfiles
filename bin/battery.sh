@@ -35,7 +35,7 @@ __battery_osx() {
 
             if [[ -n $maxcap && -n $curcap && -n $extconnect ]]; then
                 if [[ "$curcap" == "$maxcap" || "$fully_charged" == "Yes" && $extconnect == "Yes"  ]]; then
-                    return
+                    echo "${HEART_FULL} 100"
                 fi
                 charge=$(( 100 * $curcap / $maxcap ))
                 if [[ $charge -lt 20 ]]; then
