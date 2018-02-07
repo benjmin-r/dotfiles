@@ -28,7 +28,7 @@ call plug#begin('~/.neovim/plugged')
     Plug 'sunaku/vim-ruby-minitest'
     Plug 'dag/vim-fish'
     Plug 'tpope/vim-fugitive'
-    Plug 'tpope/vim-rhubarb', { 'on': ['GBrowse'] }
+    Plug 'tpope/vim-rhubarb'
     Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'  " Tell fzf plugin to use homebrew installed fzf
     Plug 'benjmin-r/vim-i18n'
     Plug 'tpope/vim-commentary'
