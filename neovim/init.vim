@@ -2,6 +2,8 @@ set nocompatible      " Don't force vi compatibility
 
 call plug#begin('~/.neovim/plugged')
     Plug 'frankier/neovim-colors-solarized-truecolor-only'
+    Plug 'rakr/vim-one'
+
     Plug 'itchyny/lightline.vim'
     Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind']}
     Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': ['NERDTreeToggle', 'NERDTreeFind']}
@@ -22,23 +24,21 @@ call plug#begin('~/.neovim/plugged')
     Plug 'IN3D/vim-raml'
     Plug 'qpkorr/vim-bufkill'
     Plug 'tpope/vim-endwise'
-    Plug 'skalnik/vim-vroom'
+    Plug 'skalnik/vim-vroom', { 'on': ['VroomRunTestFile'] }
     Plug 'sunaku/vim-ruby-minitest'
     Plug 'dag/vim-fish'
-    Plug 'ecomba/vim-ruby-refactoring'
     Plug 'tpope/vim-fugitive'
-    Plug 'tpope/vim-rhubarb'
+    Plug 'tpope/vim-rhubarb', { 'on': ['GBrowse'] }
     Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'  " Tell fzf plugin to use homebrew installed fzf
     Plug 'benjmin-r/vim-i18n'
     Plug 'tpope/vim-commentary'
     Plug 'w0rp/ale'
     Plug 'jlanzarotta/bufexplorer', { 'on': ['BufExplorer'] }
+
     Plug 'junegunn/goyo.vim', { 'on': ['Goyo'] }
     Plug 'dracula/vim', { 'on': ['Goyo'] }
 
     Plug 'dermusikman/sonicpi.vim'
-
-    "Plug 'tpope/vim-fireplace'
     Plug 'tpope/vim-unimpaired'
 call plug#end()
 
@@ -48,6 +48,7 @@ call plug#end()
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 behave xterm
 
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 let g:solarized_termtrans = 1
 set background=dark
@@ -59,10 +60,43 @@ set colorcolumn=120
 " Keymappings and complex plugins
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 let mapleader = "\<Space>"
+
+source ~/.dotfiles/vim/lightline.conf
 source ~/.dotfiles/vim/functions-commands.vim
 source ~/.dotfiles/vim/keymappings.conf
 source ~/.dotfiles/vim/nerdtree.conf
-source ~/.dotfiles/vim/lightline.conf
 source ~/.dotfiles/vim/plugins.conf
 source ~/.dotfiles/vim/filetypes.vim
 source ~/.dotfiles/vim/settings.vim
+
+
+function! Solar_light()
+    set background=light
+    colorscheme solarized
+    " tell iterm to switch to light color profile
+    silent !osascript -e 'tell app "System Events" to keystroke "l" using {shift down, option down, control down}'
+    execute "silent !tmux source-file " . shellescape(expand('~/.dotfiles/tmux/solarized/tmuxcolors-light.conf'))
+endfunction
+
+function! Solar_dark()
+    set background=dark
+    colorscheme solarized
+    " tell iterm to switch to dark color profile
+    silent !osascript -e 'tell app "System Events" to keystroke "d" using {shift down, option down, control down}'
+    execute "silent !tmux source-file " . shellescape(expand('~/.dotfiles/tmux/solarized/tmuxcolors-dark.conf'))
+endfunction
+
+function! Solar_swap()
+    if &background ==? 'dark'
+        call Solar_light()
+    else
+        call Solar_dark()
+    endif
+endfunction
+
+command! SolarDark  call Solar_dark()
+command! SolarLight call Solar_light()
+command! SolarSwap  call Solar_swap()
+
+nnoremap <leader>sd :SolarDark<CR>
+nnoremap <leader>sl :SolarLight<CR>
