@@ -8,6 +8,4 @@ function backup -d "use rsync to copy from SOURCE_DIR to TARGET_DIR"
         --exclude-from="$HOME/bin/backup/rsync-std-excludes" \
         "$source_dir" \
         "$target_dir"
-
 end
-
