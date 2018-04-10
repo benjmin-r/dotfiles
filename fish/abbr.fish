@@ -7,3 +7,5 @@ abbr -a lt exa -lT --git --group-directories-first --sort modified
 
 abbr -a tx tmuxifier
 abbr -a sync-contacts "PYTHONPATH='' vdirsyncer sync and mates index"
+
+abbr -a se source .env.fish
