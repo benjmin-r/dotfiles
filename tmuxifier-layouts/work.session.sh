@@ -3,7 +3,15 @@ if initialize_session "work"; then
     new_window "work"
     run_cmd "m work"
     split_h 60
-    run_cmd "work-todos"
+
+    window_root "~/work/crispymtn/projects/keyline"
+    new_window "keyline-workers"
+    run_cmd "source .env.fish;"
+    split_h 70
+    run_cmd "source .env.fish"
+    select_pane 1
+    split_v
+    run_cmd "source .env.fish;"
 
     window_root "~/work/crispymtn/projects/keyline"
     new_window "keyline"
