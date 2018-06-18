@@ -24,7 +24,6 @@ call plug#begin('~/.neovim/plugged')
     Plug 'IN3D/vim-raml'
     Plug 'qpkorr/vim-bufkill'
     Plug 'tpope/vim-endwise'
-    Plug 'skalnik/vim-vroom', { 'on': ['VroomRunTestFile'] }
     Plug 'sunaku/vim-ruby-minitest'
     Plug 'dag/vim-fish'
     Plug 'tpope/vim-fugitive'
