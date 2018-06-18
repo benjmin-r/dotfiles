@@ -1,6 +1,8 @@
 abbr -a vim nvim
 abbr -a vi  nvim
 
+abbr -a cat bat
+
 abbr -a l exa -la
 abbr -a lt exa -lT --git --group-directories-first --sort modified
 
