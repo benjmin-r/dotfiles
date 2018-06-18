@@ -12,6 +12,7 @@ abbr -a gr git remote
 abbr -a grh git reset HEAD
 abbr -a grhh git reset HEAD --hard
 abbr -a gl git lgs
+abbr -a gs git co -
 
 function git
   # inspired by thoughtbot/dotfiles

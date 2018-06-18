@@ -43,6 +43,15 @@ eval (tmuxifier init - fish)
 set -gx NVM_DIR ~/.nvm
 
 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# gem_home - a better way to do bundler
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+source ~/.config/fish/gem_home.fish
+# brew installed chruby
+# source /usr/local/Cellar/chruby-fish/0.8.1/share/chruby/auto.fish
+source /usr/local/Cellar/chruby-fish/0.8.1/share/chruby/chruby.fish
+
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # setup pyenv shims ... virtualenv is used as a pyenv plugin
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
