@@ -1,1 +1,0 @@
-eval "$(tmuxifier init -)"
