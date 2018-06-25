@@ -15,20 +15,20 @@ def translate_knob(knob_cc)
   end
 end
 
-def kn1(max_value: 10)
-  (get(:knob1) || 1) * max_value / 127
+def kn1(max: 10)
+  (get(:knob1) || 1) * max / 127
 end
 
-def kn2(max_value: 10)
-  (get(:knob2) || 1) * max_value / 127
+def kn2(max: 10)
+  (get(:knob2) || 1) * max / 127
 end
 
-def kn3(max_value: 10)
-  (get(:knob3) || 1) * max_value / 127
+def kn3(max: 10)
+  (get(:knob3) || 1) * max / 127
 end
 
-def kn4(max_value: 10)
-  (get(:knob4) || 1) * max_value / 127
+def kn4(max: 10)
+  (get(:knob4) || 1) * max / 127
 end
 
 
@@ -61,5 +61,25 @@ def bpm(value)
   elsif value != get(:bpm)
     set :bpm, value
     use_bpm value
+  end
+end
+
+# allows
+# ```
+# play 40
+# sleep 1
+# play 42
+# sleep 2
+# play 44
+# sleep 3
+# play 46
+# sleep 1
+# ```
+# to be expressed as `play_timed [40, 42, 44, 46], [1, 2, 3], amp: 2`
+define :play_timed do |notes, times, **args|
+  ts = times.ring
+  notes.each_with_index do |note, i|
+    play note, **args
+    sleep ts[i]
   end
 end
