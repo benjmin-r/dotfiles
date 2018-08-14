@@ -35,7 +35,7 @@ call plug#begin('~/.neovim/plugged')
     Plug 'jlanzarotta/bufexplorer', { 'on': ['BufExplorer'] }
 
     Plug 'junegunn/goyo.vim', { 'on': ['Goyo'] }
-    Plug 'dracula/vim', { 'on': ['Goyo'] }
+    Plug 'dracula/vim'
 
     Plug 'dermusikman/sonicpi.vim'
     Plug 'tpope/vim-unimpaired'
