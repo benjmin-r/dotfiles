@@ -36,6 +36,9 @@ call plug#begin('~/.neovim/plugged')
 
     Plug 'junegunn/goyo.vim', { 'on': ['Goyo'] }
     Plug 'dracula/vim'
+    Plug 'tyrannicaltoucan/vim-quantum'
+    Plug 'jdkanani/vim-material-theme'
+    Plug 'skielbasa/vim-material-monokai'
 
     Plug 'dermusikman/sonicpi.vim'
     Plug 'tpope/vim-unimpaired'
@@ -51,7 +54,12 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 let g:solarized_termtrans = 1
 set background=dark
+"colorscheme quantum
 colorscheme solarized
+"colorscheme material-theme
+"
+" let g:materialmonokai_subtle_spell=1
+" colorscheme material-monokai
 set colorcolumn=120
 
 
@@ -73,16 +81,14 @@ function! Solar_light()
     set background=light
     colorscheme solarized
     " tell iterm to switch to light color profile
-    silent !osascript -e 'tell app "System Events" to keystroke "l" using {shift down, option down, control down}'
-    execute "silent !tmux source-file " . shellescape(expand('~/.dotfiles/tmux/solarized/tmuxcolors-light.conf'))
+    "silent !osascript -e 'tell app "System Events" to keystroke "l" using {shift down, option down, control down}'
 endfunction
 
 function! Solar_dark()
     set background=dark
     colorscheme solarized
     " tell iterm to switch to dark color profile
-    silent !osascript -e 'tell app "System Events" to keystroke "d" using {shift down, option down, control down}'
-    execute "silent !tmux source-file " . shellescape(expand('~/.dotfiles/tmux/solarized/tmuxcolors-dark.conf'))
+    "silent !osascript -e 'tell app "System Events" to keystroke "d" using {shift down, option down, control down}'
 endfunction
 
 function! Solar_swap()

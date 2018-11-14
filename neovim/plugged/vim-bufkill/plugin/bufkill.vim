@@ -545,7 +545,7 @@ function! <SID>GotoBuffer(cmd, bang) "{{{1
         endif
         let w:BufKillIndex += 1
       else
-        let w:BuffKillIndex -= 1
+        let w:BufKillIndex -= 1
       endif
     endif
 
@@ -736,6 +736,7 @@ augroup BufKill
 autocmd!
 autocmd BufKill WinEnter * call <SID>UpdateList('WinEnter')
 autocmd BufKill BufEnter * call <SID>UpdateList('BufEnter')
+autocmd BufKill BufAdd * call <SID>UpdateList('BufAdd')
 autocmd BufKill WinLeave * call <SID>UpdateLastColumn('WinLeave')
 autocmd BufKill BufLeave * call <SID>UpdateLastColumn('BufLeave')
 augroup END

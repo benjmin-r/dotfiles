@@ -42,9 +42,10 @@ augroup endwise " {{{1
         \ let b:endwise_pattern = '\%(\<End\>.*\)\@<!\<&\>' |
         \ let b:endwise_syngroups = 'vbStatement,vbnetStorage,vbnetProcedure,vbnet.*Words,AspVBSStatement'
   autocmd FileType vim
-        \ let b:endwise_addition = '\=submatch(0)=="augroup" ? submatch(0) . " END" : "end" . submatch(0)' |
-        \ let b:endwise_words = 'fu,fun,func,function,wh,while,if,for,try,au,augroup' |
-        \ let b:endwise_syngroups = 'vimFuncKey,vimNotFunc,vimCommand,vimAugroupKey'
+        \ let b:endwise_addition = '\=submatch(0)=~"aug\\%[roup]" ? submatch(0) . " END" : "end" . submatch(0)' |
+        \ let b:endwise_words = 'fu\%[nction],wh\%[ile],if,for,try,aug\%[roup]\%(\s\+\cEND\)\@!' |
+        \ let b:endwise_end_pattern = '\%(end\%(fu\%[nction]\|wh\%[hile]\|if\|for\|try\)\)\|aug\%[roup]\%(\s\+\cEND\)' |
+        \ let b:endwise_syngroups = 'vimFuncKey,vimNotFunc,vimCommand,vimAugroupKey,vimAugroup,vimAugroupError'
   autocmd FileType c,cpp,xdefaults,haskell
         \ let b:endwise_addition = '#endif' |
         \ let b:endwise_words = 'if,ifdef,ifndef' |
@@ -63,6 +64,10 @@ augroup endwise " {{{1
         \ let b:endwise_addition = '{% end& %}' |
         \ let b:endwise_words = 'autoescape,block,blocktrans,cache,comment,filter,for,if,ifchanged,ifequal,ifnotequal,language,spaceless,verbatim,with' |
         \ let b:endwise_syngroups = 'djangoTagBlock,djangoStatement'
+  autocmd FileType htmljinja,jinja.html
+        \ let b:endwise_addition = '{% end& %}' |
+        \ let b:endwise_words = 'autoescape,block,cache,call,filter,for,if,macro,raw,set,trans,with' |
+        \ let b:endwise_syngroups = 'jinjaTagBlock,jinjaStatement'
   autocmd FileType snippets
         \ let b:endwise_addition = 'endsnippet' |
         \ let b:endwise_words = 'snippet' |
@@ -109,10 +114,10 @@ if !exists('g:endwise_no_mappings')
     " Already mapped
   elseif maparg('<CR>','i') =~ '<CR>'
     exe "imap <script> <C-X><CR> ".maparg('<CR>','i')."<SID>AlwaysEnd"
-    exe "imap <script> <CR>      ".maparg('<CR>','i')."<SID>DiscretionaryEnd"
+    exe "imap <silent> <script> <CR>      ".maparg('<CR>','i')."<SID>DiscretionaryEnd"
   elseif maparg('<CR>','i') =~ '<Plug>\w\+CR'
     exe "imap <C-X><CR> ".maparg('<CR>', 'i')."<Plug>AlwaysEnd"
-    exe "imap <CR> ".maparg('<CR>', 'i')."<Plug>DiscretionaryEnd"
+    exe "imap <silent> <CR> ".maparg('<CR>', 'i')."<Plug>DiscretionaryEnd"
   else
     imap <script> <C-X><CR> <CR><SID>AlwaysEnd
     imap <CR> <CR><Plug>DiscretionaryEnd
@@ -135,7 +140,7 @@ function! s:crend(always)
   let n = ""
   if !exists("b:endwise_addition") || !exists("b:endwise_words") || !exists("b:endwise_syngroups")
     return n
-  end
+  endif
   let synids = join(map(split(b:endwise_syngroups, ','), 'hlID(v:val)'), ',')
   let wordchoice = '\%('.substitute(b:endwise_words,',','\\|','g').'\)'
   if exists("b:endwise_pattern")
@@ -149,7 +154,9 @@ function! s:crend(always)
   let word  = matchstr(getline(lnum),beginpat)
   let endword = substitute(word,'.*',b:endwise_addition,'')
   let y = n.endword."\<C-O>O"
-  if b:endwise_addition[0:1] ==# '\='
+  if exists("b:endwise_end_pattern")
+    let endpat = '\w\@<!'.substitute(word, '.*', substitute(b:endwise_end_pattern, '\\', '\\\\', 'g'), '').'\w\@!'
+  elseif b:endwise_addition[0:1] ==# '\='
     let endpat = '\w\@<!'.endword.'\w\@!'
   else
     let endpat = '\w\@<!'.substitute('\w\+', '.*', b:endwise_addition, '').'\w\@!'
