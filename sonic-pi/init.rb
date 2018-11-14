@@ -1,7 +1,11 @@
 load_snippets "~/.sonic-pi/snippets", quiet: true
 
-def my_samples
-  '~/data/music-samples'
+def snippets
+  '~/data/music/music-samples_all/snippets'
+end
+
+def claps
+  '~/data/music/music-samples_all/claps'
 end
 
 
@@ -16,19 +20,23 @@ def translate_knob(knob_cc)
 end
 
 def kn1(max: 10)
-  (get(:knob1) || 1) * max / 127
+  ((get(:knob1) || 1) * max / 127.to_f).round(2)
 end
 
 def kn2(max: 10)
-  (get(:knob2) || 1) * max / 127
+  ((get(:knob2) || 1) * max / 127.to_f).round(2)
 end
 
 def kn3(max: 10)
-  (get(:knob3) || 1) * max / 127
+  ((get(:knob3) || 1) * max / 127.to_f).round(2)
 end
 
 def kn4(max: 10)
-  (get(:knob4) || 1) * max / 127
+  ((get(:knob4) || 1) * max / 127.to_f).round(2)
+end
+
+def conv(value, max: 10)
+  ((value) * max / 127.to_f).round(2)
 end
 
 
