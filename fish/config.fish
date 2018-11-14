@@ -14,7 +14,6 @@ set -gx CARGO_BIN_PATH ~/.cargo/bin
 
 set -gx EDITOR nvim
 set -gx PATH $PATH ~/bin
-set -gx PATH $PATH ~/.local/bin
 set -gx PATH $PATH $CARGO_BIN_PATH
 set -gx PATH $PATH ~/.dotfiles/tmuxifier/bin
 
@@ -49,7 +48,7 @@ set -gx NVM_DIR ~/.nvm
 source ~/.config/fish/gem_home.fish
 # brew installed chruby
 # source /usr/local/Cellar/chruby-fish/0.8.1/share/chruby/auto.fish
-source /usr/local/Cellar/chruby-fish/0.8.1/share/chruby/chruby.fish
+source /usr/local/Cellar/chruby-fish/0.8.2/share/chruby/chruby.fish
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -57,8 +56,8 @@ source /usr/local/Cellar/chruby-fish/0.8.1/share/chruby/chruby.fish
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ... and in case installing pipsi fails
 # ~/.pyenv/shims/pip install -U pip pipsi
-status --is-interactive; and source (pyenv init -|psub)
-status --is-interactive; and source (pyenv virtualenv-init -|psub)
+#status --is-interactive; and source (pyenv init -|psub)
+#status --is-interactive; and source (pyenv virtualenv-init -|psub)
 
-# make crystal work
-set -g fish_user_paths "/usr/local/opt/llvm/bin" $fish_user_paths
+# make crystal lang work
+#set -g fish_user_paths "/usr/local/opt/llvm/bin" $fish_user_paths
