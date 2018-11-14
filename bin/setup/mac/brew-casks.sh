@@ -1,29 +1,20 @@
 #!/bin/bash
 
-brew cask install google-chrome
-brew cask install arq
-brew cask install bartender
-brew cask install atom
-brew cask install totalfinder
-brew cask install skype
-brew cask install spotify
-brew cask install alfred
-brew cask install vlc
-brew cask install moneymoney
-brew cask install things
-brew cask install istat-menus
-brew cask install knox
+brew cask install karabiner-elements iterm2 1password moom qutebrowser google-chrome firefox dropbox
+brew cask install sonic-pi supercollider moneymoney bartender tripmode slack
+brew cask install arq spotify vlc alfred little-snitch
 brew cask install keycastr   # for displaying keystrokes during screencasts or presentations
-brew cask install qutebrowser
-
-
-brew cask install truecrypt
-
-## for contacts searching ... `cargo install mates`
+brew cask install ableton-live-intro
 brew cask install cargo
+brew install git neovim tmux
+
+brew install --HEAD https://raw.github.com/postmodern/gem_home/master/homebrew/gem_home.rb
+brew install fish
+brew install chruby
+brew install chruby-fish
+brew install fzf
+
+echo "Finish fish and fzf install by running `fisher` in a new shell"
+echo " ... and run `cargo install mates` for contacts searching"
 
 
-# brew cask install firefox
-# brew cask install iterm2
-# brew cask install moom
-# brew cask install dropbox

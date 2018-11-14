@@ -24,9 +24,7 @@ function main {
     bi ack
     bi automake
     bi bash
-    bi bash-completion
     bi contacts
-    bi cowsay
     bi ctags
     bi exiftool
     bi git
@@ -34,9 +32,9 @@ function main {
     bi ifstat
     bi iftop
     bi md5sha1sum
-    bi mobile-shell
-    bi msmtp
-    bi notmuch
+    #bi mobile-shell
+    #bi msmtp
+    #bi notmuch
     bi offline-imap
     bi openssh
     bi openssl
@@ -48,11 +46,10 @@ function main {
     bi tmux
     bi tmux-mem-cpu-load
     bi urlview
-    bi vim
+    bi neovim
     bi macvim
     bi wget
     bi vdirsyncer
-    bi exa
 }
 
 

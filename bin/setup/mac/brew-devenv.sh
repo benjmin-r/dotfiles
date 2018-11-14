@@ -4,7 +4,6 @@
 # brew cask install postgres # which is postgres.app
 
 brew install node
-#brew install qt
 brew install pyenv
 brew install pyenv-virtualenv
 brew install pyenv-virtualenvwrapper
