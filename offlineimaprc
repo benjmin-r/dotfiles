@@ -1,6 +1,6 @@
 [general]
 ui = ttyui
-accounts = personal, work, work-new
+accounts = personal
 pythonfile=~/.mutt/offlineimap.py
 fsync = False
 
@@ -30,36 +30,4 @@ remoteuser = 'benjamin@ambestengestern.de'
 remotepasseval = get_keychain_pass('benjamin@ambestengestern.de', 'mailbox.org')
 ssl = yes
 cert_fingerprint = 65149f34d0fb7d832c93ef845d4440c4b6fc8965
-folderfilter = lambda folder: folder not in ['Trash', 
-                                             'Junk', ]
-
-
-[Account work]
-localrepository = work-local
-remoterepository = work-remote
-
-[Repository work-local]
-type = Maildir
-localfolders = ~/.mail/work
-nametrans = lambda folder: {'Archive': '[Gmail]/All Mail',
-                            'Drafts': '[Gmail]/Drafts',
-                            'Sent': '[Gmail]/Sent Mail',
-                            'Starred': '[Gmail]/Starred',
-                            }.get(folder, folder)
-
-[Repository work-remote]
-maxconnections = 1
-type = IMAP
-remotehost = imap.gmail.com
-remoteuser = br@crispymtn.com
-remotepasseval = get_keychain_pass('br@crispymtn.com', 'imap.gmail.com')
-sslcacertfile = /usr/local/etc/openssl/cert.pem
-ssl = yes
-nametrans = lambda folder: {
-                            '[Gmail]/All Mail': 'Archive',
-                            '[Gmail]/Drafts': 'Drafts',
-                            '[Gmail]/Sent Mail': 'Sent',
-                            '[Gmail]/Starred': 'Starred',
-                            }.get(folder, folder)
-folderfilter = lambda folder: folder not in ['Trash', 'Contacts' ]
-
+folderfilter = lambda folder: folder not in ['Trash', 'Junk', ]
