@@ -9,10 +9,8 @@ brew cask install cargo
 brew install git neovim tmux
 
 brew install --HEAD https://raw.github.com/postmodern/gem_home/master/homebrew/gem_home.rb
-brew install fish
-brew install chruby
-brew install chruby-fish
-brew install fzf
+brew install fish fzf
+brew install ruby-build chruby chruby-fish
 
 echo "Finish fish and fzf install by running `fisher` in a new shell"
 echo " ... and run `cargo install mates` for contacts searching"

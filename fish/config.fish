@@ -43,12 +43,17 @@ set -gx NVM_DIR ~/.nvm
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# gem_home - a better way to do bundler
+# chruby & gem_home - a better way to do rbenv & bundler
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 source ~/.config/fish/gem_home.fish
-# brew installed chruby
-# source /usr/local/Cellar/chruby-fish/0.8.1/share/chruby/auto.fish
+
+# configure brew installed chruby
 source /usr/local/Cellar/chruby-fish/0.8.2/share/chruby/chruby.fish
+
+# install ruby versions with `ruby-build 2.5.1 ~/.rubies/2.5.1`
+# init default ruby version and cross-project gems
+chruby 2.5.1
+gem_home ~/.gem_home
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
