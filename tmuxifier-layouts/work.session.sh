@@ -1,9 +1,4 @@
 if initialize_session "work"; then
-    window_root "~/Downloads"
-    new_window "work"
-    run_cmd "m work"
-    split_h 60
-
     window_root "~/work/crispymtn/projects/keyline"
     new_window "keyline-workers"
     run_cmd "source .env.fish;"
