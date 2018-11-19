@@ -5,7 +5,7 @@ brew cask install sonic-pi supercollider moneymoney bartender tripmode slack
 brew cask install arq spotify vlc alfred little-snitch
 brew cask install keycastr   # for displaying keystrokes during screencasts or presentations
 brew cask install ableton-live-intro
-brew cask install cargo
+brew cask install cargo dash flux insomnia signal
 brew install git neovim tmux
 
 brew install --HEAD https://raw.github.com/postmodern/gem_home/master/homebrew/gem_home.rb
