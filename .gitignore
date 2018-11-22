@@ -18,3 +18,9 @@ pentadactyl/info/default/local-marks
 weechat/*.log
 weechat/*.weechatlog
 weechat/logs/
+sonic-pi/.uuid
+sonic-pi/.writableTesterPath
+sonic-pi/log/
+sonic-pi/settings.json
+sonic-pi/store/
+
