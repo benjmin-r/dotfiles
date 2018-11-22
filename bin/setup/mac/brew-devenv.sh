@@ -3,10 +3,8 @@
 # brew cask install java
 # brew cask install postgres # which is postgres.app
 
-brew install node
-brew install pyenv
-brew install pyenv-virtualenv
-brew install pyenv-virtualenvwrapper
+brew install node leiningen
+brew install pyenv pyenv-virtualenv pyenv-virtualenvwrapper
 
 ### install pipsi
 curl https://raw.githubusercontent.com/mitsuhiko/pipsi/master/get-pipsi.py | python

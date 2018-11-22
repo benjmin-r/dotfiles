@@ -22,7 +22,7 @@ function init {
 function main {
     bi mutt
     bi ack
-    bi automake
+    bi ag bi automake
     bi bash
     bi contacts
     bi ctags
