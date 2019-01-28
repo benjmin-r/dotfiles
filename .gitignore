@@ -24,3 +24,6 @@ sonic-pi/log/
 sonic-pi/settings.json
 sonic-pi/store/
 
+
+vim/plugged/
+
