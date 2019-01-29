@@ -1,11 +1,4 @@
 if initialize_session "personal"; then
-    window_root "~/Downloads"
-    new_window "personal"
-    run_cmd "m personal"
-    split_h
-    run_cmd "cd ~/data/notes"
-    select_pane 1
-
     window_root "~/data/projects/git-projects/squeakyvessel.com"
     new_window "[sq]"
     run_cmd "source .env.fish"
