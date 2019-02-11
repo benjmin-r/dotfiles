@@ -1,3 +1,5 @@
+scriptencoding utf-8
+set encoding=utf-8
 set nocompatible      " Don't force vi compatibility
 
 filetype off
@@ -20,12 +22,12 @@ call plug#begin('~/.vim/plugged')
     Plug 'ervandew/supertab'
     Plug 'stephpy/vim-yaml'
     Plug 'airblade/vim-gitgutter'
+    Plug 'qpkorr/vim-bufkill'
 
     "Plug 'garbas/vim-snipmate'
     "Plug 'kchmck/vim-coffee-script'
     "Plug 'jiangmiao/auto-pairs'
     "Plug 'IN3D/vim-raml'
-    "Plug 'qpkorr/vim-bufkill'
     "Plug 'tpope/vim-endwise'
     "Plug 'sunaku/vim-ruby-minitest'
     "Plug 'dag/vim-fish'
@@ -38,7 +40,7 @@ call plug#end()
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 behave xterm
 
-set term=xterm-256color
+set term=screen-256color
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 set background=dark

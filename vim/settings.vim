@@ -4,8 +4,8 @@ set timeoutlen=500      " reaction even though it's configured as leader key
 set ttimeoutlen=200
 
 set laststatus=2         " show lightline/airline right after startup
-"set list                 " show invisible characters
-"set listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:.,trail:·
+set list                 " show invisible characters
+set listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:.,trail:·
 set relativenumber
 set scrolloff=7          " keeps current line from reaching top or bottom
 set cursorline           " highlight current line
