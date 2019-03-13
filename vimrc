@@ -15,22 +15,20 @@ call plug#begin('~/.vim/plugged')
     Plug 'mileszs/ack.vim', { 'on': ['Ack', 'Ack!'] }
     Plug 'jlanzarotta/bufexplorer', { 'on': ['BufExplorer'] }
     Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'  " Tell fzf plugin to use homebrew installed fzf
-    Plug 'vim-ruby/vim-ruby'
     Plug 'tpope/vim-rails'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-rhubarb'
     Plug 'ervandew/supertab'
-    Plug 'stephpy/vim-yaml'
     Plug 'airblade/vim-gitgutter'
     Plug 'qpkorr/vim-bufkill'
+    Plug 'sheerun/vim-polyglot'
+    Plug 'w0rp/ale'
 
     "Plug 'garbas/vim-snipmate'
     "Plug 'kchmck/vim-coffee-script'
     "Plug 'jiangmiao/auto-pairs'
-    "Plug 'IN3D/vim-raml'
     "Plug 'tpope/vim-endwise'
     "Plug 'sunaku/vim-ruby-minitest'
-    "Plug 'dag/vim-fish'
     "Plug 'benjmin-r/vim-i18n'
 call plug#end()
 
