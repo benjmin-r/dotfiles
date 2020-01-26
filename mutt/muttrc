@@ -61,6 +61,7 @@ set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 
 
 # Index Key Bindings ---------------------------------
+bind index g        noop
 bind index gg       first-entry
 bind index G        last-entry
 bind index R        group-reply
@@ -112,6 +113,7 @@ bind pager k    previous-line
 bind pager j    next-line
 bind pager \Cd  next-page
 bind pager \Cu  previous-page
+bind pager g    noop
 bind pager gg   top
 bind pager G    bottom
 
@@ -151,7 +153,7 @@ set reverse_name                     # reply as whomever it was to
 set include                          # include message in replies
 set forward_quote                    # include message in forwards
 
-set editor = "nvim +9"
+set editor = "vim +9"
 
 set sendmail_wait = 0
 bind compose p postpone-message
@@ -160,7 +162,10 @@ macro compose Y pfy "Send mail without GPG"
 
 # Search Options -------------------------------¬
 macro index a "<limit>all\n" "show all messages (undo limit)"
-macro index S "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py.py ~/.mail/temporary/search<enter><change-folder-readonly>+temporary/search<enter>" "search mail (using notmuch)"
+
+### notmuch & neomutt
+set nm_default_uri = "notmuch:///Users/benjamin/.mail/personal"
+macro index,pager S "<vfolder-from-query-readonly>"
 
 # Prepare GPG usage -------------------------------¬
 set pgp_use_gpg_agent = yes

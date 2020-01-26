@@ -11,8 +11,7 @@ mailboxes "+personal/INBOX" \
           "+personal/Archive" \
           "+personal/Sent" \
           "+personal/leadership_spark" \
-          "+personal/Trash" \
-          "+personal/Junk"
+          "+personal/Trash"
 
 set header_cache     = ~/.mutt/cache/personal-headers # where to store headers
 set message_cachedir = ~/.mutt/cache/personal-bodies  # where to store bodies
@@ -32,15 +31,15 @@ macro index gs "<change-folder>+personal/Sent<enter>" "Jump to Sent"
 macro pager gs "<change-folder>+personal/Sent<enter>" "Jump to Sent"
 
 
-set from      = "benjamin@ambestengestern.de"
+set from      = "benjamin@cto.coffee"
 set record    = "+personal/Sent"
 set postponed = "+personal/Drafts"
 
 alternates benjamin@nur-eine-i.de breitzammer@gmail.com, benjamin@squeakyvessel.com, benjamin@cto.coffee
 
-alias identity_1    Benjamin Reitzammer <benjamin@ambestengestern.de>
-alias identity_2    Benjamin Reitzammer <benjamin@squeakyvessel.com>
-alias identity_3    Benjamin Reitzammer <benjamin@cto.coffee>
+alias identity_1    Benjamin Reitzammer <benjamin@cto.coffee>
+alias identity_2    Benjamin Reitzammer <benjamin@ambestengestern.de>
+alias identity_3    Benjamin Reitzammer <benjamin@squeakyvessel.com>
 alias identity_4    B Reitzammer <breitzammer@gmail.com>
 macro compose v "<edit-from>^Uidentity_<tab>" "Select from" 
 

@@ -1,1 +1,0 @@
-/Users/benjamin/.mutt/notmuch-py/mutt-notmuch-py.py
