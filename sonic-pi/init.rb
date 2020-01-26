@@ -8,6 +8,10 @@ def claps
   '~/data/music/music-samples_all/claps'
 end
 
+def esgibt
+  '~/data/music/music-samples_all/es-gibt-melodien'
+end
+
 
 # helper functions for reading values from the knobs of my midi keyboard
 def translate_knob(knob_cc)
@@ -91,3 +95,7 @@ define :play_timed do |notes, times, **args|
     sleep ts[i]
   end
 end
+
+# following is only for having simple autocomplete in vim
+vim_synth_names = (ring :beep, :blade, :bnoise, :chipbass, :chiplead, :chipnoise, :cnoise, :dark_ambience, :dpulse, :dsaw, :dtri, :dull_bell, :fm, :gnoise, :growl, :hollow, :hoover, :mod_beep, :mod_dsaw, :mod_fm, :mod_pulse, :mod_saw, :mod_sine, :mod_tri, :noise, :piano, :pluck, :pnoise, :pretty_bell, :prophet, :pulse, :saw, :sine, :sound_in, :sound_in_stereo, :square, :subpulse, :supersaw, :tb303, :tech_saws, :tri, :zawa)
+

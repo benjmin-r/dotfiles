@@ -4,3 +4,12 @@ snippet l
 snippet t
 	t('${0}')
 
+snippet 16
+	beat = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0].ring
+	sample :${0} if beat.tick == 1
+	sleep 0.25
+
+snippet ll
+	live_loop : do
+	  ${0}
+	end

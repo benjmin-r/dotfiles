@@ -1,6 +1,6 @@
 [user]
-	name = Benjamin Reitzammer
-	email = benjamin@ambestengestern.de
+        name = Benjamin Reitzammer
+        email = benjamin@ambestengestern.de
 
 [alias]
     rev = rev-parse HEAD
@@ -16,7 +16,7 @@
     dc = diff --cached
     ndc = diff --name-only --cached
     difflog = log -p
-    lgs = log --pretty=format:\"%C(yellow)%h%Creset %Cgreen%ar%Creset %Cblue%an%Creset %s %C(white)%d%Creset\" --graph --all
+    lgs = log --pretty=format:\"%C(yellow)%h%Creset %Cgreen%ar %cD%Creset %Cblue%an%Creset %s %C(white)%d%Creset\" --graph --all
     lg = log --graph --oneline --decorate --all
     tags = tag -ln
     url =! bash -c 'git config --get remote.origin.url | sed -E "s/.+:\\(.+\\)\\.git$/https:\\\\/\\\\/github\\\\.com\\\\/\\\\1/g"'
@@ -31,7 +31,7 @@
     remotes = remote -v
     change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ $`echo $VAR` = \\\"$OLD\\\" ]]; then export $VAR=\\\"$NEW\\\"; fi\" $@; }; f "
 [color]
-	ui = always
+        ui = always
 [core]
     excludesfile = /Users/benjamin/.gitignore_global
     editor = vim
@@ -46,20 +46,26 @@
 [difftool]
     prompt=false
 [ghi]
-	token = !security find-internet-password -a benjmin-r -s github.com -l 'ghi token' -w
+        token = !security find-internet-password -a benjmin-r -s github.com -l 'ghi token' -w
 [pull]
-	rebase = true
+        rebase = true
 [url "ssh://git@heroku.com/"]
-	insteadOf = https://git.heroku.com/
+        insteadOf = https://git.heroku.com/
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+        oldNormal = red bold
+        oldHighlight = red bold 52
+        newNormal = yellow bold
+        newHighlight = yellow bold 22
 [color "diff"]
-	meta = 227
-	frag = magenta bold
-	commit = 227 bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+        meta = 227
+        frag = magenta bold
+        commit = 227 bold
+        old = red bold
+        new = yellow bold
+        whitespace = red reverse
+
+[includeIf "gitdir:~/work/clients/codecentric-lsg/"]
+      path = ~/work/clients/codecentric-lsg/gitconfig
+
+[includeIf "gitdir:~/work/clients/bryter/"]
+      path = ~/work/clients/bryter/gitconfig

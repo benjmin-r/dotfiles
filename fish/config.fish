@@ -64,8 +64,8 @@ source /usr/local/Cellar/chruby-fish/0.8.2/share/chruby/chruby.fish
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ... and in case installing pipsi fails
 # ~/.pyenv/shims/pip install -U pip pipsi
-#status --is-interactive; and source (pyenv init -|psub)
-#status --is-interactive; and source (pyenv virtualenv-init -|psub)
+status --is-interactive; and source (pyenv init -|psub)
+status --is-interactive; and source (pyenv virtualenv-init -|psub)
 
 # make crystal lang work
 #set -g fish_user_paths "/usr/local/opt/llvm/bin" $fish_user_paths
