@@ -8,6 +8,7 @@ filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
     Plug 'lifepillar/vim-solarized8'
+
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'benmills/vimux'
     Plug 'itchyny/lightline.vim'
@@ -21,8 +22,24 @@ call plug#begin('~/.vim/plugged')
     Plug 'ervandew/supertab'
     Plug 'airblade/vim-gitgutter'
     Plug 'qpkorr/vim-bufkill'
-    Plug 'sheerun/vim-polyglot'
     Plug 'w0rp/ale'
+    Plug 'sheerun/vim-polyglot'
+    Plug 'Alok/notational-fzf-vim'
+    Plug 'trevordmiller/nova-vim'
+
+    Plug 'dermusikman/sonicpi.vim'
+
+    Plug 'MarcWeber/vim-addon-mw-utils'
+    Plug 'tomtom/tlib_vim'
+    Plug 'garbas/vim-snipmate'
+
+    Plug 'dracula/vim'
+
+    " Intellisense-style autocomplete
+    "Plug 'Shougo/deoplete.nvim'
+    "Plug 'roxma/nvim-yarp'
+    "Plug 'roxma/vim-hug-neovim-rpc'
+    "Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 
     "Plug 'garbas/vim-snipmate'
     "Plug 'kchmck/vim-coffee-script'
@@ -31,7 +48,6 @@ call plug#begin('~/.vim/plugged')
     "Plug 'sunaku/vim-ruby-minitest'
     "Plug 'benjmin-r/vim-i18n'
 call plug#end()
-
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " color scheme
@@ -42,8 +58,8 @@ set term=screen-256color
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 set background=dark
-colorscheme solarized8
-
+"colorscheme solarized8
+colorscheme dracula
 
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
