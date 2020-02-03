@@ -74,31 +74,31 @@ source ~/.dotfiles/vim/plugins.conf
 source ~/.dotfiles/vim/filetypes.vim
 source ~/.dotfiles/vim/settings.vim
 
-function! Solar_light()
-    set background=light
-    colorscheme solarized8
-    " tell iterm to switch to light color profile
-    "silent !osascript -e 'tell app "System Events" to keystroke "l" using {shift down, option down, control down}'
-endfunction
-
-function! Solar_dark()
-    set background=dark
-    colorscheme solarized8
-    " tell iterm to switch to dark color profile
-    "silent !osascript -e 'tell app "System Events" to keystroke "d" using {shift down, option down, control down}'
-endfunction
-
-function! Solar_swap()
-    if &background ==? 'dark'
-        call Solar_light()
-    else
-        call Solar_dark()
-    endif
-endfunction
-
-command! SolarDark  call Solar_dark()
-command! SolarLight call Solar_light()
-command! SolarSwap  call Solar_swap()
-
-nnoremap <leader>sd :SolarDark<CR>
-nnoremap <leader>sl :SolarLight<CR>
+"function! Solar_light()
+"    set background=light
+"    colorscheme solarized8
+"    " tell iterm to switch to light color profile
+"    "silent !osascript -e 'tell app "System Events" to keystroke "l" using {shift down, option down, control down}'
+"endfunction
+"
+"function! Solar_dark()
+"    set background=dark
+"    colorscheme solarized8
+"    " tell iterm to switch to dark color profile
+"    "silent !osascript -e 'tell app "System Events" to keystroke "d" using {shift down, option down, control down}'
+"endfunction
+"
+"function! Solar_swap()
+"    if &background ==? 'dark'
+"        call Solar_light()
+"    else
+"        call Solar_dark()
+"    endif
+"endfunction
+"
+"command! SolarDark  call Solar_dark()
+"command! SolarLight call Solar_light()
+"command! SolarSwap  call Solar_swap()
+"
+"nnoremap <leader>sd :SolarDark<CR>
+"nnoremap <leader>sl :SolarLight<CR>
