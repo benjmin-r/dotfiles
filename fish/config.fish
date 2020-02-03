@@ -26,7 +26,6 @@ set -gx MATES_DIR ~/.contacts/personal
 # source in various configs
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 source ~/.config/fish/abbr.fish
-source ~/.config/fish/autoenv.fish
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
