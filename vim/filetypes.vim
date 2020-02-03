@@ -11,5 +11,6 @@ if has("autocmd")
   au BufNewFile,BufRead *.prawn set filetype=ruby
 
   autocmd FileType mail setlocal spell spelllang=de_de
+  autocmd FileType mail Wrap
   autocmd FileType markdown setlocal spell spelllang=en_gb
 endif

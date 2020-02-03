@@ -37,10 +37,11 @@ set mat=5             " how many tenths of a second to blink matching brackets f
 set pastetoggle=<leader>pp
 set modeline          " enable applying of modelines (such as for setting ft in file itself)
 set modelines=1
-set tw=120
-set colorcolumn=120
 set tags=./tags,.git/tags,tags;/
 set encoding=utf-8
+
+set textwidth=120
+set colorcolumn=120
 
 set nojoinspaces      " Insert only one space when joining lines that contain sentence-terminating
 set ai                " Turn on autoindenting
@@ -53,3 +54,7 @@ set incsearch       " BUT do highlight as you type you search phrase
 set ignorecase      " make searching case-insensitive
 set smartcase       " make searches with mixed case, case-sensitive
 set gdefault        " always substitute globally
+
+" enable soft line linewrapping per buffer by issuing :Wrap
+command! -nargs=* Wrap set wrap linebreak nolist textwidth=500
+
