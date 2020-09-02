@@ -7,10 +7,15 @@ set pgp_encrypt_only_command="pgpewrap gpg --batch --quiet --no-verbose --output
 set pgp_encrypt_sign_command="pgpewrap gpg %?p?--passphrase-fd 0? --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust --encrypt-to 0x7600BD53 -- -r %r -- %f"
 
 mailboxes "+personal/INBOX" \
+          "+personal/finance" \
+          "+personal/amyhoy-stb" \
+          "+personal/csgis" \
+          "+personal/awamo" \
+          "+personal/#humansconf" \
+          "+personal/finance" \
           "+personal/Drafts" \
           "+personal/Archive" \
           "+personal/Sent" \
-          "+personal/leadership_spark" \
           "+personal/Trash"
 
 set header_cache     = ~/.mutt/cache/personal-headers # where to store headers
@@ -35,13 +40,14 @@ set from      = "benjamin@cto.coffee"
 set record    = "+personal/Sent"
 set postponed = "+personal/Drafts"
 
-alternates benjamin@nur-eine-i.de breitzammer@gmail.com, benjamin@squeakyvessel.com, benjamin@cto.coffee
+alternates benjamin@nur-eine-i.de breitzammer@gmail.com, benjamin@squeakyvessel.com, benjamin@cto.coffee, hello@humansconf.org
 
 alias identity_1    Benjamin Reitzammer <benjamin@cto.coffee>
 alias identity_2    Benjamin Reitzammer <benjamin@ambestengestern.de>
 alias identity_3    Benjamin Reitzammer <benjamin@squeakyvessel.com>
 alias identity_4    B Reitzammer <breitzammer@gmail.com>
+alias identity_5    Benjamin Reitzammer from humansconf <hello@humansconf.org>
 macro compose v "<edit-from>^Uidentity_<tab>" "Select from" 
 
-macro index F "<shell-escape>offlineimap -a personal<enter>"           "run offlineimap to sync all mail"
+macro index F "<shell-escape>offlineimap -a personal; update_mail_git.sh<enter>" "run offlineimap to sync all mail and commit it to git repo"
 macro index f "<shell-escape>offlineimap -qf INBOX -a personal<enter>" "run offlineimap to sync inbox"

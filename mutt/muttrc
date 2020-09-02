@@ -164,8 +164,8 @@ macro compose Y pfy "Send mail without GPG"
 macro index a "<limit>all\n" "show all messages (undo limit)"
 
 ### notmuch & neomutt
-set nm_default_uri = "notmuch:///Users/benjamin/.mail/personal"
-macro index,pager S "<vfolder-from-query-readonly>"
+#set nm_default_uri = "notmuch:///Users/benjamin/.mail/personal"
+#macro index,pager S "<vfolder-from-query-readonly>"
 
 # Prepare GPG usage -------------------------------¬
 set pgp_use_gpg_agent = yes

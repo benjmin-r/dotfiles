@@ -19,13 +19,13 @@ color tree		color141	default
 color index		color210	default 	~D # deleted messages
 color index		color84		default 	~F # flagged messages
 color index		color117	default 	~N # new messages
-color index		color212	default 	~Q # messages which have been replied to
+#color index		color212	default 	~Q # messages which have been replied to
 color index		color215	default 	~T # tagged messages
 color index		color141	default		~v # messages part of a collapsed thread
 
 # message headers ---- foreground ---- background -----------------------------
 color hdrdefault	color117	default
-color header		color231	default		^Subject:.*
+#color header		color231	default		^Subject:.*
 
 # message body ------- foreground ---- background -----------------------------
 color attachment	color228	default
