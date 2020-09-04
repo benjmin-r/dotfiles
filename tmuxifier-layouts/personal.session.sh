@@ -1,17 +1,7 @@
 if initialize_session "personal"; then
     new_window "[mail & notes]"
-    run_cmd "m personal"
     split_h
-    run_cmd "cd ~/data/notes; and vim"
-
-    window_root "~/data/work/code/squeakyvessel.com"
-    new_window "[sq]"
-    run_cmd "source .env.fish"
-    split_h 70
-    run_cmd "source .env.fish; and vim"
-    select_pane 1
-    split_v 30
-    run_cmd "source .env.fish"
+    run_cmd "cd ~/data/notes"
 
     window_root "~/data/work/code/cto.coffee"
     new_window "[cto.coffee]"
@@ -30,15 +20,6 @@ if initialize_session "personal"; then
     select_pane 1
     split_v 20
     run_cmd "and source .env.fish"
-
-    window_root "~/data/work/code/freelancers-and-friends"
-    new_window "[f&f]"
-    run_cmd "source .env.fish"
-    split_h 70
-    run_cmd "source .env.fish; and vim"
-    select_pane 1
-    split_v 20
-    run_cmd "source .env.fish"
 
     select_window 1
 fi
