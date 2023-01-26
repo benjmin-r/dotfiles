@@ -27,7 +27,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'Alok/notational-fzf-vim'
     Plug 'trevordmiller/nova-vim'
 
-    Plug 'dermusikman/sonicpi.vim'
+    "Plug 'dermusikman/sonicpi.vim'
+    Plug 'lilyinstarlight/vim-sonic-pi'
 
     Plug 'MarcWeber/vim-addon-mw-utils'
     Plug 'tomtom/tlib_vim'
