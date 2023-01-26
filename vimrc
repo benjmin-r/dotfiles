@@ -32,7 +32,7 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'MarcWeber/vim-addon-mw-utils'
     Plug 'tomtom/tlib_vim'
-    Plug 'garbas/vim-snipmate'
+    "Plug 'garbas/vim-snipmate'
 
     Plug 'dracula/vim'
 
