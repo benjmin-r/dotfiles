@@ -15,7 +15,7 @@ set -gx CARGO_BIN_PATH ~/.cargo/bin
 set -gx EDITOR vim
 set -gx PATH $PATH ~/bin
 set -gx PATH $PATH $CARGO_BIN_PATH
-set -gx PATH $PATH ~/.dotfiles/tmuxifier/bin
+set -gx PATH $PATH ~/.tmuxifier/bin
 
 set -gx FZF_DEFAULT_COMMAND 'ag -g ""'
 set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
@@ -26,6 +26,7 @@ set -gx MATES_DIR ~/.contacts/personal
 # source in various configs
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 source ~/.config/fish/abbr.fish
+source ~/.profile
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -47,7 +48,6 @@ set -gx NVM_DIR ~/.nvm
 source ~/.config/fish/gem_home.fish
 
 # configure brew installed chruby
-source /usr/local/Cellar/chruby-fish/0.8.2/share/chruby/chruby.fish
 
 # install ruby versions with `ruby-build 2.5.1 ~/.rubies/2.5.1`
 # `env RUBY_CONFIGURE_OPTS=--with-readline-dir=(brew --prefix readline) ruby-build 2.5.3 ~/.rubies/2.5.3`
