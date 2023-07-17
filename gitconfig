@@ -63,9 +63,3 @@
         old = red bold
         new = yellow bold
         whitespace = red reverse
-
-[includeIf "gitdir:~/work/clients/codecentric-lsg/"]
-      path = ~/work/clients/codecentric-lsg/gitconfig
-
-[includeIf "gitdir:~/work/clients/bryter/"]
-      path = ~/work/clients/bryter/gitconfig
