@@ -48,6 +48,7 @@ set -gx NVM_DIR ~/.nvm
 source ~/.config/fish/gem_home.fish
 
 # configure brew installed chruby
+source /usr/local/Cellar/chruby-fish/1.0.0/share/fish/vendor_conf.d/chruby_auto.fish
 
 # install ruby versions with `ruby-build 2.5.1 ~/.rubies/2.5.1`
 # `env RUBY_CONFIGURE_OPTS=--with-readline-dir=(brew --prefix readline) ruby-build 2.5.3 ~/.rubies/2.5.3`
