@@ -43,6 +43,7 @@
     default = current
 [init]
     templatedir = ~/.git_template
+	defaultBranch = main
 [difftool]
     prompt=false
 [ghi]

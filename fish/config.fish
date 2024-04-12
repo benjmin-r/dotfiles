@@ -13,13 +13,13 @@ set fish_key_bindings fish_vi_key_bindings
 set -gx CARGO_BIN_PATH ~/.cargo/bin
 
 set -gx EDITOR vim
+set -gx SHELL '/opt/homebrew/bin/fish'
 set -gx PATH $PATH ~/bin
 set -gx PATH $PATH $CARGO_BIN_PATH
 set -gx PATH $PATH ~/.tmuxifier/bin
 
 set -gx FZF_DEFAULT_COMMAND 'ag -g ""'
 set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
-set -gx MATES_DIR ~/.contacts/personal
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
