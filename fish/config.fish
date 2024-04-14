@@ -12,6 +12,10 @@ set -gx EDITOR vim
 set -gx SHELL '/opt/homebrew/bin/fish'
 set -gx PATH $PATH ~/bin
 set -gx PATH $PATH ~/.tmuxifier/bin
+set -gx FZF_DEFAULT_COMMAND 'ag -g ""'
+#set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
+#set -gx FZF_CTRL_R_OPTS '--bind=ctrl-j:up,ctrl-k:down'
+
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -54,6 +58,7 @@ status --is-interactive; and source (pyenv virtualenv-init -|psub)
 # key bindings
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 fish_vi_key_bindings
+fzf_key_bindings
 
 bind --mode insert --sets-mode default jk backward-char force-repaint
 
@@ -90,8 +95,6 @@ bind -M default K commandline_man
 #set -gx CARGO_BIN_PATH ~/.cargo/bin
 #set -gx PATH $PATH $CARGO_BIN_PATH
 
-#set -gx FZF_DEFAULT_COMMAND 'ag -g ""'
-#set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # nvm & node
