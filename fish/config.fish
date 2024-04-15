@@ -14,7 +14,7 @@ set -gx PATH $PATH ~/bin
 set -gx PATH $PATH ~/.tmuxifier/bin
 set -gx FZF_DEFAULT_COMMAND 'ag -g ""'
 #set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
-#set -gx FZF_CTRL_R_OPTS '--bind=ctrl-j:up,ctrl-k:down'
+set -gx FZF_CTRL_R_OPTS '--bind=ctrl-u:up,ctrl-d:down'
 
 
 
