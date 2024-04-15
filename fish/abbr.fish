@@ -7,6 +7,7 @@ abbr -a se source .env.fish
 
 abbr -a sq sqlite-utils
 abbr -a ds datasette
+abbr -a k kubectl
 
 # code maat specific abbreviation
 abbr -a gm "git log --pretty=format:'[%h] %an %ad %s' --date=short --numstat --before=(date +%Y-%m-%d)"
