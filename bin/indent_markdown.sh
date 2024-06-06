@@ -9,6 +9,7 @@ BEGIN {
     dash = "- "
     line_count = 0
     first_paragraph = 0
+    heading_encountered = 0
 }
 function get_indent(level) {
     result = ""
@@ -27,30 +28,36 @@ function get_indent(level) {
 /^## / {
     indent = 1
     first_paragraph = 1
+    heading_encountered = 1
     print get_indent(indent - 1) dash $0
     next
 }
 /^### / {
     indent = 2
     first_paragraph = 1
+    heading_encountered = 1
     print get_indent(indent - 1) dash $0
     next
 }
 /^#### / {
     indent = 3
     first_paragraph = 1
+    heading_encountered = 1
     print get_indent(indent - 1) dash $0
     next
 }
 /^#/ {
     indent = 0
     first_paragraph = 1
+    heading_encountered = 1
     print dash $0
     next
 }
 {
     if (NF == 0) {
         print ""
+    } else if (heading_encountered == 0) {
+        printf("%s\n", $0)
     } else if (indent > 0) {
         if (first_paragraph) {
             printf("%s%s%s\n", get_indent(indent), dash, $0)
