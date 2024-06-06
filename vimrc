@@ -53,9 +53,9 @@ call plug#end()
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " color scheme
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-behave xterm
+"behave xterm
 
-set term=screen-256color
+"set term=screen-256color
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 set background=dark

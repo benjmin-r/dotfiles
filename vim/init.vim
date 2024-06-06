@@ -1,1 +1,1 @@
-/Users/benjamin/.vimrc
+/Users/benjamin.reitzammer/.vimrc
