@@ -30,5 +30,6 @@ remoteuser = 'benjamin@ambestengestern.de'
 remotepasseval = get_keychain_pass('benjamin@ambestengestern.de', 'mailbox.org')
 ssl = yes
 #cert_fingerprint = 
-sslcacertfile = /usr/local/etc/openssl/cert.pem
+#sslcacertfile = /usr/local/etc/openssl/cert.pem
+sslcacertfile = /opt/homebrew/etc/openssl@3/cert.pem
 folderfilter = lambda folder: folder not in ['Trash', 'Junk', ]
