@@ -10,13 +10,17 @@ end
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set -gx EDITOR vim
 set -gx SHELL '/opt/homebrew/bin/fish'
-set -gx PATH $PATH ~/bin
 set -gx PATH $PATH ~/.tmuxifier/bin
 set -gx FZF_DEFAULT_COMMAND 'ag -g ""'
 #set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 set -gx FZF_CTRL_R_OPTS '--bind=ctrl-u:up,ctrl-d:down'
 set -gx FZF_CTRL_T_OPTS '--bind=ctrl-u:up,ctrl-d:down'
 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# prepend dirs to PATH so they take precedence
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+set -gx PATH ~/bin $PATH
+set -gx PATH /opt/homebrew/bin $PATH
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
