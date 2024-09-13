@@ -1,7 +1,5 @@
 [user]
-        name = Benjamin Reitzammer
-        email = benjamin@ambestengestern.de
-
+    name = Benjamin Reitzammer
 [alias]
     rev = rev-parse HEAD
     revs = rev-parse --short HEAD
@@ -42,8 +40,7 @@
 [push]
     default = current
 [init]
-    templatedir = ~/.git_template
-	defaultBranch = main
+    defaultBranch = main
 [difftool]
     prompt=false
 [ghi]
