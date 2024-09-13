@@ -74,6 +74,7 @@ source ~/.dotfiles/vim/lightline.conf
 source ~/.dotfiles/vim/plugins.conf
 source ~/.dotfiles/vim/filetypes.vim
 source ~/.dotfiles/vim/settings.vim
+source ~/.dotfiles/vim/bracketed-paste.vim
 
 "function! Solar_light()
 "    set background=light
