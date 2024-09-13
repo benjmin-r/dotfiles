@@ -10,9 +10,10 @@ end
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set -gx EDITOR vim
 set -gx SHELL '/opt/homebrew/bin/fish'
+set -gx PATH $PATH ~/bin
+set -gx PATH $PATH ~/.local/bin
 set -gx PATH $PATH ~/.tmuxifier/bin
 set -gx FZF_DEFAULT_COMMAND 'ag -g ""'
-#set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 set -gx FZF_CTRL_R_OPTS '--bind=ctrl-u:up,ctrl-d:down'
 set -gx FZF_CTRL_T_OPTS '--bind=ctrl-u:up,ctrl-d:down'
 
@@ -20,7 +21,7 @@ set -gx FZF_CTRL_T_OPTS '--bind=ctrl-u:up,ctrl-d:down'
 # prepend dirs to PATH so they take precedence
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set -gx PATH ~/bin $PATH
-set -gx PATH /opt/homebrew/bin $PATH
+set -gx PATH (brew --prefix)/bin $PATH
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -51,8 +52,13 @@ eval (tmuxifier init - fish)
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# setup pyenv shims ... virtualenv is used as a pyenv plugin
+# pyenv
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# venv prompt is already configured in the fish_prompt.fish function
+set -x PYENV_VIRTUALENV_DISABLE_PROMPT 1
+
+# setup pyenv shims ... virtualenv is used as a pyenv plugin
 # ... and in case installing pipsi fails
 # ~/.pyenv/shims/pip install -U pip pipsi
 status --is-interactive; and source (pyenv init -|psub)
@@ -62,8 +68,10 @@ status --is-interactive; and source (pyenv virtualenv-init -|psub)
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # key bindings
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+fzf --fish | source
+
 fish_vi_key_bindings
-fzf_key_bindings
+#fzf_key_bindings
 
 bind --mode insert --sets-mode default jk backward-char force-repaint
 
@@ -110,10 +118,10 @@ bind -M default K commandline_man
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # chruby & gem_home - a better way to do rbenv & bundler
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#source ~/.config/fish/gem_home.fish
+source ~/.config/fish/gem_home.fish
 
 # configure brew installed chruby
-#source /usr/local/Cellar/chruby-fish/1.0.0/share/fish/vendor_conf.d/chruby_auto.fish
+source /opt/homebrew/Cellar/chruby-fish/1.0.0/share/fish/vendor_conf.d/chruby_auto.fish
 
 # install ruby versions with `ruby-build 2.5.1 ~/.rubies/2.5.1`
 # `env RUBY_CONFIGURE_OPTS=--with-readline-dir=(brew --prefix readline) ruby-build 2.5.3 ~/.rubies/2.5.3`

@@ -6,6 +6,8 @@ abbr -a sync-contacts "PYTHONPATH='' vdirsyncer sync and mates index"
 abbr -a se source .env.fish
 
 abbr -a sq sqlite-utils
+abbr -a sq3 sqlite3
+abbr -a sqb sqlitebiter
 abbr -a ds datasette
 abbr -a k kubectl
 
