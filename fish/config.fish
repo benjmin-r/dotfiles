@@ -21,7 +21,7 @@ set -gx FZF_CTRL_T_OPTS '--bind=ctrl-u:up,ctrl-d:down'
 # prepend dirs to PATH so they take precedence
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set -gx PATH ~/bin $PATH
-set -gx PATH (brew --prefix)/bin $PATH
+set -gx PATH /opt/homebrew/bin $PATH
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

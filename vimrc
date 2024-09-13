@@ -37,6 +37,8 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'dracula/vim'
 
+    Plug 'knubie/vim-kitty-navigator', {'do': 'cp ./*.py ~/.config/kitty/'}
+
     " Intellisense-style autocomplete
     "Plug 'Shougo/deoplete.nvim'
     "Plug 'roxma/nvim-yarp'
