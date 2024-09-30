@@ -1,4 +1,4 @@
-abbr -a l ls -al
+abbr -a l lsd -al
 
 abbr -a tx tmuxifier
 abbr -a sync-contacts "PYTHONPATH='' vdirsyncer sync and mates index"
