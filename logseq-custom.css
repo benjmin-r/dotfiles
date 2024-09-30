@@ -1,0 +1,115 @@
+/*
+ * Just a irregularly updated dump of my custom css in logseq
+ *
+ * I'm using the Gunmetal Dark theme, but adjust it with some Dracula colors and features
+ *
+ * https://github.com/blueteafrog/logseq-gunmetal-theme/blob/main/gunmetal.css
+ * https://github.com/dracula/logseq/blob/master/custom.css
+ *
+ * */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
+html[data-theme="dark"] {
+  --background: #282a36;
+  --light-background: #343746;
+  --lighter-background: #424450;
+  --dark-background: #21222c;
+  --darker-background: #191a21;
+  
+  --ls-page-text-size: 16px;
+  
+  --ls-tag-text-opacity: 0.8;
+  --ls-tag-text-hover-opacity: 0.8;
+  --ls-page-text-size: 18px;
+  --ls-page-title-size: 36px;
+  --ls-font-family: "Fira Sans";
+  --ls-font-weight-light: 300;
+  --ls-font-weight-regular: 400;
+  --ls-font-weight-medium: 500;
+  --ls-font-letter-spacing: 0.002em;
+  --ls-font-line-height: 1.5;
+  
+  --ls-scrollbar-background-color: var(--background);
+  --ls-scrollbar-foreground-color: var(--darker-background);
+  --ls-scrollbar-thumb-hover-color: var(--light-background);
+} 
+
+html,
+body {
+  font-weight: var(--ls-font-weight-light);
+  letter-spacing: var(--ls-font-letter-spacing);
+  line-height: var(--ls-font-line-height);
+  font-size: var(--ls-page-text-size);
+  background-color: #282a36;
+}
+
+i, em {
+  color: var(--orange);
+}
+
+strong,
+b {
+  color: var(--blue);
+  font-weight: var(--ls-font-weight-medium);
+}
+
+
+blockquote,
+pre.pre-wrap-white-space {
+      border: 1px solid var(--transparent);
+      border-radius: var(--radius-md);
+      padding: 0.5em 0.5em;
+      margin: 0em 0;
+}
+
+blockquote::before {
+        font-size: 2.5em;
+      font-weight: normal;
+      line-height: 0.1em;
+      margin-right: 1px;
+      vertical-align: -0.3em;
+      content: "❝";
+}
+
+/*
+.journal-title .title::before {
+      content: "📆" !important;
+}
+*/
+
+.is-journals .title::before {
+      content: "🗓" !important;
+}
+
+/*
+Available colors in gunmetal theme:
+https://github.com/blueteafrog/logseq-gunmetal-theme/blob/main/gunmetal.css
+      --aqua: 180, 68%, 71%;
+      --red: hsl(5, 100%, 82%);
+      --orange: hsl(33, 100%, 82%);
+      --green: hsl(168, 100%, 82%);
+      --blue: hsl(188, 100%, 82%);
+
+In Dracula Theme:
+https://github.com/dracula/logseq/blob/master/custom.css
+  --background: #282a36;
+  --light-background: #343746;
+  --lighter-background: #424450;
+  --dark-background: #21222c;
+  --darker-background: #191a21;
+  --current-line: #44475a;
+  --comment: #6272a4;
+  --white: #f8f8f2;
+  --white-hover: #f8f8f280;
+  --red: #ff5555;
+  --orange: #ffb86c;
+  --yellow: #f1fa8c;
+  --green: #50fa7b;
+  --purple: #bd93f9;
+  --purple-hover: #bf93f980;
+  --cyan: #8be9fd;
+  --cyan-hover: #8be9fd80;
+  --pink: #ff79c6;
+  --pink-hover: #ff79c680;
+*/
