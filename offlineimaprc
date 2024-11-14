@@ -1,7 +1,7 @@
 [general]
 ui = ttyui
 accounts = personal
-pythonfile=~/.mutt/offlineimap.py
+pythonfile=~/.dotfiles/offlineimap_get-pass.py
 fsync = False
 
 
